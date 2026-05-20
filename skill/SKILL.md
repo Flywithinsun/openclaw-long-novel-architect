@@ -1,0 +1,171 @@
+---
+name: long-novel-architect
+description: A portable OpenClaw skill for managing long-form fiction projects: state discovery, chapter requests, drafting workflow, readability/de-AI polishing, audits, asset packaging, migration, and completion discipline. Public-safe template; configure project-specific paths and model routes in a separate config file.
+---
+
+# Long Novel Architect
+
+This Skill controls a long-form fiction project through explicit files, repeatable workflows, and safe handoff packages. It is designed for fresh OpenClaw sessions and migrated workspaces where hidden chat memory is unavailable.
+
+## 0. Public-safe design
+
+This Skill intentionally uses generic role names and configurable paths. Do not hardcode private model provider IDs, API endpoints, personal directories, cloud account names, or credentials in this file.
+
+Project-specific values belong in:
+
+```text
+novel-architect.config.json
+PROJECT_STATE.md / CURRENT_STATE.md
+WORK_QUEUE.md
+workflow/model-routing.md
+```
+
+## 1. Non-negotiable operating rules
+
+1. **Use files as truth.** Current progress comes from state files, chapter directories, and recent version control, not memory.
+2. **No hidden-memory dependency.** Requests and handoffs must be self-contained.
+3. **Separate roles.** Organizer, side-miner, engineering helper, and final canon judge are distinct responsibilities even if one model performs multiple roles.
+4. **Side material is not canon.** Side-model outputs must be reviewed by the final canon role before entering drafts/readable outputs.
+5. **Completion requires evidence.** Do not claim completion without file checks, verification output, and version-control status or a named blocker.
+6. **Stop after completion.** Finishing one chapter does not authorize starting the next chapter.
+7. **Protect private data.** Never package secrets, raw logs, credentials, personal paths, or private archives by default.
+8. **Prefer reversible operations.** Avoid destructive deletes; archive or ask when unsure.
+
+## 2. Mandatory first reads
+
+For a fresh session, read the configured equivalents of:
+
+```text
+PROJECT_STATE.md or CURRENT_STATE.md
+WORK_QUEUE.md
+PROJECT_INDEX.md or FILES.md
+workflow/model-routing.md
+workflow/start-chapter.md
+```
+
+For progress questions, also inspect chapter directories and recent version control:
+
+```bash
+ls drafts/ readable/ summaries/ audits/ ledgers/ 2>/dev/null
+git log --oneline -5 2>/dev/null || true
+```
+
+If the project uses another directory layout, follow `novel-architect.config.json`.
+
+## 3. Model role contract
+
+The exact provider/model names are project-specific. This Skill uses roles:
+
+| Role | Responsibility | Must not do |
+|---|---|---|
+| `organizer` | chat, compression, context packing, light editing | final canon decisions |
+| `final_canon` | final prose selection, continuity, terminal review, readable/de-AI approval | silent downgrade |
+| `side_miner_primary` | diagnosis, alternative scenes, red-team | direct canon writes |
+| `side_miner_texture` | life texture, body reactions, voice variants | direct canon writes |
+| `side_miner_structure` | continuity, structure, loopholes | replacing final canon |
+| `engineering_helper` | scripts, validators, packaging, workflow tools | prose canon |
+
+Map these roles in `workflow/model-routing.md` or your config. If a route is unavailable, record the fallback and its limitations.
+
+## 4. Standard chapter workflow
+
+A full chapter is complete only when all configured required assets exist and pass checks.
+
+1. Confirm target chapter and scope: request-only, draft-only, full chapter, repair, or audit.
+2. Verify current progress from state files, chapter directories, and git.
+3. Load recent summaries, outline nodes, ledger constraints, and name/continuity locks.
+4. Generate or refresh a self-contained chapter request.
+5. Run configured side-mining/red-team steps; store outputs in scratch/process directories, not canon directories.
+6. Use the final canon role for final prose decisions.
+7. Write configured draft path, e.g. `drafts/chNNN.md`.
+8. Write configured support files:
+   - summary;
+   - self-audit;
+   - ledger/update suggestions;
+   - final-review evidence if used.
+9. Create readable/de-AI candidate if part of the project standard.
+10. Run local character/word count and verification.
+11. Update state/work queue.
+12. Commit or record version status.
+13. Report completion and stop.
+
+## 5. Readability / de-AI workflow
+
+Use this for publishable/readable candidates or style-humanization passes.
+
+1. Confirm source draft exists.
+2. Preserve canon facts, order of events, strong lines, object states, and character voice.
+3. Run side diagnosis/mining if configured.
+4. Use side outputs as suggestions only.
+5. Let the final canon role approve the final readable text.
+6. Save the readable output to the configured path.
+7. Verify no canon drift and record quality state:
+   - `PASS_UNCHANGED`
+   - `PASS_REVISED`
+   - `FAIL_NEEDS_REVISION`
+
+## 6. Range audit workflow
+
+A range audit must judge the completed range and lock the next stage.
+
+Check:
+
+- continuity;
+- pacing and chapter-level consequence;
+- character/name consistency;
+- economics/logistics/institutional plausibility where relevant;
+- antagonist/external learning;
+- unresolved hooks;
+- repeated beats or prose fatigue;
+- next-stage risks.
+
+Audit output must include:
+
+- verdict;
+- warnings/blockers;
+- repair list;
+- next chapter start point;
+- next 3–5 chapter pressure;
+- next stage consequence;
+- hard rules for upcoming request packages.
+
+Do not begin the next chapter after an audit unless explicitly instructed.
+
+## 7. Asset packaging and migration
+
+Use the public scripts:
+
+```bash
+python3 scripts/verify_portable_assets.py --project-root /path/to/project --config /path/to/project/novel-architect.config.json
+python3 scripts/package_portable_assets.py --project-root /path/to/project --config /path/to/project/novel-architect.config.json --output-dir /tmp/portable-novel
+```
+
+Default packaging excludes secrets, scratch logs, inbox/outbox, archives, and large compressed files.
+
+## 8. Completion report template
+
+```text
+Chapter N "Title" is complete.
+Readable/de-AI status: ____.
+Count: ____.
+Continuity: ____.
+Files written: ____.
+Verification: ____.
+Version control: ____.
+Current stop point: before Chapter N+1. Waiting for instruction.
+```
+
+## 9. References
+
+Read the most specific reference:
+
+```text
+references/project-map.md
+references/chapter-workflow.md
+references/deai-workflow.md
+references/audit-workflow.md
+references/model-routing.md
+references/closeout-checklist.md
+references/asset-package.md
+references/portability-guide.md
+```

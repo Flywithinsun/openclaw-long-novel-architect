@@ -1,0 +1,62 @@
+{
+  "project_name": "Your Long Novel Project",
+  "chapter_prefix": "ch",
+  "required_paths": [
+    "PROJECT_STATE.md",
+    "WORK_QUEUE.md",
+    "PROJECT_INDEX.md",
+    "workflow",
+    "drafts",
+    "readable",
+    "summaries",
+    "audits",
+    "ledgers",
+    "outlines",
+    "characters",
+    "skill",
+    "scripts"
+  ],
+  "recommended_paths": [
+    "canon",
+    "bible",
+    "writing-requests",
+    "exports"
+  ],
+  "draft_dir": "drafts",
+  "readable_dir": "readable",
+  "summary_dir": "summaries",
+  "audit_dir": "audits",
+  "ledger_dir": "ledgers",
+  "exclude_dirs": [
+    ".git",
+    ".secrets",
+    "scratch",
+    "inbox",
+    "outbox",
+    "archive",
+    "backups",
+    "node_modules",
+    "__pycache__"
+  ],
+  "exclude_patterns": [
+    "*.pyc",
+    "*.pyo",
+    "*.zip",
+    "*.tar",
+    "*.tar.gz",
+    "*.tgz",
+    "*.7z",
+    "*.rar",
+    "*.log",
+    ".env",
+    ".env.*"
+  ],
+  "model_roles": {
+    "organizer": "<your-fast-general-model>",
+    "final_canon": "<your-best-writing-and-review-model>",
+    "side_miner_primary": "<your-primary-side-review-model>",
+    "side_miner_texture": "<your-style-or-human-texture-model>",
+    "side_miner_structure": "<your-long-context-structure-model>",
+    "engineering_helper": "<your-coding-model>"
+  }
+}

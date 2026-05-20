@@ -1,0 +1,23 @@
+# Example portable asset manifest
+created: 2026-01-01T00:00:00
+project_name: Your Long Novel Project
+
+## Included categories
+- state files
+- workflow files
+- skill files
+- drafts
+- readable chapters
+- summaries
+- audits
+- ledgers
+- outlines
+- characters
+
+## Excluded categories
+- secrets
+- git history
+- raw scratch logs
+- archives
+- transfer inbox/outbox
+- compressed backups

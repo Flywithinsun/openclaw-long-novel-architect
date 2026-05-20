@@ -1,0 +1,37 @@
+# Secrets / credentials
+.env
+.env.*
+.secrets/
+*.pem
+*.key
+*credential*
+*credentials*
+*token*
+*rclone*.conf
+
+# Project-private process data
+scratch/
+inbox/
+outbox/
+archive/
+backups/
+exports/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Node / system
+node_modules/
+.DS_Store
+
+# Generated packages
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+*.log
