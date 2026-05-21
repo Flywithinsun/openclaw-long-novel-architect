@@ -10,6 +10,7 @@ Before reporting completion, verify configured equivalents of:
 - local count completed;
 - verification passed or blocker recorded;
 - state/work queue updated;
-- git status/commit recorded.
+- git status/commit recorded;
+- private GitHub sync passed, skipped by instruction, or failed with blocker recorded.
 
 Report the stop point and wait.

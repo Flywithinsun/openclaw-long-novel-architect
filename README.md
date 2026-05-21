@@ -32,6 +32,7 @@
 - 做十章 / 阶段审计，并锁定下一阶段推进；
 - 打包一个脱敏后的迁移资产包；
 - 检查迁移后的项目是否具备继续写作条件。
+- 在配置允许时，把完成节点同步到私有 GitHub 仓库，方便另一个 OpenClaw 从文件和 git 历史继续接手。
 
 ### 它不是什么？
 
@@ -60,7 +61,8 @@ openclaw-long-novel-architect/
 │   │   ├── model-routing.md
 │   │   ├── closeout-checklist.md
 │   │   ├── asset-package.md
-│   │   └── portability-guide.md
+│   │   ├── portability-guide.md
+│   │   └── github-sync.md
 │   └── templates/
 │       ├── chapter-request-template.md
 │       ├── deai-request-template.md
@@ -68,9 +70,11 @@ openclaw-long-novel-architect/
 │       └── completion-report-template.md
 ├── scripts/
 │   ├── package_portable_assets.py
-│   └── verify_portable_assets.py
+│   ├── verify_portable_assets.py
+│   └── github_private_sync.py
 ├── examples/
 │   ├── project-config.example.json
+│   ├── github-sync.example.json
 │   ├── model-routing.example.md
 │   └── asset-manifest.example.txt
 └── docs/
@@ -148,6 +152,28 @@ python3 scripts/verify_portable_assets.py --project-root . --config novel-archit
 
 确认通过后，再让 OpenClaw 读取 `skill/SKILL.md` 和你的项目状态文件。
 
+#### 6. 同步到私有 GitHub 仓库
+
+如果你希望在每次 git 环节后自动同步到自己的私有 GitHub 项目，可以使用：
+
+```bash
+python3 scripts/github_private_sync.py --repo-root /path/to/your/project --config /path/to/your/project/github-sync.config.json --auto-commit
+```
+
+支持的能力：
+
+- 自动检测当前 git 仓库；
+- 自动读取当前分支并推送到配置的远程；
+- 可选自动提交未提交改动；
+- 可选推送 tags；
+- 支持 `--dry-run` 预演。
+
+注意：这个接口**只负责调用本地 git**，不会在代码里保存 GitHub token。你应当通过本机 git remote、Git Credential Manager、SSH key 或其他本地凭据方案完成认证。
+
+示例配置见：`examples/github-sync.example.json`
+
+OpenClaw 使用时，应该先读取 `skill/references/github-sync.md`，并把同步结果写进完成报告：`PASS / SKIPPED / FAILED`。
+
 ### 推荐项目文件结构
 
 默认建议：
@@ -210,6 +236,7 @@ scripts/
 5. **完成必须有文件、检查和停点。**
 6. **完成一章不等于自动开始下一章。**
 7. **审计不仅判断过去，还必须锁定下一阶段。**
+8. **如果启用私有 GitHub 同步，同步是交接证据，不是凭据管理。**
 
 ### 发布前检查
 
@@ -256,6 +283,7 @@ It helps an OpenClaw agent:
 - run range audits and lock the next stage;
 - package a sanitized asset bundle for another OpenClaw;
 - verify whether a migrated project has enough assets to continue safely.
+- sync completed checkpoints to a private GitHub repository when configured, so another OpenClaw can resume from files and git history.
 
 ### What this is not
 
@@ -284,7 +312,8 @@ openclaw-long-novel-architect/
 │   │   ├── model-routing.md
 │   │   ├── closeout-checklist.md
 │   │   ├── asset-package.md
-│   │   └── portability-guide.md
+│   │   ├── portability-guide.md
+│   │   └── github-sync.md
 │   └── templates/
 │       ├── chapter-request-template.md
 │       ├── deai-request-template.md
@@ -292,9 +321,11 @@ openclaw-long-novel-architect/
 │       └── completion-report-template.md
 ├── scripts/
 │   ├── package_portable_assets.py
-│   └── verify_portable_assets.py
+│   ├── verify_portable_assets.py
+│   └── github_private_sync.py
 ├── examples/
 │   ├── project-config.example.json
+│   ├── github-sync.example.json
 │   ├── model-routing.example.md
 │   └── asset-manifest.example.txt
 └── docs/
@@ -372,6 +403,18 @@ python3 scripts/verify_portable_assets.py --project-root . --config novel-archit
 
 After verification passes, let OpenClaw read `skill/SKILL.md` and your project state files.
 
+#### 6. Sync to a private GitHub repository
+
+If the project enables private GitHub sync, use:
+
+```bash
+python3 scripts/github_private_sync.py --repo-root /path/to/your/project --config /path/to/your/project/github-sync.config.json --auto-commit
+```
+
+OpenClaw should read `skill/references/github-sync.md` first and report the sync result as `PASS / SKIPPED / FAILED`.
+
+This script delegates authentication to local git, SSH agent, Git Credential Manager, or the hosting environment. Do not store GitHub tokens in project files.
+
 ### Recommended project layout
 
 Default recommendation:
@@ -434,6 +477,7 @@ Before publishing or sharing any generated package, you should still run your ow
 5. **Completion requires files, checks, and a stop point.**
 6. **A completed chapter does not authorize starting the next chapter.**
 7. **Audits must lock the next stage, not merely judge the past.**
+8. **Private GitHub sync is handoff evidence, not credential management.**
 
 ### Pre-release checks
 

@@ -1,0 +1,8 @@
+{
+  "remote_name": "origin",
+  "branch": "main",
+  "push_tags": false,
+  "auto_commit": false,
+  "commit_message": "chore(sync): update private mirror",
+  "remote_url": "git@github.com:your-org/your-private-repo.git"
+}

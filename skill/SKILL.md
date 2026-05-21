@@ -18,6 +18,7 @@ novel-architect.config.json
 PROJECT_STATE.md / CURRENT_STATE.md
 WORK_QUEUE.md
 workflow/model-routing.md
+github-sync.config.json, if private GitHub sync is enabled
 ```
 
 ## 1. Non-negotiable operating rules
@@ -87,7 +88,8 @@ A full chapter is complete only when all configured required assets exist and pa
 10. Run local character/word count and verification.
 11. Update state/work queue.
 12. Commit or record version status.
-13. Report completion and stop.
+13. If configured, sync the checkpoint to the private GitHub remote.
+14. Report completion and stop.
 
 ## 5. Readability / de-AI workflow
 
@@ -142,7 +144,20 @@ python3 scripts/package_portable_assets.py --project-root /path/to/project --con
 
 Default packaging excludes secrets, scratch logs, inbox/outbox, archives, and large compressed files.
 
-## 8. Completion report template
+## 8. Private GitHub sync
+
+If the project uses private GitHub sync, read `references/github-sync.md` before pushing.
+
+Use:
+
+```bash
+python3 scripts/github_private_sync.py --repo-root /path/to/project --config /path/to/project/github-sync.config.json --dry-run
+python3 scripts/github_private_sync.py --repo-root /path/to/project --config /path/to/project/github-sync.config.json --auto-commit
+```
+
+Never store GitHub tokens or credentials in project files. Authentication belongs to the local git client, SSH agent, Git Credential Manager, or the hosting environment.
+
+## 9. Completion report template
 
 ```text
 Chapter N "Title" is complete.
@@ -152,10 +167,11 @@ Continuity: ____.
 Files written: ____.
 Verification: ____.
 Version control: ____.
+GitHub private sync: ____.
 Current stop point: before Chapter N+1. Waiting for instruction.
 ```
 
-## 9. References
+## 10. References
 
 Read the most specific reference:
 
@@ -168,4 +184,5 @@ references/model-routing.md
 references/closeout-checklist.md
 references/asset-package.md
 references/portability-guide.md
+references/github-sync.md
 ```

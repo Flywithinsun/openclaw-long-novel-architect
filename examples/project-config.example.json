@@ -27,6 +27,7 @@
   "summary_dir": "summaries",
   "audit_dir": "audits",
   "ledger_dir": "ledgers",
+  "github_sync_config": "github-sync.config.json",
   "exclude_dirs": [
     ".git",
     ".secrets",
