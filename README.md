@@ -67,7 +67,11 @@ openclaw-long-novel-architect/
 │       ├── chapter-request-template.md
 │       ├── deai-request-template.md
 │       ├── audit-report-template.md
-│       └── completion-report-template.md
+│       ├── completion-report-template.md
+│       ├── project-state-template.md
+│       ├── work-queue-template.md
+│       ├── project-index-template.md
+│       └── model-routing-template.md
 ├── scripts/
 │   ├── package_portable_assets.py
 │   ├── verify_portable_assets.py
@@ -76,14 +80,47 @@ openclaw-long-novel-architect/
 │   ├── project-config.example.json
 │   ├── github-sync.example.json
 │   ├── model-routing.example.md
-│   └── asset-manifest.example.txt
+│   ├── asset-manifest.example.txt
+│   └── minimal-project/
 └── docs/
     ├── github-release-checklist.md
     ├── migration-quickstart.md
-    └── sanitization-report.md
+    ├── sanitization-report.md
+    ├── openclaw-installation.md
+    └── first-project-setup.md
 ```
 
 ### 快速开始
+
+#### 0. 一分钟上手
+
+如果你只是想快速试用：
+
+```bash
+git clone https://github.com/Flywithinsun/openclaw-long-novel-architect.git
+cd openclaw-long-novel-architect
+cp -R examples/minimal-project ../my-novel-project
+cd ../my-novel-project
+cp -R ../openclaw-long-novel-architect/skill ./skill
+cp -R ../openclaw-long-novel-architect/scripts ./scripts
+python scripts/verify_portable_assets.py --project-root . --config novel-architect.config.json
+```
+
+然后让 OpenClaw 先读取：
+
+```text
+skill/SKILL.md
+PROJECT_STATE.md
+WORK_QUEUE.md
+PROJECT_INDEX.md
+workflow/model-routing.md
+```
+
+更多说明见：
+
+- `docs/openclaw-installation.md`
+- `docs/first-project-setup.md`
+- `examples/minimal-project/`
 
 #### 1. 安装 / 复制 Skill
 
@@ -318,7 +355,11 @@ openclaw-long-novel-architect/
 │       ├── chapter-request-template.md
 │       ├── deai-request-template.md
 │       ├── audit-report-template.md
-│       └── completion-report-template.md
+│       ├── completion-report-template.md
+│       ├── project-state-template.md
+│       ├── work-queue-template.md
+│       ├── project-index-template.md
+│       └── model-routing-template.md
 ├── scripts/
 │   ├── package_portable_assets.py
 │   ├── verify_portable_assets.py
@@ -327,14 +368,47 @@ openclaw-long-novel-architect/
 │   ├── project-config.example.json
 │   ├── github-sync.example.json
 │   ├── model-routing.example.md
-│   └── asset-manifest.example.txt
+│   ├── asset-manifest.example.txt
+│   └── minimal-project/
 └── docs/
     ├── github-release-checklist.md
     ├── migration-quickstart.md
-    └── sanitization-report.md
+    ├── sanitization-report.md
+    ├── openclaw-installation.md
+    └── first-project-setup.md
 ```
 
 ### Quick start
+
+#### 0. One-minute start
+
+If you just want to try it quickly:
+
+```bash
+git clone https://github.com/Flywithinsun/openclaw-long-novel-architect.git
+cd openclaw-long-novel-architect
+cp -R examples/minimal-project ../my-novel-project
+cd ../my-novel-project
+cp -R ../openclaw-long-novel-architect/skill ./skill
+cp -R ../openclaw-long-novel-architect/scripts ./scripts
+python scripts/verify_portable_assets.py --project-root . --config novel-architect.config.json
+```
+
+Then ask OpenClaw to read:
+
+```text
+skill/SKILL.md
+PROJECT_STATE.md
+WORK_QUEUE.md
+PROJECT_INDEX.md
+workflow/model-routing.md
+```
+
+See also:
+
+- `docs/openclaw-installation.md`
+- `docs/first-project-setup.md`
+- `examples/minimal-project/`
 
 #### 1. Install / copy the Skill
 

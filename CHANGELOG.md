@@ -1,5 +1,43 @@
 # Changelog
 
+## v0.3.0 - OpenClaw Public Onboarding Pack
+
+### 中文
+
+本版本面向开源使用者，重点降低第一次使用 OpenClaw Long Novel Architect 的门槛。
+
+主要变化：
+
+- 新增 `docs/openclaw-installation.md`：中英文 OpenClaw 安装与首次读取说明。
+- 新增 `docs/first-project-setup.md`：中英文首个小说项目初始化指南。
+- 新增 `examples/minimal-project/`：最小可用 OpenClaw 小说项目骨架。
+- 新增项目启动模板：
+  - `skill/templates/project-state-template.md`
+  - `skill/templates/work-queue-template.md`
+  - `skill/templates/project-index-template.md`
+  - `skill/templates/model-routing-template.md`
+- 更新 `README.md`：增加“一分钟上手 / One-minute start”。
+
+本版本的目标是让新用户 clone 仓库后能更快理解：怎么安装 Skill、怎么初始化小说项目、OpenClaw 第一次应该读取哪些文件，以及项目完成后如何继续交接。
+
+### English
+
+This release focuses on public onboarding and lowers the first-use barrier for OpenClaw Long Novel Architect.
+
+Highlights:
+
+- Added `docs/openclaw-installation.md` with bilingual OpenClaw installation and first-read guidance.
+- Added `docs/first-project-setup.md` with bilingual first-project setup instructions.
+- Added `examples/minimal-project/`, a minimal usable OpenClaw novel project skeleton.
+- Added project bootstrap templates:
+  - `skill/templates/project-state-template.md`
+  - `skill/templates/work-queue-template.md`
+  - `skill/templates/project-index-template.md`
+  - `skill/templates/model-routing-template.md`
+- Updated `README.md` with a “One-minute start” section.
+
+The goal is to help new users understand how to install the Skill, initialize a novel project, identify the first files OpenClaw should read, and continue through explicit file-based handoffs.
+
 ## v0.2.0 - OpenClaw Private GitHub Sync
 
 ### 中文

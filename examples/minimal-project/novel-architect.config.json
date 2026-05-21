@@ -1,0 +1,38 @@
+{
+  "project_name": "Minimal OpenClaw Novel Project",
+  "chapter_prefix": "ch",
+  "required_paths": [
+    "PROJECT_STATE.md",
+    "WORK_QUEUE.md",
+    "PROJECT_INDEX.md",
+    "workflow",
+    "drafts",
+    "readable",
+    "summaries",
+    "audits",
+    "ledgers",
+    "outlines",
+    "characters"
+  ],
+  "recommended_paths": [
+    "canon",
+    "writing-requests",
+    "exports",
+    "skill",
+    "scripts"
+  ],
+  "draft_dir": "drafts",
+  "readable_dir": "readable",
+  "summary_dir": "summaries",
+  "audit_dir": "audits",
+  "ledger_dir": "ledgers",
+  "github_sync_config": "github-sync.config.json",
+  "model_roles": {
+    "organizer": "TODO",
+    "final_canon": "TODO",
+    "side_miner_primary": "TODO",
+    "side_miner_texture": "TODO",
+    "side_miner_structure": "TODO",
+    "engineering_helper": "TODO"
+  }
+}
