@@ -2,6 +2,8 @@
 
 This public release tree is designed to be uploaded to GitHub without private project material.
 
+Historical data support is intentionally lightweight and external-data oriented. The public template may describe SQLite / CSV / JSON adapters, but it does not bundle historical databases by default.
+
 ## Removed / not included
 
 - private novel drafts;

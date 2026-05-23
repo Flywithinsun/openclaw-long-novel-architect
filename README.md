@@ -104,6 +104,8 @@ openclaw-long-novel-architect/
 │   └── minimal-project/
 └── docs/
     ├── HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
+    ├── historical-mode-roadmap.md
+    ├── third-party-inspiration.md
     ├── github-release-checklist.md
     ├── migration-quickstart.md
     ├── sanitization-report.md
@@ -419,6 +421,8 @@ openclaw-long-novel-architect/
 │   └── minimal-project/
 └── docs/
     ├── HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
+    ├── historical-mode-roadmap.md
+    ├── third-party-inspiration.md
     ├── github-release-checklist.md
     ├── migration-quickstart.md
     ├── sanitization-report.md
