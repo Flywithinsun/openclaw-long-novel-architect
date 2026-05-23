@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import argparse
+import fnmatch
 import json
 import re
+import os
 from pathlib import Path
 import sys
 from typing import Any
@@ -33,6 +35,74 @@ DEFAULT_CONFIG: dict[str, Any] = {
     "summary_dir": "summaries",
     "audit_dir": "audits",
     "ledger_dir": "ledgers",
+    "timeline_dir": "timelines",
+    "map_dir": "maps",
+    "lore_dir": "lore",
+    "standards_dir": "standards",
+    "context_pack_dir": "context-packs",
+    "branch_dir": "branches",
+    "reports_dir": "reports",
+    "external_data_dir": "external-data",
+    "exports_dir": "exports",
+    "historical_mode": {
+        "enabled": False,
+        "primary_calendar": "CE",
+        "allow_bce": True,
+        "date_precision": ["year", "month", "day"],
+        "require_source_for_real_history": True,
+        "require_chapter_link_for_alt_events": True,
+    },
+    "timeline_rules": {
+        "event_id_required": True,
+        "allowed_tracks": [
+            "real_history",
+            "alt_history",
+            "character",
+            "military",
+            "policy",
+            "economy",
+            "technology",
+            "local",
+        ],
+        "allowed_confidence": ["confirmed", "probable", "fictional", "unknown"],
+    },
+    "metadata_tags": {
+        "characters": "@char",
+        "places": "@place",
+        "lore": "@lore",
+        "events": "@event",
+        "sources": "@source",
+        "chapters": "@chapter",
+    },
+    "historical_data_sources": [],
+    "exclude_dirs": [
+        ".git",
+        ".secrets",
+        "scratch",
+        "inbox",
+        "outbox",
+        "archive",
+        "backups",
+        "external-data",
+        "node_modules",
+        "__pycache__",
+    ],
+    "exclude_patterns": [
+        "*.db",
+        "*.pyc",
+        "*.pyo",
+        "*.sqlite",
+        "*.sqlite3",
+        "*.zip",
+        "*.tar",
+        "*.tar.gz",
+        "*.tgz",
+        "*.7z",
+        "*.rar",
+        "*.log",
+        ".env",
+        ".env.*",
+    ],
 }
 
 REQUIRED_SKILL_TEXT = [
@@ -47,14 +117,46 @@ SECRET_PATTERNS = [
     re.compile(r"(?i)(api[_-]?key|token|secret|credential|authorization|bearer|password)\s*[:=]\s*['\"]?[^\s'\"]{8,}"),
 ]
 
+DATABASE_PATTERNS = ("*.db", "*.sqlite", "*.sqlite3")
+
+
+def merge_config(data: dict[str, Any]) -> dict[str, Any]:
+    """Merge user config with safety-preserving defaults."""
+    cfg = dict(DEFAULT_CONFIG)
+    cfg.update(data)
+
+    for key in ("historical_mode", "timeline_rules", "metadata_tags"):
+        merged = dict(DEFAULT_CONFIG.get(key, {}))
+        value = data.get(key)
+        if isinstance(value, dict):
+            merged.update(value)
+        cfg[key] = merged
+
+    for key in ("exclude_dirs", "exclude_patterns"):
+        merged = list(DEFAULT_CONFIG.get(key, []))
+        for item in data.get(key, []):
+            if item not in merged:
+                merged.append(item)
+        cfg[key] = merged
+
+    return cfg
+
 
 def load_config(path: str | None) -> dict[str, Any]:
     cfg = dict(DEFAULT_CONFIG)
     if path:
         p = Path(path).expanduser()
         data = json.loads(p.read_text(encoding="utf-8"))
-        cfg.update(data)
+        cfg = merge_config(data)
     return cfg
+
+
+def config_enabled(value: Any) -> bool:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        return value.strip().lower() in {"1", "true", "yes", "on"}
+    return bool(value)
 
 
 def parse_args() -> argparse.Namespace:
@@ -88,6 +190,86 @@ def scan_file_for_secrets(p: Path) -> list[str]:
         if any(rx.search(line) for rx in SECRET_PATTERNS):
             hits.append(f"{p}:{i}")
     return hits
+
+
+def is_under_excluded_dir(rel: str, cfg: dict[str, Any]) -> bool:
+    excluded = set(cfg.get("exclude_dirs", []))
+    return any(part in excluded for part in Path(rel).parts)
+
+
+def matches_any_pattern(name: str, patterns: tuple[str, ...] | list[str]) -> bool:
+    return any(fnmatch.fnmatch(name, pat) for pat in patterns)
+
+
+def package_roots(root: Path, cfg: dict[str, Any]) -> list[str]:
+    required = list(cfg.get("required_paths", []))
+    recommended = [p for p in cfg.get("recommended_paths", []) if (root / p).exists()]
+    roots: list[str] = []
+    for rel in required + recommended:
+        if rel not in roots:
+            roots.append(rel)
+    return roots
+
+
+def scan_package_roots_for_databases(root: Path, cfg: dict[str, Any]) -> list[str]:
+    """Warn about lightweight/local DB files in paths that packaging would consider."""
+    hits: list[str] = []
+    seen: set[str] = set()
+    for rel_root in package_roots(root, cfg):
+        base = root / rel_root
+        if not base.exists():
+            continue
+        if base.is_file():
+            rel = base.relative_to(root).as_posix()
+            if rel not in seen and not is_under_excluded_dir(rel, cfg) and matches_any_pattern(base.name, DATABASE_PATTERNS):
+                seen.add(rel)
+                hits.append(rel)
+            continue
+        for cur, dirs, files in os.walk(base):
+            curp = Path(cur)
+            dirs[:] = [
+                d
+                for d in dirs
+                if not is_under_excluded_dir((curp / d).relative_to(root).as_posix(), cfg)
+            ]
+            for name in files:
+                if not matches_any_pattern(name, DATABASE_PATTERNS):
+                    continue
+                full = curp / name
+                rel = full.relative_to(root).as_posix()
+                if rel not in seen and not is_under_excluded_dir(rel, cfg):
+                    seen.add(rel)
+                    hits.append(rel)
+    return hits
+
+
+def add_historical_mode_warnings(root: Path, cfg: dict[str, Any], warnings: list[str]) -> None:
+    historical = cfg.get("historical_mode", {})
+    if not isinstance(historical, dict) or not config_enabled(historical.get("enabled", False)):
+        return
+
+    for key in ("timeline_dir", "lore_dir", "standards_dir"):
+        rel = cfg.get(key)
+        if rel and not (root / rel).exists():
+            warnings.append(f"historical mode enabled but missing recommended path: {rel}")
+
+    external_data_dir = cfg.get("external_data_dir", "external-data")
+    if external_data_dir not in cfg.get("exclude_dirs", []):
+        warnings.append(f"historical external data dir is not excluded by default: {external_data_dir}")
+
+    for pattern in DATABASE_PATTERNS:
+        if pattern not in cfg.get("exclude_patterns", []):
+            warnings.append(f"database files are not excluded by default: {pattern}")
+
+    for source in cfg.get("historical_data_sources", []):
+        if not isinstance(source, dict):
+            continue
+        name = source.get("name", "unnamed")
+        if source.get("package") is True:
+            warnings.append(f"historical data source requests packaging; review license before sharing: {name}")
+        source_path = source.get("path")
+        if source_path and external_data_dir not in Path(source_path).parts:
+            warnings.append(f"historical data source is outside external data dir: {name} -> {source_path}")
 
 
 def main() -> int:
@@ -128,6 +310,13 @@ def main() -> int:
         warnings.append(f"latest draft {draft_latest} != latest readable {readable_latest}")
     if draft_latest and summary_latest and summary_latest < draft_latest:
         warnings.append(f"latest summary {summary_latest} behind latest draft {draft_latest}")
+
+    add_historical_mode_warnings(root, cfg, warnings)
+    for rel in scan_package_roots_for_databases(root, cfg):
+        warnings.append(
+            "database file found under package roots; keep it lightweight, external, "
+            f"and license-reviewed before sharing: {rel}"
+        )
 
     if args.scan_secrets:
         for rel in ["."]:
