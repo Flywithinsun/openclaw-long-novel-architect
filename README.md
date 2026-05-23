@@ -20,13 +20,36 @@ docs/historical-mode-roadmap.md
 docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 ```
 
-当前明确的下一步是从 **P0：许可、安全与范围边界** 开始，把本项目升级为适合严谨历史 / 架空历史 / 穿越长篇的工程化写作系统。不要先集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何外部模型 provider；应先完成第三方灵感来源、许可证边界、外部数据排除规则和历史模式路线图。
+当前状态：**P0：许可、安全与范围边界已完成**。项目已经补齐第三方灵感来源、许可证边界、外部数据排除规则、历史模式路线图、README 中文化和基础验证记录。
+
+当前明确的下一步是 **P1：双轴历史时间线系统**。不要先集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何外部模型 provider；下一阶段应先建立 Markdown-first 的真实历史 / 架空历史时间线、事件模板和 `timeline_lint.py` 验证脚本。
 
 历史模式路线图见：[`docs/historical-mode-roadmap.md`](docs/historical-mode-roadmap.md)<br>
 第三方灵感与许可证边界见：[`docs/third-party-inspiration.md`](docs/third-party-inspiration.md)<br>
 完整 AI 交接实施计划见：[`docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md`](docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md)
 
 历史数据适配器应保持**轻量、可选、用户本地自备**：优先读取 SQLite / CSV / JSON 等简单格式；公共模板和默认打包流程不捆绑 CBDB 或任何第三方历史数据库。
+
+### 历史模式阶段进度
+
+| 阶段 | 状态 | 说明 |
+|---|---|---|
+| P0：许可、安全与范围边界 | 已完成 | 已建立第三方灵感 / GPL 边界、CBDB 与外部数据不打包规则、`external-data/` 与数据库文件排除、路线图与 README 指针。 |
+| P1：双轴历史时间线 | 下一步 | 建立真实历史与架空历史时间线目录、事件模板、时间线工作流和 `scripts/timeline_lint.py`。 |
+| P3：Lore 元数据与交叉引用 | 待开始 | P1 后优先推进 lore 卡片、索引和元数据标签。 |
+| P4：上下文层与时代语言控制 | 待开始 | 在时间线和 lore 基础上补充时代语言、禁用现代词、章节上下文包。 |
+
+#### P1 预期交付物
+
+- `skill/references/timeline-workflow.md`
+- `skill/templates/timeline-event-template.md`
+- `skill/templates/timeline-audit-template.md`
+- `examples/minimal-project/timelines/README.md`
+- `examples/minimal-project/timelines/real-history.md`
+- `examples/minimal-project/timelines/alt-history.md`
+- `scripts/timeline_lint.py`
+
+P1 完成标准：示例时间线可被脚本检查；真实历史事件要求来源字段；架空历史事件要求章节关联；旧的非历史项目仍可通过基础验证。
 
 ### 长期规则与进度记录
 
@@ -40,16 +63,18 @@ docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 
 | 项目 | 当前值 |
 |---|---|
-| 记录时间 | 2026-05-23 20:30:00 +08 |
-| 已完成 | 8 项 |
-| 剩余 | 1 项 |
-| 最近一次 Git 同步本地时间 | 本轮推送完成后见完成报告 |
-| 当前状态 | README 中文化收尾与资产验证完成，准备提交并推送 |
+| 记录时间 | 2026-05-23 20:47:00 +08 |
+| 当前阶段 | P1：双轴历史时间线系统 |
+| P0 状态 | 已完成 |
+| 下一步 | 创建 P1 时间线工作流、事件模板、示例时间线和 `scripts/timeline_lint.py` |
+| 最近一次 Git 同步本地时间 | 2026-05-23 20:41 +08 |
+| 当前状态 | P0 完成记录和 P1 下一步已补齐到 README / 交接文件，准备验证、提交并推送 |
 
 #### 下次更新格式
 
-- 已完成：X 项
-- 剩余：Y 项
+- 当前阶段：……
+- P0 状态：……
+- 下一步：……
 - 最近一次 Git 同步本地时间：YYYY-MM-DD HH:MM:SS +08
 - 当前状态：……
 

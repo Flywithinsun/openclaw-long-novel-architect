@@ -46,8 +46,8 @@ Historical mode is for projects that need:
 
 | Phase | Goal | What gets added |
 |---|---|---|
-| P0 | Licensing, safety, and scope boundary | Third-party inspiration doc, roadmap, safe packaging exclusions |
-| P1 | Dual-axis historical timeline | Real-history and alt-history timelines, timeline linter |
+| P0 | Licensing, safety, and scope boundary | Completed: third-party inspiration doc, roadmap, safe packaging exclusions |
+| P1 | Dual-axis historical timeline | Next: real-history and alt-history timelines, timeline linter |
 | P2 | Geography and logistics | Place cards, routes, movement checks |
 | P3 | Lore metadata and cross-reference system | Lore cards, indexes, metadata tags |
 | P4 | Context layers and period-language controls | Standards files and chapter context packs |
@@ -98,13 +98,13 @@ If another AI takes over this repository:
 1. Read `README.md`.
 2. Read `AI_NEXT_STEPS.md`.
 3. Read this roadmap.
-4. Start with P0.
+4. Start with P1; P0 is complete.
 5. Keep historical datasets external unless the user explicitly requests otherwise.
 6. Keep GPL projects concept-only.
 7. Do not start with provider integration or GUI work.
 
 ## Current stop point / 当前停点
 
-The repository is currently at the P0 boundary phase.
+The repository has completed P0 and is currently ready for P1: the dual-axis historical timeline system.
 
-当前仓库正处于 P0 边界阶段。
+当前仓库已完成 P0，下一步是 P1：双轴历史时间线系统。

@@ -8,7 +8,7 @@
 
 ## 0. Immediate next step for the next AI session
 
-The next AI session should start with **Phase P0**.
+The next AI session should start with **Phase P1 — Dual-axis historical timeline system**. Phase P0 is complete.
 
 ### First command to run
 
@@ -30,26 +30,29 @@ examples/minimal-project/novel-architect.config.json
 
 ### First implementation target
 
-Create the licensing / safety boundary documents and config exclusions:
+Create the dual-axis timeline workflow, templates, examples, and linter:
 
 ```text
-docs/third-party-inspiration.md
-docs/historical-mode-roadmap.md
+skill/references/timeline-workflow.md
+skill/templates/timeline-event-template.md
+skill/templates/timeline-audit-template.md
+examples/minimal-project/timelines/README.md
+examples/minimal-project/timelines/real-history.md
+examples/minimal-project/timelines/alt-history.md
+scripts/timeline_lint.py
 ```
 
-Then update:
+Keep the P1 implementation aligned with:
 
 ```text
 README.md
-examples/project-config.example.json
 examples/minimal-project/novel-architect.config.json
-scripts/package_portable_assets.py
 scripts/verify_portable_assets.py
 ```
 
 ### Do not do first
 
-Do **not** begin by integrating AutoGen, CBDB, Electron, Obsidian, Emacs, or any external AI provider. The correct first step is documenting the clean-room migration boundary and adding safe config / packaging exclusions.
+Do **not** begin by integrating AutoGen, CBDB, Electron, Obsidian, Emacs, or any external AI provider. The correct next step is the Markdown-first timeline system; keep P0 licensing and data-safety boundaries intact.
 
 ---
 

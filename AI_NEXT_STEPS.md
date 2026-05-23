@@ -32,13 +32,13 @@ Upgrade `openclaw-long-novel-architect` from a general long-novel OpenClaw workf
 
 ## Start with this phase / 从这一阶段开始
 
-Start with **P0 — Licensing, safety, and scope boundary**.
+Start with **P1 — Dual-axis historical timeline system**.
 
-先做 **P0：许可、安全与范围边界**。
+先做 **P1：双轴历史时间线系统**。
 
-Do not start with coding timeline parsers, AutoGen, CBDB, Electron, Obsidian, Emacs, or model-provider integrations.
+P0 licensing / safety / scope boundary is complete. Do not start with AutoGen, CBDB, Electron, Obsidian, Emacs, or model-provider integrations.
 
-不要一上来就写时间线解析器、集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何模型 provider。
+P0 许可 / 安全 / 范围边界已经完成。不要一上来就集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何模型 provider。
 
 ---
 
@@ -50,7 +50,64 @@ git status --short --branch
 
 ---
 
-## P0 implementation checklist / P0 实施清单
+## P0 completion record / P0 完成记录
+
+Status: **complete**.
+
+状态：**已完成**。
+
+Completed P0 scope:
+
+- documented third-party inspiration and license boundaries;
+- stated that GPL projects are concept-only unless clean-room reimplemented;
+- stated that CBDB and other historical datasets are user-provided external data and must not be packaged by default;
+- added `external-data` to default excluded dirs;
+- added `*.db`, `*.sqlite`, and `*.sqlite3` to default excluded patterns;
+- added a visible historical-mode roadmap pointer in README;
+- kept old non-historical projects working;
+- verified the minimal project assets.
+
+已完成的 P0 范围：
+
+- 记录第三方灵感来源与许可证边界；
+- 明确 GPL 项目只能作为概念参考，除非干净重写；
+- 明确 CBDB 和其他历史数据集属于用户自备外部数据，默认不得打包；
+- 默认排除目录加入 `external-data`；
+- 默认排除模式加入 `*.db`、`*.sqlite`、`*.sqlite3`；
+- README 已加入历史模式路线图入口；
+- 旧的非历史项目仍可工作；
+- 已验证 minimal project 资产可用。
+
+---
+
+## P1 implementation checklist / P1 实施清单
+
+Create:
+
+```text
+skill/references/timeline-workflow.md
+skill/templates/timeline-event-template.md
+skill/templates/timeline-audit-template.md
+examples/minimal-project/timelines/README.md
+examples/minimal-project/timelines/real-history.md
+examples/minimal-project/timelines/alt-history.md
+scripts/timeline_lint.py
+```
+
+Minimum required changes:
+
+- define the Markdown timeline event schema;
+- support real-history and alternate-history tracks;
+- require sources for real-history events when configured;
+- require chapter links for alternate-history events when configured;
+- validate event id, date, calendar, track, confidence, source, and related chapters;
+- write or support a report path such as `reports/timeline-lint-report.md`;
+- update README / roadmap / verification notes if behavior changes;
+- keep old non-historical projects working.
+
+---
+
+## Previous P0 implementation checklist / 既往 P0 实施清单
 
 Create:
 
