@@ -1,5 +1,21 @@
 # Changelog
 
+## Unreleased - Historical Mode P0 Groundwork
+
+### 中文
+
+- 新增历史模式 P0 基础文档：第三方灵感与许可证边界、历史模式路线图。
+- 扩展配置安全边界：默认排除 `external-data/` 与数据库文件（`*.db`、`*.sqlite`、`*.sqlite3`），避免打包 CBDB 等外部历史数据。
+- 增强验证脚本：在历史模式启用时提示时间线 / lore / 标准目录缺失，并警告包内路径下的本地数据库文件。
+- 同步 README、发布检查清单与脱敏报告，强调历史数据适配器应保持轻量、可选、用户本地自备。
+
+### English
+
+- Added historical-mode P0 groundwork docs: third-party inspiration/license boundaries and the historical-mode roadmap.
+- Expanded config safety boundaries: exclude `external-data/` and database files (`*.db`, `*.sqlite`, `*.sqlite3`) by default to avoid packaging CBDB or other external historical data.
+- Enhanced verification: warn when historical mode is enabled but timeline / lore / standards paths are missing, and warn about local database files under package roots.
+- Synced README, release checklist, and sanitization guidance to keep historical data adapters lightweight, optional, and user-provided.
+
 ## v0.3.0 - OpenClaw Public Onboarding Pack
 
 ### 中文

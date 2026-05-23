@@ -13,6 +13,8 @@ Before publishing this repository or a generated asset package:
 - [ ] README explains installation and limitations.
 - [ ] LICENSE present.
 - [ ] SECURITY.md present.
+- [ ] GPL or license-restricted projects are concept-only; no restricted code copied into this MIT repository.
+- [ ] Historical data adapters remain lightweight and optional; no provider-specific or GUI dependency added by accident.
 
 ## Generated asset package
 
@@ -22,5 +24,9 @@ Before publishing this repository or a generated asset package:
 - [ ] `archive/` excluded unless sanitized intentionally.
 - [ ] `.git/` excluded.
 - [ ] `.secrets/` excluded.
+- [ ] `external-data/` excluded unless intentionally private and license-reviewed.
+- [ ] SQLite / local database files excluded by default: `*.db`, `*.sqlite`, `*.sqlite3`.
+- [ ] CBDB or other third-party historical databases not bundled in public packages.
+- [ ] Local CSV / JSON research data reviewed before sharing.
 - [ ] Secret scan passed.
 - [ ] Destination verification passed.

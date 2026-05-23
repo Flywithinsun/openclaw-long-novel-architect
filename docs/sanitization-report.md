@@ -10,6 +10,9 @@ This public release tree is designed to be uploaded to GitHub without private pr
 - scratch directories;
 - inbox/outbox transfer data;
 - archive snapshots;
+- `external-data/` and user-provided historical datasets;
+- CBDB or other third-party historical databases;
+- local database files such as `*.db`, `*.sqlite`, and `*.sqlite3`;
 - `.git/` history from the source project;
 - `.secrets/`, `.env`, API keys, provider credentials;
 - personal home paths;
@@ -33,6 +36,9 @@ grep -RInE "(sk-|api[_-]?key|token|secret|credential|Authorization|Bearer|passwo
 
 python3 scripts/verify_portable_assets.py --help
 python3 scripts/package_portable_assets.py --help
+
+# historical data / local database files should not appear in public packages by default
+find . -path './external-data' -o -name '*.db' -o -name '*.sqlite' -o -name '*.sqlite3'
 ```
 
 For stronger assurance, use a dedicated scanner such as `gitleaks` or `trufflehog` before publishing.

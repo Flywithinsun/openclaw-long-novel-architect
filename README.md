@@ -16,12 +16,17 @@
 
 ```text
 AI_NEXT_STEPS.md
+docs/historical-mode-roadmap.md
 docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 ```
 
 当前明确的下一步是从 **P0：许可、安全与范围边界** 开始，把本项目升级为适合严谨历史 / 架空历史 / 穿越长篇的工程化写作系统。不要先集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何外部模型 provider；应先完成第三方灵感来源、许可证边界、外部数据排除规则和历史模式路线图。
 
-完整实施路线见：[`docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md`](docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md)
+历史模式路线图见：[`docs/historical-mode-roadmap.md`](docs/historical-mode-roadmap.md)<br>
+第三方灵感与许可证边界见：[`docs/third-party-inspiration.md`](docs/third-party-inspiration.md)<br>
+完整 AI 交接实施计划见：[`docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md`](docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md)
+
+历史数据适配器应保持**轻量、可选、用户本地自备**：优先读取 SQLite / CSV / JSON 等简单格式；公共模板和默认打包流程不捆绑 CBDB 或任何第三方历史数据库。
 
 ### 它适合什么项目？
 
@@ -55,6 +60,7 @@ docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 - 不保证你的环境里有某个特定模型；
 - 不替代你自己的 canon、正文、大纲、人物表、状态文件；
 - 不会自动判断你的项目私有资料是否都适合公开发布。
+- 不是公共历史数据库镜像，也不会默认捆绑 CBDB、SQLite 数据库或其他第三方数据集；
 
 ### 目录结构
 
@@ -275,7 +281,11 @@ scripts/
 - `inbox/`、`outbox/`；
 - `archive/`；
 - `backups/`；
+- `external-data/`；
+- SQLite / 本地数据库文件，例如 `*.db`、`*.sqlite`、`*.sqlite3`；
 - 压缩包、日志、缓存文件。
+
+用户本地研究数据、CSV / JSON 数据集和第三方历史数据库副本应默认留在 `external-data/` 或其他私有位置；只有在你明确确认许可证、脱敏和体积后，才应主动纳入自己的私有包。
 
 发布或分享任何生成包之前，仍建议你运行自己的 secret scanner。
 
@@ -301,6 +311,8 @@ python3 scripts/verify_portable_assets.py --project-root /path/to/project --conf
 
 更稳妥的做法是使用 `gitleaks` 或 `trufflehog` 等专门工具。
 
+同时确认 `external-data/`、`*.db`、`*.sqlite`、`*.sqlite3` 以及本地 CSV / JSON 研究数据没有被误纳入公开发布包。
+
 ### License
 
 MIT。详见 `LICENSE`。
@@ -319,12 +331,17 @@ If you are an AI assistant continuing this project in another chat, read these f
 
 ```text
 AI_NEXT_STEPS.md
+docs/historical-mode-roadmap.md
 docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 ```
 
 The current next step is **P0: licensing, safety, and scope boundary** for upgrading this repository into an engineering workflow system for rigorous historical / alternate-history / time-travel long-form fiction. Do not begin by integrating AutoGen, CBDB, Electron, Obsidian, Emacs, or any external model provider. Start with third-party inspiration documentation, licensing boundaries, external-data exclusions, and the historical-mode roadmap.
 
-Full implementation plan: [`docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md`](docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md)
+Historical-mode roadmap: [`docs/historical-mode-roadmap.md`](docs/historical-mode-roadmap.md)<br>
+Third-party inspiration and license boundaries: [`docs/third-party-inspiration.md`](docs/third-party-inspiration.md)<br>
+Full AI handoff implementation plan: [`docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md`](docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md)
+
+Historical data adapters should remain **lightweight, optional, and user-provided**. Prefer simple local formats such as SQLite / CSV / JSON. The public template and default packaging workflow do not bundle CBDB or any third-party historical database.
 
 ### What kind of project is this for?
 
@@ -358,6 +375,7 @@ It helps an OpenClaw agent:
 - Not a guarantee that any specific model route exists in your environment.
 - Not a replacement for your canon files, drafts, outlines, character files, or state files.
 - Not an automatic privacy auditor for every project package you generate.
+- Not a public historical database mirror; it does not bundle CBDB, SQLite databases, or other third-party datasets by default.
 
 ### Directory layout
 
@@ -568,7 +586,11 @@ The packaging script excludes by default:
 - `inbox/`, `outbox/`;
 - `archive/`;
 - `backups/`;
+- `external-data/`;
+- SQLite / local database files such as `*.db`, `*.sqlite`, and `*.sqlite3`;
 - compressed files, logs, and caches.
+
+Local research data, CSV / JSON datasets, and third-party historical database copies should stay in `external-data/` or another private location by default. Include them only after you have explicitly reviewed licensing, sanitization, and package size.
 
 Before publishing or sharing any generated package, you should still run your own secret scanner.
 
@@ -593,6 +615,8 @@ python3 scripts/verify_portable_assets.py --project-root /path/to/project --conf
 ```
 
 For stronger assurance, use dedicated tools such as `gitleaks` or `trufflehog`.
+
+Also confirm that `external-data/`, `*.db`, `*.sqlite`, `*.sqlite3`, and local CSV / JSON research datasets have not been accidentally included in a public release package.
 
 ### License
 
