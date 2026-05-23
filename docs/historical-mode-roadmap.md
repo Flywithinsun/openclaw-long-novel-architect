@@ -50,7 +50,7 @@ Historical mode is for projects that need:
 | P1 | Dual-axis historical timeline | Completed first version: real-history and alt-history timelines, event templates, timeline linter |
 | P2 | Geography and logistics | Place cards, routes, movement checks |
 | P3 | Lore metadata and cross-reference system | Completed first version: lore cards, source notes, index script, metadata tags |
-| P4 | Context layers and period-language controls | Standards files and chapter context packs |
+| P4 | Context layers and period-language controls | Completed first version: standards files, context packs, workflow references |
 | P5 | Historical logic audit committee | Multi-role plausibility review workflow |
 | P6 | Butterfly-effect branch simulation | Branch state, divergence, and merge decisions |
 | P7 | Historical data adapter | Optional local data sources such as SQLite / CSV / JSON |
@@ -98,13 +98,13 @@ If another AI takes over this repository:
 1. Read `README.md`.
 2. Read `AI_NEXT_STEPS.md`.
 3. Read this roadmap.
-4. P1 first version is complete; continue with P3 unless the user asks for P1 repairs.
+4. P1, P3, and P4 first versions are complete; continue with P10 partial unless the user asks for repairs.
 5. Keep historical datasets external unless the user explicitly requests otherwise.
 6. Keep GPL projects concept-only.
 7. Do not start with provider integration or GUI work.
 
 ## Current stop point / 当前停点
 
-The repository has completed P0, the first usable P1 dual-axis timeline system, and the first usable P3 lore metadata system. The recommended next phase is P4: context layers and period-language controls.
+The repository has completed P0, P1, P3, and the first usable P4 context-layer system. The recommended next phase is P10 partial verification/package/README sync.
 
-当前仓库已完成 P0、P1 双轴时间线系统首个可用版本，以及 P3 lore 元数据系统首个可用版本。建议下一阶段推进 P4：上下文层与时代语言控制。
+当前仓库已完成 P0、P1、P3，以及 P4 上下文层系统首个可用版本。建议下一阶段推进 P10 partial：验证、打包与 README 同步。

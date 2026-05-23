@@ -20,6 +20,8 @@
 - `canon/` — canon bible and hard rules.
 - `timelines/` — real-history and alternate-history timeline events.
 - `lore/` — historical research cards, source notes, and metadata cross-references.
+- `standards/` — prose style, historical dialogue, forbidden modernisms, and de-AI rules.
+- `context-packs/` — chapter/audit/de-AI context bundle templates.
 - `writing-requests/` — self-contained chapter request packages.
 - `exports/` — intentional export outputs.
 

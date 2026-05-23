@@ -11,12 +11,14 @@ Use only when the user clearly asks to start/write/generate a chapter.
 5. Load relevant outline, summary, audit, ledger, and continuity locks.
 6. If historical mode is enabled, load relevant timeline files: `timelines/real-history.md`, `timelines/alt-history.md`, and optional character/military/policy tracks.
 7. If lore tracking is enabled, load `lore/index.md` and relevant lore cards / source notes.
+8. If standards or context packs exist, load relevant `standards/` files and a chapter context pack.
 
 ## Production path
 
 1. Create a self-contained request.
    - Include relevant timeline event ids and any expected alternate-history divergence.
    - Include required lore ids, source ids, and unresolved lore questions.
+   - Include period-language constraints and forbidden modernisms.
 2. Run configured side-mining/red-team.
 3. Let final canon role select/compose final prose.
 4. Write draft.

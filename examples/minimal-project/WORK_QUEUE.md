@@ -13,6 +13,7 @@
 2. Draft `drafts/ch001.md` after the request is approved.
 3. Write `summaries/ch001-summary.md` and update project state.
 4. If historical mode is used, run timeline and lore validation before reporting completion.
+5. Use standards and context packs when preparing chapter requests.
 
 ## Blockers
 

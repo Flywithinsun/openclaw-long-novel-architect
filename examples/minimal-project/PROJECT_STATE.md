@@ -16,6 +16,8 @@
 - Ledger directory: `ledgers/`
 - Timeline directory: `timelines/`
 - Lore directory: `lore/`
+- Standards directory: `standards/`
+- Context pack directory: `context-packs/`
 
 ## Current continuity locks
 
@@ -25,6 +27,7 @@
 
 - Timeline examples exist under `timelines/`.
 - Lore examples exist under `lore/`.
+- Style and period-language standards exist under `standards/`.
 - Replace all placeholder historical sources with project-owned research before canon use.
 
 ## Current risks

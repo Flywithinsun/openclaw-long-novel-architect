@@ -32,13 +32,13 @@ Upgrade `openclaw-long-novel-architect` from a general long-novel OpenClaw workf
 
 ## Start with this phase / 从这一阶段开始
 
-P1 and P3 have first usable implementations. Continue with **P4 — Context layers and period-language controls**, unless the user asks for P1/P3 fixes.
+P1, P3, and P4 have first usable implementations. Continue with **P10 partial — verification/package/README sync**, unless the user asks for P1/P3/P4 fixes.
 
-**P1：双轴历史时间线系统**和 **P3：Lore 元数据与交叉引用系统**已有首个可用实现。除非用户要求修补 P1/P3，否则继续做 **P4：上下文层与时代语言控制**。
+**P1、P3、P4**已有首个可用实现。除非用户要求修补 P1/P3/P4，否则继续做 **P10 partial：验证、打包与 README 同步**。
 
-P0 licensing / safety / scope boundary is complete, and P1/P3 basics are implemented. Do not start with AutoGen, CBDB, Electron, Obsidian, Emacs, or model-provider integrations.
+P0 licensing / safety / scope boundary is complete, and P1/P3/P4 basics are implemented. Do not start with AutoGen, CBDB, Electron, Obsidian, Emacs, or model-provider integrations.
 
-P0 许可 / 安全 / 范围边界已经完成，P1/P3 基础也已实现。不要一上来就集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何模型 provider。
+P0 许可 / 安全 / 范围边界已经完成，P1/P3/P4 基础也已实现。不要一上来就集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何模型 provider。
 
 ---
 
@@ -163,6 +163,32 @@ Completed P3 scope:
 - 可检查 lore id、必填字段、重复 id、元数据标签和可判断的缺失 lore 引用；
 - 可写出 `reports/lore-index-report.md`；
 - 已更新章节工作流、审计工作流、README、路线图与 changelog；
+- 旧的非历史项目仍可工作。
+
+---
+
+## P4 completion record / P4 完成记录
+
+Status: **first usable version complete**.
+
+状态：**首个可用版本已完成**。
+
+Completed P4 scope:
+
+- added `skill/references/context-layer-workflow.md`;
+- added context pack and style standard templates;
+- added minimal project standards for prose style, historical dialogue, forbidden modernisms, de-AI style rules, and chapter rhythm;
+- added minimal project context-pack templates for chapter, audit, and de-AI work;
+- updated `skill/SKILL.md`, chapter workflow, and de-AI workflow to load standards/context packs when present;
+- kept old non-historical projects working.
+
+已完成的 P4 范围：
+
+- 新增 `skill/references/context-layer-workflow.md`；
+- 新增 context pack 模板与 style standard 模板；
+- 新增 minimal project 的叙事风格、时代对白、禁用现代词、去 AI 味规则与章节节奏标准；
+- 新增 minimal project 的章节、审计、去 AI 上下文包模板；
+- 已更新 `skill/SKILL.md`、章节工作流与 de-AI 工作流，使其在存在 standards/context-packs 时读取相关文件；
 - 旧的非历史项目仍可工作。
 
 ---

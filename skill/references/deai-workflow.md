@@ -8,11 +8,14 @@ Goal: produce a readable/publishable candidate while preserving canon.
 - Project state and recent summary.
 - Continuity/name/object locks.
 - Model routing roles.
+- `standards/deai-style-rules.md`, if present.
+- `standards/historical-dialogue.md` and `standards/forbidden-modernisms.md`, if present.
 
 ## Process
 
 1. Copy or reference source draft; never overwrite it casually.
 2. Identify anchors: strong lines, event order, character voice, object states, ending hook.
+   - Preserve period voice, hierarchy, ritual language, and configured forbidden-modernism rules.
 3. Use side-miners for diagnosis and alternatives.
 4. Keep changes grounded; do not invent new plot facts.
 5. Final canon role approves final text.

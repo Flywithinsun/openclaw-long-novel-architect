@@ -20,7 +20,7 @@ docs/historical-mode-roadmap.md
 docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 ```
 
-当前状态：**P3：Lore 元数据与交叉引用系统进行中**。P1 双轴历史时间线系统已完成首个可用版本，当前继续补齐 lore 卡片、来源笔记、元数据标签和 `lore_index.py`。
+当前状态：**P4：上下文层与时代语言控制进行中**。P1/P3 已完成首个可用版本，当前继续补齐 standards 与 context-packs。
 
 当前路线图顺序是 P1 → P3 → P4。不要先集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何外部模型 provider；历史数据适配器仍应保持用户本地自备、默认不打包。
 
@@ -37,7 +37,7 @@ docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 | P0：许可、安全与范围边界 | 已完成 | 已建立第三方灵感 / GPL 边界、CBDB 与外部数据不打包规则、`external-data/` 与数据库文件排除、路线图与 README 指针。 |
 | P1：双轴历史时间线 | 已完成首版 | 已建立真实历史与架空历史时间线目录、事件模板、时间线工作流和 `scripts/timeline_lint.py`。 |
 | P3：Lore 元数据与交叉引用 | 已完成首版 | 已建立 lore 工作流、卡片模板、来源模板、minimal project 示例卡片和 `scripts/lore_index.py`。 |
-| P4：上下文层与时代语言控制 | 待开始 | 在时间线和 lore 基础上补充时代语言、禁用现代词、章节上下文包。 |
+| P4：上下文层与时代语言控制 | 已完成首版 | 已建立 standards、context-packs、上下文层工作流与 de-AI 规则引用。 |
 
 #### P1 交付物
 
@@ -95,12 +95,12 @@ Lore 卡片使用 `- id: lore-...` 元数据，并可在正文、摘要、审计
 
 | 项目 | 当前值 |
 |---|---|
-| 记录时间 | 2026-05-23 21:04:00 +08 |
-| 当前阶段 | P3：Lore 元数据与交叉引用系统 |
+| 记录时间 | 2026-05-23 21:11:00 +08 |
+| 当前阶段 | P4：上下文层与时代语言控制 |
 | P0 状态 | 已完成 |
-| 下一步 | 验证并提交 P3 lore 元数据与交叉引用系统 |
+| 下一步 | 验证并提交 P4 上下文层与时代语言控制；随后推进 P10 partial 验证 / 打包 / README 同步 |
 | 最近一次 Git 同步本地时间 | 2026-05-23 20:41 +08 |
-| 当前状态 | P1 已提交，本地分支领先远端；P3 文件已加入工作区，准备验证 |
+| 当前状态 | P1 与 P3 已提交，本地分支领先远端；P4 文件已加入工作区，准备验证 |
 
 #### 下次更新格式
 
@@ -160,6 +160,7 @@ openclaw-long-novel-architect/
 │   │   ├── chapter-workflow.md
 │   │   ├── timeline-workflow.md
 │   │   ├── lore-metadata-workflow.md
+│   │   ├── context-layer-workflow.md
 │   │   ├── deai-workflow.md
 │   │   ├── audit-workflow.md
 │   │   ├── model-routing.md
@@ -173,6 +174,8 @@ openclaw-long-novel-architect/
 │       ├── timeline-audit-template.md
 │       ├── lore-card-template.md
 │       ├── source-note-template.md
+│       ├── context-pack-template.md
+│       ├── style-standard-template.md
 │       ├── deai-request-template.md
 │       ├── audit-report-template.md
 │       ├── completion-report-template.md

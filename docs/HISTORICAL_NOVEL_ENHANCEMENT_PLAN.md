@@ -8,7 +8,7 @@
 
 ## 0. Immediate next step for the next AI session
 
-The next AI session should continue with **Phase P4 — Context layers and period-language controls**, unless the user asks for P1/P3 repairs. Phase P0 is complete, and Phase P1/P3 have first usable implementations.
+The next AI session should continue with **Phase P10 partial — verification/package/README sync**, unless the user asks for P1/P3/P4 repairs. Phase P0, P1, P3, and P4 have first usable implementations.
 
 ### First command to run
 
@@ -52,7 +52,7 @@ scripts/verify_portable_assets.py
 
 ### Do not do first
 
-Do **not** begin by integrating AutoGen, CBDB, Electron, Obsidian, Emacs, or any external AI provider. The next recommended phase is context layers and period-language controls; keep P0 licensing and data-safety boundaries intact.
+Do **not** begin by integrating AutoGen, CBDB, Electron, Obsidian, Emacs, or any external AI provider. The next recommended phase is P10 partial verification/package/README sync; keep P0 licensing and data-safety boundaries intact.
 
 ---
 
@@ -765,6 +765,10 @@ Layer 3: Manuscript state
 - `deai-workflow.md` references `standards/deai-style-rules.md`.
 - Chapter workflow references context packs.
 - Minimal project contains standards examples.
+
+### Current status
+
+First usable version complete. Added `skill/references/context-layer-workflow.md`, context/style templates, minimal project standards, and context-pack examples. Updated Skill, chapter workflow, and de-AI workflow to load standards/context packs when present.
 
 ---
 

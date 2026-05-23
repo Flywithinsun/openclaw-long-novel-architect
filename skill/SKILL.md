@@ -46,6 +46,8 @@ workflow/start-chapter.md
 timelines/real-history.md, if historical mode is enabled
 timelines/alt-history.md, if historical mode is enabled
 lore/index.md, if lore tracking is enabled
+standards/prose-style.md, if present
+context-packs/chapter-context-template.md, if present
 ```
 
 For progress questions, also inspect chapter directories and recent version control:
@@ -81,6 +83,7 @@ A full chapter is complete only when all configured required assets exist and pa
 3. Load recent summaries, outline nodes, ledger constraints, and name/continuity locks.
    - If historical mode is enabled, also load relevant `timelines/real-history.md`, `timelines/alt-history.md`, and optional timeline track files.
    - If lore tracking is enabled, also load `lore/index.md` and relevant lore cards.
+   - If standards/context packs are present, load relevant style standards and the chapter context pack.
 4. Generate or refresh a self-contained chapter request.
 5. Run configured side-mining/red-team steps; store outputs in scratch/process directories, not canon directories.
 6. Use the final canon role for final prose decisions.
@@ -188,6 +191,7 @@ references/project-map.md
 references/chapter-workflow.md
 references/timeline-workflow.md
 references/lore-metadata-workflow.md
+references/context-layer-workflow.md
 references/deai-workflow.md
 references/audit-workflow.md
 references/model-routing.md
