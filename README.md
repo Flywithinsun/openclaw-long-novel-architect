@@ -20,9 +20,9 @@ docs/historical-mode-roadmap.md
 docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 ```
 
-当前状态：**P1：双轴历史时间线系统已完成首个可用版本**。项目已经补齐 Markdown-first 的真实历史 / 架空历史时间线、事件模板、审计模板和 `timeline_lint.py` 验证脚本。
+当前状态：**P3：Lore 元数据与交叉引用系统进行中**。P1 双轴历史时间线系统已完成首个可用版本，当前继续补齐 lore 卡片、来源笔记、元数据标签和 `lore_index.py`。
 
-下一步建议按路线图推进 **P3：Lore 元数据与交叉引用系统**。不要先集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何外部模型 provider；历史数据适配器仍应保持用户本地自备、默认不打包。
+当前路线图顺序是 P1 → P3 → P4。不要先集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何外部模型 provider；历史数据适配器仍应保持用户本地自备、默认不打包。
 
 历史模式路线图见：[`docs/historical-mode-roadmap.md`](docs/historical-mode-roadmap.md)<br>
 第三方灵感与许可证边界见：[`docs/third-party-inspiration.md`](docs/third-party-inspiration.md)<br>
@@ -36,7 +36,7 @@ docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 |---|---|---|
 | P0：许可、安全与范围边界 | 已完成 | 已建立第三方灵感 / GPL 边界、CBDB 与外部数据不打包规则、`external-data/` 与数据库文件排除、路线图与 README 指针。 |
 | P1：双轴历史时间线 | 已完成首版 | 已建立真实历史与架空历史时间线目录、事件模板、时间线工作流和 `scripts/timeline_lint.py`。 |
-| P3：Lore 元数据与交叉引用 | 待开始 | P1 后优先推进 lore 卡片、索引和元数据标签。 |
+| P3：Lore 元数据与交叉引用 | 已完成首版 | 已建立 lore 工作流、卡片模板、来源模板、minimal project 示例卡片和 `scripts/lore_index.py`。 |
 | P4：上下文层与时代语言控制 | 待开始 | 在时间线和 lore 基础上补充时代语言、禁用现代词、章节上下文包。 |
 
 #### P1 交付物
@@ -67,6 +67,22 @@ reports/timeline-lint-report.md
 
 时间线事件使用 `# Timeline Event` Markdown 段落和 `- key: value` 元数据；真实历史事件使用 `track: real_history`，架空历史事件使用 `track: alt_history` 并关联章节。
 
+#### P3 Lore 检查
+
+在启用或维护 lore 元数据的项目中运行：
+
+```bash
+python3 scripts/lore_index.py --project-root . --config novel-architect.config.json --write-report
+```
+
+检查报告默认写入：
+
+```text
+reports/lore-index-report.md
+```
+
+Lore 卡片使用 `- id: lore-...` 元数据，并可在正文、摘要、审计、账本中使用 `@lore:`、`@source:`、`@event:`、`@chapter:` 等标签交叉引用。
+
 ### 长期规则与进度记录
 
 1. 本 README 以后只保留中文说明；只有文件名、命令、路径、代码块、参数名、链接锚点等必要内容可以保留原样。
@@ -79,12 +95,12 @@ reports/timeline-lint-report.md
 
 | 项目 | 当前值 |
 |---|---|
-| 记录时间 | 2026-05-23 21:01:00 +08 |
-| 当前阶段 | P1：双轴历史时间线系统 |
+| 记录时间 | 2026-05-23 21:04:00 +08 |
+| 当前阶段 | P3：Lore 元数据与交叉引用系统 |
 | P0 状态 | 已完成 |
-| 下一步 | 提交 P1 变更；随后按路线图推进 P3 lore 元数据与交叉引用系统 |
+| 下一步 | 验证并提交 P3 lore 元数据与交叉引用系统 |
 | 最近一次 Git 同步本地时间 | 2026-05-23 20:41 +08 |
-| 当前状态 | P1 时间线脚本与 minimal project 示例验证通过，准备提交并按需推送 |
+| 当前状态 | P1 已提交，本地分支领先远端；P3 文件已加入工作区，准备验证 |
 
 #### 下次更新格式
 
@@ -143,6 +159,7 @@ openclaw-long-novel-architect/
 │   │   ├── project-map.md
 │   │   ├── chapter-workflow.md
 │   │   ├── timeline-workflow.md
+│   │   ├── lore-metadata-workflow.md
 │   │   ├── deai-workflow.md
 │   │   ├── audit-workflow.md
 │   │   ├── model-routing.md
@@ -154,6 +171,8 @@ openclaw-long-novel-architect/
 │       ├── chapter-request-template.md
 │       ├── timeline-event-template.md
 │       ├── timeline-audit-template.md
+│       ├── lore-card-template.md
+│       ├── source-note-template.md
 │       ├── deai-request-template.md
 │       ├── audit-report-template.md
 │       ├── completion-report-template.md
@@ -165,6 +184,7 @@ openclaw-long-novel-architect/
 │   ├── package_portable_assets.py
 │   ├── verify_portable_assets.py
 │   ├── timeline_lint.py
+│   ├── lore_index.py
 │   └── github_private_sync.py
 ├── examples/
 │   ├── project-config.example.json

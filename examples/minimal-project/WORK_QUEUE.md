@@ -12,10 +12,12 @@
 1. Create a self-contained Chapter 1 request package.
 2. Draft `drafts/ch001.md` after the request is approved.
 3. Write `summaries/ch001-summary.md` and update project state.
+4. If historical mode is used, run timeline and lore validation before reporting completion.
 
 ## Blockers
 
 - Fill in project-specific canon, outline, and character details.
+- Replace example timeline/lore/source placeholders with project-owned research.
 
 ## Stop rule
 

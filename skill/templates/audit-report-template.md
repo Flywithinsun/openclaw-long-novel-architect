@@ -10,6 +10,8 @@ PASS / PASS_WITH_WARNINGS / FAIL_NEEDS_REPAIR
 - Pacing:
 - Character consistency:
 - World logic:
+- Timeline consistency:
+- Lore/source consistency:
 - External/antagonist adaptation:
 - Prose fatigue:
 

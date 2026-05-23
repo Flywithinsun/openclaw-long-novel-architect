@@ -45,6 +45,7 @@ workflow/model-routing.md
 workflow/start-chapter.md
 timelines/real-history.md, if historical mode is enabled
 timelines/alt-history.md, if historical mode is enabled
+lore/index.md, if lore tracking is enabled
 ```
 
 For progress questions, also inspect chapter directories and recent version control:
@@ -79,6 +80,7 @@ A full chapter is complete only when all configured required assets exist and pa
 2. Verify current progress from state files, chapter directories, and git.
 3. Load recent summaries, outline nodes, ledger constraints, and name/continuity locks.
    - If historical mode is enabled, also load relevant `timelines/real-history.md`, `timelines/alt-history.md`, and optional timeline track files.
+   - If lore tracking is enabled, also load `lore/index.md` and relevant lore cards.
 4. Generate or refresh a self-contained chapter request.
 5. Run configured side-mining/red-team steps; store outputs in scratch/process directories, not canon directories.
 6. Use the final canon role for final prose decisions.
@@ -91,6 +93,7 @@ A full chapter is complete only when all configured required assets exist and pa
 9. Create readable/de-AI candidate if part of the project standard.
 10. Run local character/word count and verification.
     - If timeline files changed or constrain the chapter, run `python3 scripts/timeline_lint.py --project-root . --config novel-architect.config.json --write-report`.
+    - If lore cards or metadata tags changed, run `python3 scripts/lore_index.py --project-root . --config novel-architect.config.json --write-report`.
 11. Update state/work queue.
 12. Commit or record version status.
 13. If configured, sync the checkpoint to the private GitHub remote.
@@ -184,6 +187,7 @@ Read the most specific reference:
 references/project-map.md
 references/chapter-workflow.md
 references/timeline-workflow.md
+references/lore-metadata-workflow.md
 references/deai-workflow.md
 references/audit-workflow.md
 references/model-routing.md

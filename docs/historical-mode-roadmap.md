@@ -49,7 +49,7 @@ Historical mode is for projects that need:
 | P0 | Licensing, safety, and scope boundary | Completed: third-party inspiration doc, roadmap, safe packaging exclusions |
 | P1 | Dual-axis historical timeline | Completed first version: real-history and alt-history timelines, event templates, timeline linter |
 | P2 | Geography and logistics | Place cards, routes, movement checks |
-| P3 | Lore metadata and cross-reference system | Lore cards, indexes, metadata tags |
+| P3 | Lore metadata and cross-reference system | Completed first version: lore cards, source notes, index script, metadata tags |
 | P4 | Context layers and period-language controls | Standards files and chapter context packs |
 | P5 | Historical logic audit committee | Multi-role plausibility review workflow |
 | P6 | Butterfly-effect branch simulation | Branch state, divergence, and merge decisions |
@@ -105,6 +105,6 @@ If another AI takes over this repository:
 
 ## Current stop point / 当前停点
 
-The repository has completed P0 and the first usable P1 dual-axis timeline system. The recommended next phase is P3: lore metadata and cross-reference system.
+The repository has completed P0, the first usable P1 dual-axis timeline system, and the first usable P3 lore metadata system. The recommended next phase is P4: context layers and period-language controls.
 
-当前仓库已完成 P0 和 P1 双轴时间线系统首个可用版本。建议下一阶段推进 P3：lore 元数据与交叉引用系统。
+当前仓库已完成 P0、P1 双轴时间线系统首个可用版本，以及 P3 lore 元数据系统首个可用版本。建议下一阶段推进 P4：上下文层与时代语言控制。

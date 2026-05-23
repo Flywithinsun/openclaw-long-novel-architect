@@ -32,13 +32,13 @@ Upgrade `openclaw-long-novel-architect` from a general long-novel OpenClaw workf
 
 ## Start with this phase / 从这一阶段开始
 
-P1 — Dual-axis historical timeline system has a first usable implementation. Continue with **P3 — Lore metadata and cross-reference system**, unless the user asks for P1 fixes.
+P1 and P3 have first usable implementations. Continue with **P4 — Context layers and period-language controls**, unless the user asks for P1/P3 fixes.
 
-**P1：双轴历史时间线系统**已有首个可用实现。除非用户要求修补 P1，否则继续做 **P3：Lore 元数据与交叉引用系统**。
+**P1：双轴历史时间线系统**和 **P3：Lore 元数据与交叉引用系统**已有首个可用实现。除非用户要求修补 P1/P3，否则继续做 **P4：上下文层与时代语言控制**。
 
-P0 licensing / safety / scope boundary is complete, and P1 timeline basics are implemented. Do not start with AutoGen, CBDB, Electron, Obsidian, Emacs, or model-provider integrations.
+P0 licensing / safety / scope boundary is complete, and P1/P3 basics are implemented. Do not start with AutoGen, CBDB, Electron, Obsidian, Emacs, or model-provider integrations.
 
-P0 许可 / 安全 / 范围边界已经完成，P1 时间线基础也已实现。不要一上来就集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何模型 provider。
+P0 许可 / 安全 / 范围边界已经完成，P1/P3 基础也已实现。不要一上来就集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何模型 provider。
 
 ---
 
@@ -134,6 +134,36 @@ Minimum required changes:
 - write or support a report path such as `reports/timeline-lint-report.md`;
 - update README / roadmap / verification notes if behavior changes;
 - keep old non-historical projects working.
+
+---
+
+## P3 completion record / P3 完成记录
+
+Status: **first usable version complete**.
+
+状态：**首个可用版本已完成**。
+
+Completed P3 scope:
+
+- added `skill/references/lore-metadata-workflow.md`;
+- added lore card and source note templates;
+- added minimal project lore index, sample lore card, source note, and category folders;
+- added `scripts/lore_index.py` with no external dependencies;
+- validates lore ids, required fields, duplicate ids, metadata tags, and missing lore references where possible;
+- can write `reports/lore-index-report.md`;
+- updated chapter workflow, audit workflow, README, roadmap, and changelog;
+- kept old non-historical projects working.
+
+已完成的 P3 范围：
+
+- 新增 `skill/references/lore-metadata-workflow.md`；
+- 新增 lore 卡片模板与来源笔记模板；
+- 新增 minimal project 的 lore 索引、示例 lore 卡、来源笔记与分类目录；
+- 新增无外部依赖的 `scripts/lore_index.py`；
+- 可检查 lore id、必填字段、重复 id、元数据标签和可判断的缺失 lore 引用；
+- 可写出 `reports/lore-index-report.md`；
+- 已更新章节工作流、审计工作流、README、路线图与 changelog；
+- 旧的非历史项目仍可工作。
 
 ---
 

@@ -8,7 +8,7 @@
 
 ## 0. Immediate next step for the next AI session
 
-The next AI session should continue with **Phase P3 — Lore metadata and cross-reference system**, unless the user asks for P1 repairs. Phase P0 is complete, and Phase P1 has a first usable implementation.
+The next AI session should continue with **Phase P4 — Context layers and period-language controls**, unless the user asks for P1/P3 repairs. Phase P0 is complete, and Phase P1/P3 have first usable implementations.
 
 ### First command to run
 
@@ -52,7 +52,7 @@ scripts/verify_portable_assets.py
 
 ### Do not do first
 
-Do **not** begin by integrating AutoGen, CBDB, Electron, Obsidian, Emacs, or any external AI provider. The next recommended phase is the Markdown-first lore metadata and cross-reference system; keep P0 licensing and data-safety boundaries intact.
+Do **not** begin by integrating AutoGen, CBDB, Electron, Obsidian, Emacs, or any external AI provider. The next recommended phase is context layers and period-language controls; keep P0 licensing and data-safety boundaries intact.
 
 ---
 
@@ -667,6 +667,10 @@ TODO
 - `PROJECT_INDEX.md` explains lore.
 - Chapter request template includes “required lore”.
 - `verify_portable_assets.py` can warn if historical mode is enabled but lore is missing.
+
+### Current status
+
+First usable version complete. Added `skill/references/lore-metadata-workflow.md`, lore/source templates, minimal project lore examples, and `scripts/lore_index.py`. Verified the minimal project lore examples with zero errors.
 
 ---
 

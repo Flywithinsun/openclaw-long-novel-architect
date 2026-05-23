@@ -12,6 +12,7 @@ A range audit checks the completed chapters and locks the next stage.
 - real-history and alternate-history timeline consistency;
 - source coverage for real-history events when configured;
 - chapter links and consequences for alternate-history events when configured;
+- lore metadata references and source-backed research claims;
 - antagonist/external adaptation;
 - unresolved hooks;
 - prose fatigue and repeated beats.
@@ -26,5 +27,6 @@ A range audit checks the completed chapters and locks the next stage.
 - next stage consequence;
 - request-package hard rules.
 - timeline repairs or locks for the next request package.
+- lore repairs, missing sources, or required cards for the next request package.
 
 After audit, update state/work queue and stop unless explicitly asked to start the next chapter.

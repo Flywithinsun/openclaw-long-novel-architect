@@ -18,6 +18,8 @@ You are continuing a long-form novel project from explicit files. Do not rely on
 - Character/name/object locks:
 - Relevant real-history events:
 - Relevant alternate-history events:
+- Required lore:
+- Required sources:
 - Timeline divergence risk:
 
 ## This chapter must accomplish

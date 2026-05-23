@@ -253,6 +253,10 @@ def add_historical_mode_warnings(root: Path, cfg: dict[str, Any], warnings: list
         if rel and not (root / rel).exists():
             warnings.append(f"historical mode enabled but missing recommended path: {rel}")
 
+    lore_dir = cfg.get("lore_dir", "lore")
+    if lore_dir and (root / lore_dir).exists() and not (root / lore_dir / "index.md").exists():
+        warnings.append(f"historical mode enabled but missing lore index: {lore_dir}/index.md")
+
     external_data_dir = cfg.get("external_data_dir", "external-data")
     if external_data_dir not in cfg.get("exclude_dirs", []):
         warnings.append(f"historical external data dir is not excluded by default: {external_data_dir}")

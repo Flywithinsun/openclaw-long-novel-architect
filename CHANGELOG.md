@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased - Historical Mode P1 Timeline
+## Unreleased - Historical Mode P1/P3 Timeline and Lore
 
 ### 中文
 
@@ -12,6 +12,8 @@
 - 新增 P1 双轴历史时间线系统：`timeline-workflow.md`、时间线事件模板、时间线审计模板、minimal project 示例时间线。
 - 新增 `scripts/timeline_lint.py`，无外部依赖检查事件 id、日期、历法、轨道、可信度、真实历史来源、架空历史章节关联和重复 id，并可写出 `reports/timeline-lint-report.md`。
 - 更新章节请求模板、章节工作流和审计工作流，要求历史模式下读取相关时间线并记录分歧后果。
+- 新增 P3 lore 元数据系统：`lore-metadata-workflow.md`、lore 卡片模板、来源笔记模板、minimal project 示例 lore 卡和分类目录。
+- 新增 `scripts/lore_index.py`，无外部依赖检查 lore id、必填字段、重复 id、元数据标签和可判断的缺失 lore 引用，并可写出 `reports/lore-index-report.md`。
 
 ### English
 
@@ -23,6 +25,8 @@
 - Added the P1 dual-axis historical timeline system: `timeline-workflow.md`, timeline event template, timeline audit template, and minimal project timeline examples.
 - Added `scripts/timeline_lint.py` with no external dependencies to validate event ids, dates, calendars, tracks, confidence values, real-history sources, alternate-history chapter links, and duplicate ids, with optional `reports/timeline-lint-report.md` output.
 - Updated the chapter request template, chapter workflow, and audit workflow to load relevant timelines and record divergence consequences in historical mode.
+- Added the P3 lore metadata system: `lore-metadata-workflow.md`, lore card template, source note template, minimal project sample lore card, and category folders.
+- Added `scripts/lore_index.py` with no external dependencies to validate lore ids, required fields, duplicate ids, metadata tags, and detectable missing lore references, with optional `reports/lore-index-report.md` output.
 
 ## v0.3.0 - OpenClaw Public Onboarding Pack
 

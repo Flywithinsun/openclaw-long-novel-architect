@@ -14,10 +14,18 @@
 - Outline directory: `outlines/`
 - Character directory: `characters/`
 - Ledger directory: `ledgers/`
+- Timeline directory: `timelines/`
+- Lore directory: `lore/`
 
 ## Current continuity locks
 
 - None yet.
+
+## Historical / lore state
+
+- Timeline examples exist under `timelines/`.
+- Lore examples exist under `lore/`.
+- Replace all placeholder historical sources with project-owned research before canon use.
 
 ## Current risks
 
