@@ -20,7 +20,7 @@ docs/historical-mode-roadmap.md
 docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 ```
 
-当前状态：**P10 final 发布前总验收已完成**。P1/P2/P3/P4/P5/P6/P7/P8/P9/P10 已完成可用版本与发布前验证；下一步只需按需创建 GitHub release / tag，或处理用户指定修补。
+当前状态：**P10 final 发布前总验收已完成并复核通过**。本轮已再次确认脚本语法、`--help` 冒烟、时间线 / lore / 地理 / 分支验证、历史数据查询（未配置数据源时仅警告不失败）、Org 导出、项目快照、手稿导出、便携包打包与包边界检查都可用；下一步只需按需创建 GitHub release / tag，或处理用户指定修补。
 
 当前路线图顺序已推进到 P1 → P3 → P4 → P10 partial → P5 → P6 → P9 → P2 → P10 closeout sync → P7 → P8 → P10 final。不要先集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何外部模型 provider；历史数据适配器仍应保持用户本地自备、默认不打包。
 
@@ -44,7 +44,7 @@ docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 | P7：历史数据适配器 | 已完成首版 | 已加入本地 SQLite / CSV / JSON / Markdown table 查询、生成 lore 草稿、外部数据目录说明和安全边界文档。 |
 | P8：Org mode 大纲导出 | 已完成首版 | 已加入 `skill/references/org-export-workflow.md` 和 `scripts/export_org_outline.py`，可从项目状态、工作队列、大纲、人物、lore、时间线和分支生成 `exports/org/project-outline.org`。 |
 | P9：Git 快照与手稿导出 | 已完成首版 | 已加入 versioning/export 工作流、修订分支与发布说明模板、`scripts/project_snapshot.py` 和 `scripts/export_manuscript.py`。 |
-| P10：验证、打包、README 与示例同步 | 已完成 final 发布前总验收 | 已把 timelines/maps/lore/external-data 说明/standards/context-packs/branches/reports/exports/org 纳入推荐资产、配置、验证/打包默认值和入门/迁移文档，并完成脚本、打包、脱敏与陈旧交接提示检查。 |
+| P10：验证、打包、README 与示例同步 | 已完成 final 发布前总验收并复核通过 | 已把 timelines/maps/lore/external-data 说明/standards/context-packs/branches/reports/exports/org 纳入推荐资产、配置、验证/打包默认值和入门/迁移文档，并完成脚本、打包、脱敏与陈旧交接提示检查。 |
 
 #### P1 交付物
 
@@ -176,12 +176,12 @@ exports/release/volume-01.md
 
 | 项目 | 当前值 |
 |---|---|
-| 记录时间 | 2026-05-24 00:30:00 +08 |
-| 当前阶段 | P10 final：发布前总验收已完成 |
+| 记录时间 | 2026-05-24 01:36:33 +08 |
+| 当前阶段 | P10 final：发布前总验收已完成并复核通过 |
 | P0 状态 | 已完成 |
 | 下一步 | 按需创建 GitHub release / tag，或处理用户指定修补 |
 | 最近一次 Git 同步本地时间 | 2026-05-24 00:31 +08 |
-| 当前状态 | P1/P2/P3/P4/P5/P6/P7/P8/P9/P10 final 均已可用并通过发布前验证；P7/P8/P10 文档、示例、验证、打包与安全边界已同步 |
+| 当前状态 | P1/P2/P3/P4/P5/P6/P7/P8/P9/P10 final 均已可用并通过发布前验证；本轮已复核脚本语法、`--help` 冒烟、时间线 / lore / 地理 / 分支验证、历史数据查询仅警告不失败、Org 导出、项目快照、手稿导出、便携包打包与包边界检查；P7/P8/P10 文档、示例、验证、打包与安全边界已同步 |
 
 #### 下次更新格式
 
