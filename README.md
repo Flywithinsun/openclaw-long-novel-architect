@@ -10,6 +10,19 @@
 
 这个仓库按公开发布标准设计，**不包含私人小说正文、不包含 API key、不包含 provider 凭据、不包含个人路径、不包含私有模型账号标识**。
 
+### 下一步开发计划 / AI 交接入口
+
+如果你是在另一个对话里接手本项目的 AI，请先读：
+
+```text
+AI_NEXT_STEPS.md
+docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
+```
+
+当前明确的下一步是从 **P0：许可、安全与范围边界** 开始，把本项目升级为适合严谨历史 / 架空历史 / 穿越长篇的工程化写作系统。不要先集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何外部模型 provider；应先完成第三方灵感来源、许可证边界、外部数据排除规则和历史模式路线图。
+
+完整实施路线见：[`docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md`](docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md)
+
 ### 它适合什么项目？
 
 尤其适合这些类型：
@@ -48,6 +61,7 @@
 ```text
 openclaw-long-novel-architect/
 ├── README.md
+├── AI_NEXT_STEPS.md
 ├── LICENSE
 ├── SECURITY.md
 ├── .gitignore
@@ -83,6 +97,7 @@ openclaw-long-novel-architect/
 │   ├── asset-manifest.example.txt
 │   └── minimal-project/
 └── docs/
+    ├── HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
     ├── github-release-checklist.md
     ├── migration-quickstart.md
     ├── sanitization-report.md
@@ -298,6 +313,19 @@ MIT。详见 `LICENSE`。
 
 This repository is designed for public GitHub release. It contains **no private novel text, no API keys, no provider credentials, no personal paths, and no private model account identifiers**.
 
+### Next development plan / AI handoff entry
+
+If you are an AI assistant continuing this project in another chat, read these first:
+
+```text
+AI_NEXT_STEPS.md
+docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
+```
+
+The current next step is **P0: licensing, safety, and scope boundary** for upgrading this repository into an engineering workflow system for rigorous historical / alternate-history / time-travel long-form fiction. Do not begin by integrating AutoGen, CBDB, Electron, Obsidian, Emacs, or any external model provider. Start with third-party inspiration documentation, licensing boundaries, external-data exclusions, and the historical-mode roadmap.
+
+Full implementation plan: [`docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md`](docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md)
+
 ### What kind of project is this for?
 
 It is especially useful for:
@@ -336,6 +364,7 @@ It helps an OpenClaw agent:
 ```text
 openclaw-long-novel-architect/
 ├── README.md
+├── AI_NEXT_STEPS.md
 ├── LICENSE
 ├── SECURITY.md
 ├── .gitignore
@@ -371,6 +400,7 @@ openclaw-long-novel-architect/
 │   ├── asset-manifest.example.txt
 │   └── minimal-project/
 └── docs/
+    ├── HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
     ├── github-release-checklist.md
     ├── migration-quickstart.md
     ├── sanitization-report.md
