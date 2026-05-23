@@ -1,6 +1,6 @@
 # OpenClaw Long Novel Architect
 
-[中文说明](#中文说明) | [English](#english)
+[中文说明](#中文说明) | [长期规则与进度记录](#长期规则与进度记录)
 
 ---
 
@@ -10,7 +10,7 @@
 
 这个仓库按公开发布标准设计，**不包含私人小说正文、不包含 API key、不包含 provider 凭据、不包含个人路径、不包含私有模型账号标识**。
 
-### 下一步开发计划 / AI 交接入口
+### 下一步开发计划与交接入口
 
 如果你是在另一个对话里接手本项目的 AI，请先读：
 
@@ -27,6 +27,31 @@ docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 完整 AI 交接实施计划见：[`docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md`](docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md)
 
 历史数据适配器应保持**轻量、可选、用户本地自备**：优先读取 SQLite / CSV / JSON 等简单格式；公共模板和默认打包流程不捆绑 CBDB 或任何第三方历史数据库。
+
+### 长期规则与进度记录
+
+1. 本 README 以后只保留中文说明；只有文件名、命令、路径、代码块、参数名、链接锚点等必要内容可以保留原样。
+2. 每次开始一个明确阶段前，先确认或更新本节进度记录；不要为每个微小命令制造噪音。
+3. Git 提交 / 推送前，必须把本节更新到“准备同步”的稳定状态。
+4. Git 推送完成后，在完成报告中记录同步结果；除非还有实质内容变化，不再只为时间戳新增提交，避免“更新记录 → 提交 → 推送 → 再更新记录”的循环。
+5. 如果有新的对话接手，请先看本 README、`AI_NEXT_STEPS.md` 和本节记录。
+
+#### 当前进度记录
+
+| 项目 | 当前值 |
+|---|---|
+| 记录时间 | 2026-05-23 20:30:00 +08 |
+| 已完成 | 8 项 |
+| 剩余 | 1 项 |
+| 最近一次 Git 同步本地时间 | 本轮推送完成后见完成报告 |
+| 当前状态 | README 中文化收尾与资产验证完成，准备提交并推送 |
+
+#### 下次更新格式
+
+- 已完成：X 项
+- 剩余：Y 项
+- 最近一次 Git 同步本地时间：YYYY-MM-DD HH:MM:SS +08
+- 当前状态：……
 
 ### 它适合什么项目？
 
@@ -315,313 +340,6 @@ python3 scripts/verify_portable_assets.py --project-root /path/to/project --conf
 
 同时确认 `external-data/`、`*.db`、`*.sqlite`、`*.sqlite3` 以及本地 CSV / JSON 研究数据没有被误纳入公开发布包。
 
-### License
+### 许可证
 
 MIT。详见 `LICENSE`。
-
----
-
-## English
-
-**OpenClaw Long Novel Architect** is a portable OpenClaw Skill template for managing long-form fiction projects with structured context, chapter production, revision, audit, readability / de-AI polishing, asset packaging, and cross-OpenClaw handoff workflows.
-
-This repository is designed for public GitHub release. It contains **no private novel text, no API keys, no provider credentials, no personal paths, and no private model account identifiers**.
-
-### Next development plan / AI handoff entry
-
-If you are an AI assistant continuing this project in another chat, read these first:
-
-```text
-AI_NEXT_STEPS.md
-docs/historical-mode-roadmap.md
-docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
-```
-
-The current next step is **P0: licensing, safety, and scope boundary** for upgrading this repository into an engineering workflow system for rigorous historical / alternate-history / time-travel long-form fiction. Do not begin by integrating AutoGen, CBDB, Electron, Obsidian, Emacs, or any external model provider. Start with third-party inspiration documentation, licensing boundaries, external-data exclusions, and the historical-mode roadmap.
-
-Historical-mode roadmap: [`docs/historical-mode-roadmap.md`](docs/historical-mode-roadmap.md)<br>
-Third-party inspiration and license boundaries: [`docs/third-party-inspiration.md`](docs/third-party-inspiration.md)<br>
-Full AI handoff implementation plan: [`docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md`](docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md)
-
-Historical data adapters should remain **lightweight, optional, and user-provided**. Prefer simple local formats such as SQLite / CSV / JSON. The public template and default packaging workflow do not bundle CBDB or any third-party historical database.
-
-### What kind of project is this for?
-
-It is especially useful for:
-
-- long historical novels;
-- alternate-history, political, military, or institution-heavy fiction;
-- multi-character, multi-faction, continuity-heavy projects;
-- serialized fiction requiring long-term state management;
-- projects handed across multiple OpenClaw agents, model routes, or chat sessions.
-
-### What does it help with?
-
-It helps an OpenClaw agent:
-
-- discover the current project state;
-- avoid relying on hidden chat memory;
-- generate self-contained chapter requests;
-- separate final canon decisions from side-model mining;
-- produce drafts, summaries, self-audits, ledger updates, and readable candidates;
-- run range audits and lock the next stage;
-- package a sanitized asset bundle for another OpenClaw;
-- verify whether a migrated project has enough assets to continue safely.
-- sync completed checkpoints to a private GitHub repository when configured, so another OpenClaw can resume from files and git history.
-
-### What this is not
-
-- Not a complete novel.
-- Not a model provider integration.
-- Not an API key manager.
-- Not a guarantee that any specific model route exists in your environment.
-- Not a replacement for your canon files, drafts, outlines, character files, or state files.
-- Not an automatic privacy auditor for every project package you generate.
-- Not a public historical database mirror; it does not bundle CBDB, SQLite databases, or other third-party datasets by default.
-
-### Directory layout
-
-```text
-openclaw-long-novel-architect/
-├── README.md
-├── AI_NEXT_STEPS.md
-├── LICENSE
-├── SECURITY.md
-├── .gitignore
-├── skill/
-│   ├── SKILL.md
-│   ├── references/
-│   │   ├── project-map.md
-│   │   ├── chapter-workflow.md
-│   │   ├── deai-workflow.md
-│   │   ├── audit-workflow.md
-│   │   ├── model-routing.md
-│   │   ├── closeout-checklist.md
-│   │   ├── asset-package.md
-│   │   ├── portability-guide.md
-│   │   └── github-sync.md
-│   └── templates/
-│       ├── chapter-request-template.md
-│       ├── deai-request-template.md
-│       ├── audit-report-template.md
-│       ├── completion-report-template.md
-│       ├── project-state-template.md
-│       ├── work-queue-template.md
-│       ├── project-index-template.md
-│       └── model-routing-template.md
-├── scripts/
-│   ├── package_portable_assets.py
-│   ├── verify_portable_assets.py
-│   └── github_private_sync.py
-├── examples/
-│   ├── project-config.example.json
-│   ├── github-sync.example.json
-│   ├── model-routing.example.md
-│   ├── asset-manifest.example.txt
-│   └── minimal-project/
-└── docs/
-    ├── HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
-    ├── historical-mode-roadmap.md
-    ├── third-party-inspiration.md
-    ├── github-release-checklist.md
-    ├── migration-quickstart.md
-    ├── sanitization-report.md
-    ├── openclaw-installation.md
-    └── first-project-setup.md
-```
-
-### Quick start
-
-#### 0. One-minute start
-
-If you just want to try it quickly:
-
-```bash
-git clone https://github.com/Flywithinsun/openclaw-long-novel-architect.git
-cd openclaw-long-novel-architect
-cp -R examples/minimal-project ../my-novel-project
-cd ../my-novel-project
-cp -R ../openclaw-long-novel-architect/skill ./skill
-cp -R ../openclaw-long-novel-architect/scripts ./scripts
-python scripts/verify_portable_assets.py --project-root . --config novel-architect.config.json
-```
-
-Then ask OpenClaw to read:
-
-```text
-skill/SKILL.md
-PROJECT_STATE.md
-WORK_QUEUE.md
-PROJECT_INDEX.md
-workflow/model-routing.md
-```
-
-See also:
-
-- `docs/openclaw-installation.md`
-- `docs/first-project-setup.md`
-- `examples/minimal-project/`
-
-#### 1. Install / copy the Skill
-
-Copy `skill/` into your OpenClaw workspace, or install it according to your OpenClaw Skill mechanism.
-
-#### 2. Prepare project config
-
-Copy the example config into your novel project root:
-
-```bash
-cp examples/project-config.example.json /path/to/your/project/novel-architect.config.json
-```
-
-Then edit:
-
-- project name;
-- chapter prefix;
-- draft directory;
-- readable directory;
-- summary / audit / ledger directories;
-- required assets;
-- recommended assets;
-- model role mapping.
-
-#### 3. Verify project assets
-
-```bash
-python3 scripts/verify_portable_assets.py \
-  --project-root /path/to/your/project \
-  --config /path/to/your/project/novel-architect.config.json
-```
-
-Strict mode:
-
-```bash
-python3 scripts/verify_portable_assets.py \
-  --project-root /path/to/your/project \
-  --config /path/to/your/project/novel-architect.config.json \
-  --strict
-```
-
-#### 4. Package a sanitized migration bundle
-
-```bash
-python3 scripts/package_portable_assets.py \
-  --project-root /path/to/your/project \
-  --config /path/to/your/project/novel-architect.config.json \
-  --output-dir /tmp/portable-novel
-```
-
-Output:
-
-```text
-<project-name>-portable-YYYYMMDD-HHMMSS.zip
-<project-name>-portable-YYYYMMDD-HHMMSS-MANIFEST.txt
-```
-
-#### 5. Deploy in another OpenClaw workspace
-
-```bash
-mkdir -p /path/to/new/project
-cd /path/to/new/project
-unzip /path/to/package.zip
-python3 scripts/verify_portable_assets.py --project-root . --config novel-architect.config.json
-```
-
-After verification passes, let OpenClaw read `skill/SKILL.md` and your project state files.
-
-#### 6. Sync to a private GitHub repository
-
-If the project enables private GitHub sync, use:
-
-```bash
-python3 scripts/github_private_sync.py --repo-root /path/to/your/project --config /path/to/your/project/github-sync.config.json --auto-commit
-```
-
-OpenClaw should read `skill/references/github-sync.md` first and report the sync result as `PASS / SKIPPED / FAILED`.
-
-This script delegates authentication to local git, SSH agent, Git Credential Manager, or the hosting environment. Do not store GitHub tokens in project files.
-
-### Recommended project layout
-
-Default recommendation:
-
-```text
-PROJECT_STATE.md or CURRENT_STATE.md
-WORK_QUEUE.md
-PROJECT_INDEX.md
-workflow/
-drafts/
-readable/ or de-ai/
-summaries/
-audits/
-ledgers/
-outlines/
-characters/
-canon/ or bible/
-skill/
-scripts/
-```
-
-You can override this in `novel-architect.config.json`.
-
-### Model roles, not fixed model names
-
-The public template does not bind to any provider or model name. Map your own models to these roles:
-
-| Role | Purpose |
-|---|---|
-| `organizer` | chat, context compression, task structuring |
-| `final_canon` | final prose, canon gate, readable approval |
-| `side_miner_primary` | side mining, red-team review, loophole checks |
-| `side_miner_texture` | human texture, action detail, voice variants |
-| `side_miner_structure` | structure, continuity, long-context review |
-| `engineering_helper` | scripts, verification, packaging, workflow tooling |
-
-Principle: **side models provide material only. They do not write directly into canon. Final output must be approved by the `final_canon` role.**
-
-### Public safety design
-
-The packaging script excludes by default:
-
-- `.git/`
-- `.env`, `.secrets/`, credential files;
-- raw model logs;
-- `scratch/`;
-- `inbox/`, `outbox/`;
-- `archive/`;
-- `backups/`;
-- `external-data/`;
-- SQLite / local database files such as `*.db`, `*.sqlite`, and `*.sqlite3`;
-- compressed files, logs, and caches.
-
-Local research data, CSV / JSON datasets, and third-party historical database copies should stay in `external-data/` or another private location by default. Include them only after you have explicitly reviewed licensing, sanitization, and package size.
-
-Before publishing or sharing any generated package, you should still run your own secret scanner.
-
-### Core workflow philosophy
-
-1. **Skill controls method; project assets control facts.**
-2. **Every chapter request must be self-contained.**
-3. **Side-model outputs are mining material, not canon.**
-4. **A final canon role/model must make prose and continuity decisions.**
-5. **Completion requires files, checks, and a stop point.**
-6. **A completed chapter does not authorize starting the next chapter.**
-7. **Audits must lock the next stage, not merely judge the past.**
-8. **Private GitHub sync is handoff evidence, not credential management.**
-
-### Pre-release checks
-
-If you publish your own project package, at minimum run:
-
-```bash
-grep -RInE "(sk-|api[_-]?key|token|secret|credential|Authorization|Bearer|password|\.secrets|\.env)" .
-python3 scripts/verify_portable_assets.py --project-root /path/to/project --config /path/to/project/novel-architect.config.json
-```
-
-For stronger assurance, use dedicated tools such as `gitleaks` or `trufflehog`.
-
-Also confirm that `external-data/`, `*.db`, `*.sqlite`, `*.sqlite3`, and local CSV / JSON research datasets have not been accidentally included in a public release package.
-
-### License
-
-MIT. See `LICENSE`.
