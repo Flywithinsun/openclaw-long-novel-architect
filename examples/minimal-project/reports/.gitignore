@@ -1,0 +1,3 @@
+# Keep generated verification reports out of the template tree.
+*
+!.gitignore

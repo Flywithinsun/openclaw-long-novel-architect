@@ -16,6 +16,7 @@
 - 新增 `scripts/lore_index.py`，无外部依赖检查 lore id、必填字段、重复 id、元数据标签和可判断的缺失 lore 引用，并可写出 `reports/lore-index-report.md`。
 - 新增 P4 上下文层与时代语言控制首版：context-layer 工作流、context/style 模板、minimal project standards 与 context-packs 示例。
 - 开始 P10 partial 收口：standards / context-packs 已纳入推荐资产、验证脚本与打包脚本默认配置。
+- 补充 minimal project 的 `exports/` 占位目录，并为 `reports/` 增加忽略规则，避免验证演练产物污染模板工作区。
 
 ### English
 
@@ -31,6 +32,7 @@
 - Added `scripts/lore_index.py` with no external dependencies to validate lore ids, required fields, duplicate ids, metadata tags, and detectable missing lore references, with optional `reports/lore-index-report.md` output.
 - Added the first P4 context-layer and period-language controls: context-layer workflow, context/style templates, minimal project standards, and context-pack examples.
 - Started P10 partial polish: standards / context-packs are now part of recommended assets and default verification/packaging configuration.
+- Added a minimal-project `exports/` placeholder and a `reports/` ignore rule so verification runs do not pollute the template workspace.
 
 ## v0.3.0 - OpenClaw Public Onboarding Pack
 

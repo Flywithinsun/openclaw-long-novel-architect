@@ -16,6 +16,8 @@ outbox/
 archive/
 backups/
 exports/
+!examples/minimal-project/exports/
+!examples/minimal-project/exports/.gitkeep
 
 # Python
 __pycache__/
