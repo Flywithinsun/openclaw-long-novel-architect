@@ -20,9 +20,9 @@ docs/historical-mode-roadmap.md
 docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 ```
 
-当前状态：**P2：地理 / 地图 / 后勤约束已完成首版**。P1/P2/P3/P4/P5/P6/P9/P10 partial 已完成可用版本，下一步按路线图继续 P10 收口或进入 P7 历史数据适配器。
+当前状态：**P10 收口同步已推进**。P1/P2/P3/P4/P5/P6/P9/P10 closeout sync 已完成可用版本，下一步可进入 P7 历史数据适配器，或继续做 P10 final 的发布前总验收。
 
-当前路线图顺序已推进到 P1 → P3 → P4 → P10 partial → P5 → P6 → P9 → P2。不要先集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何外部模型 provider；历史数据适配器仍应保持用户本地自备、默认不打包。
+当前路线图顺序已推进到 P1 → P3 → P4 → P10 partial → P5 → P6 → P9 → P2 → P10 closeout sync。不要先集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何外部模型 provider；历史数据适配器仍应保持用户本地自备、默认不打包。
 
 历史模式路线图见：[`docs/historical-mode-roadmap.md`](docs/historical-mode-roadmap.md)<br>
 第三方灵感与许可证边界见：[`docs/third-party-inspiration.md`](docs/third-party-inspiration.md)<br>
@@ -42,6 +42,7 @@ docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 | P5：历史逻辑审计委员会 | 已完成首版 | 已加入逻辑审计工作流、请求/报告模板、示例审计和章节审计接入说明。 |
 | P6：蝴蝶效应分支模拟 | 已完成首版 | 已加入 branch simulation 工作流、分支模板、示例分支和 `scripts/branch_status.py`。 |
 | P9：Git 快照与手稿导出 | 已完成首版 | 已加入 versioning/export 工作流、修订分支与发布说明模板、`scripts/project_snapshot.py` 和 `scripts/export_manuscript.py`。 |
+| P10：验证、打包、README 与示例同步 | 已完成本轮收口同步 | 已把 timelines/maps/lore/standards/context-packs/branches/reports/exports 纳入推荐资产、配置、验证/打包默认值和入门/迁移文档。 |
 
 #### P1 交付物
 
@@ -141,12 +142,12 @@ exports/release/volume-01.md
 
 | 项目 | 当前值 |
 |---|---|
-| 记录时间 | 2026-05-23 22:06:00 +08 |
-| 当前阶段 | P2：地理 / 地图 / 后勤约束已完成首版 |
+| 记录时间 | 2026-05-23 22:26:00 +08 |
+| 当前阶段 | P10：验证、打包、README 与示例同步已完成本轮收口 |
 | P0 状态 | 已完成 |
-| 下一步 | P10 收口同步，或继续 P7：历史数据适配器 |
+| 下一步 | P7：历史数据适配器，或 P10 final 发布前总验收 |
 | 最近一次 Git 同步本地时间 | 2026-05-23 21:54 +08 |
-| 当前状态 | P1/P2/P3/P4/P5/P6/P9/P10 partial 已可用；P2 已通过 geo_lint 与 minimal-project 资产验证，本次提交用于同步 GitHub |
+| 当前状态 | P1/P2/P3/P4/P5/P6/P9/P10 closeout sync 已可用；推荐资产、验证/打包默认值、minimal project 索引与入门/迁移文档已同步到当前历史模式目录集 |
 
 #### 下次更新格式
 
@@ -409,7 +410,14 @@ ledgers/
 outlines/
 characters/
 canon/ 或 bible/
+timelines/
 maps/
+lore/
+standards/
+context-packs/
+branches/
+reports/
+exports/
 skill/
 scripts/
 ```

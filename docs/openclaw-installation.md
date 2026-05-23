@@ -48,10 +48,30 @@ skill/references/github-sync.md
 github-sync.config.json
 ```
 
+如果项目启用了历史模式，或项目存在这些目录，再按任务需要读取：
+
+```text
+standards/
+context-packs/
+timelines/
+maps/
+lore/
+branches/
+reports/
+```
+
 ### 4. 验证项目资产
 
 ```bash
 python scripts/verify_portable_assets.py --project-root /path/to/your-novel-project --config /path/to/your-novel-project/novel-architect.config.json
+```
+
+历史模式常用附加检查：
+
+```bash
+python scripts/timeline_lint.py --project-root /path/to/your-novel-project --config /path/to/your-novel-project/novel-architect.config.json --write-report
+python scripts/lore_index.py --project-root /path/to/your-novel-project --config /path/to/your-novel-project/novel-architect.config.json --write-report
+python scripts/geo_lint.py --project-root /path/to/your-novel-project --config /path/to/your-novel-project/novel-architect.config.json --write-report
 ```
 
 ### 5. 推荐给 OpenClaw 的第一句话
@@ -110,10 +130,30 @@ skill/references/github-sync.md
 github-sync.config.json
 ```
 
+If historical mode is enabled, or these directories exist, read them as needed for the task:
+
+```text
+standards/
+context-packs/
+timelines/
+maps/
+lore/
+branches/
+reports/
+```
+
 ### 4. Verify project assets
 
 ```bash
 python scripts/verify_portable_assets.py --project-root /path/to/your-novel-project --config /path/to/your-novel-project/novel-architect.config.json
+```
+
+Common historical-mode checks:
+
+```bash
+python scripts/timeline_lint.py --project-root /path/to/your-novel-project --config /path/to/your-novel-project/novel-architect.config.json --write-report
+python scripts/lore_index.py --project-root /path/to/your-novel-project --config /path/to/your-novel-project/novel-architect.config.json --write-report
+python scripts/geo_lint.py --project-root /path/to/your-novel-project --config /path/to/your-novel-project/novel-architect.config.json --write-report
 ```
 
 ### 5. Suggested first prompt for OpenClaw

@@ -32,9 +32,9 @@ Upgrade `openclaw-long-novel-architect` from a general long-novel OpenClaw workf
 
 ## Start with this phase / 从这一阶段开始
 
-P1, P2, P3, P4, P5, P6, P9, and P10 partial have first usable implementations. Continue with **P10 closeout sync** or **P7 historical data adapter** unless the user asks for repairs.
+P1, P2, P3, P4, P5, P6, P9, and P10 closeout sync have first usable implementations. Continue with **P7 historical data adapter** or **P10 final release verification** unless the user asks for repairs.
 
-**P1、P2、P3、P4、P5、P6、P9、P10 partial**已有可用实现。除非用户要求修补既有阶段，否则继续 **P10 收口同步** 或 **P7 历史数据适配器**。
+**P1、P2、P3、P4、P5、P6、P9、P10 closeout sync**已有可用实现。除非用户要求修补既有阶段，否则继续 **P7 历史数据适配器** 或 **P10 final 发布前总验收**。
 
 P0 licensing / safety / scope boundary is complete, and P1/P3/P4 basics are implemented. Do not start with AutoGen, CBDB, Electron, Obsidian, Emacs, or model-provider integrations.
 
@@ -247,14 +247,14 @@ P0  Licensing, safety, scope boundary
 P1  Dual-axis historical timeline
 P3  Lore metadata and cross-reference system
 P4  Context layers and period-language controls
-P10 Partial verification/package/README sync
+P10 Closeout sync for verification/package/README/docs/examples
 P5  Historical logic audit committee
 P6  Butterfly-effect branch simulation
 P9  Git snapshot and manuscript export
 P2  Geography and logistics
 P7  Historical data adapter
 P8  Org mode export
-P10 Final docs/examples/verification/changelog sync
+P10 Final release verification and changelog sync
 ```
 
 ---

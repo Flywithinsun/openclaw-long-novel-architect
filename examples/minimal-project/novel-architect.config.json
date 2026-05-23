@@ -17,13 +17,16 @@
   "recommended_paths": [
     "canon",
     "writing-requests",
-    "exports",
-    "skill",
-    "scripts",
+    "timelines",
+    "maps",
+    "lore",
     "standards",
     "context-packs",
-    "maps",
-    "branches"
+    "branches",
+    "reports",
+    "exports",
+    "skill",
+    "scripts"
   ],
   "draft_dir": "drafts",
   "readable_dir": "readable",

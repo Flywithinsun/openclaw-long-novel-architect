@@ -8,7 +8,7 @@
 
 ## 0. Immediate next step for the next AI session
 
-The next AI session should continue with **P10 closeout sync** or **Phase P7 — Historical data source adapter**, unless the user asks for earlier-phase repairs. Phase P0, P1, P2, P3, P4, P5, P6, P9, and P10 partial have usable implementations.
+The next AI session should continue with **Phase P7 — Historical data source adapter** or **P10 final release verification**, unless the user asks for earlier-phase repairs. Phase P0, P1, P2, P3, P4, P5, P6, P9, and P10 closeout sync have usable implementations.
 
 ### First command to run
 
@@ -52,7 +52,7 @@ scripts/verify_portable_assets.py
 
 ### Do not do first
 
-Do **not** begin by integrating AutoGen, CBDB, Electron, Obsidian, Emacs, or any external AI provider. The next recommended phase is P10 closeout sync or P7 historical data adapter; keep P0 licensing and data-safety boundaries intact.
+Do **not** begin by integrating AutoGen, CBDB, Electron, Obsidian, Emacs, or any external AI provider. The next recommended phase is P7 historical data adapter or P10 final release verification; keep P0 licensing and data-safety boundaries intact.
 
 ---
 
@@ -1228,6 +1228,10 @@ scripts/package_portable_assets.py
 6. Lore index can be invoked or recommended.
 7. `external-data/` is not required.
 8. Database files are warned about if found in package-included paths.
+
+### Current status
+
+Closeout sync for the current implemented scope is complete. Recommended asset roots, example configs, verification defaults, packaging defaults, README, setup/migration docs, minimal project state/index, roadmap, changelog, and handoff notes are aligned for P1/P2/P3/P4/P5/P6/P9. P7 remains the next feature phase; P10 final remains the final release verification pass after remaining optional phases.
 
 ### `package_portable_assets.py` should eventually ensure
 

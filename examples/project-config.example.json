@@ -20,11 +20,14 @@
     "canon",
     "bible",
     "writing-requests",
-    "exports",
+    "timelines",
+    "maps",
+    "lore",
     "standards",
     "context-packs",
-    "maps",
-    "branches"
+    "branches",
+    "reports",
+    "exports"
   ],
   "draft_dir": "drafts",
   "readable_dir": "readable",

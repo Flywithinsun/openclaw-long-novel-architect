@@ -20,6 +20,8 @@
 - Standards directory: `standards/`
 - Context pack directory: `context-packs/`
 - Branch simulation directory: `branches/`
+- Reports directory: `reports/`
+- Exports directory: `exports/`
 
 ## Current continuity locks
 
@@ -33,6 +35,8 @@
 - Style and period-language standards exist under `standards/`.
 - Logic audit examples exist under `audits/`.
 - Branch simulation examples exist under `branches/`.
+- Reports are written under `reports/` and ignored when generated.
+- Exports are written under `exports/` only when intentionally generated.
 - Replace all placeholder historical sources with project-owned research before canon use.
 
 ## Current risks
@@ -41,6 +45,7 @@
 - Major historical changes should use the logic audit committee before canon.
 - Travel, campaign, supply, or courier movement should be checked against `maps/` route constraints before canon.
 - Alternate-history branch work is not canon until a merge decision is accepted.
+- External historical datasets must remain outside public packages unless license-reviewed.
 
 ## Next OpenClaw instruction
 

@@ -56,7 +56,7 @@ Historical mode is for projects that need:
 | P7 | Historical data adapter | Optional local data sources such as SQLite / CSV / JSON |
 | P8 | Org mode outline export | Optional outline export for large projects |
 | P9 | Git writing, revision, snapshot, and export workflow | Completed first version: versioning/export workflows, revision/release templates, snapshot and manuscript export scripts |
-| P10 | Verification, packaging, README, and example sync | Partial in progress: P1/P3/P4 verification, packaging roots, README sync |
+| P10 | Verification, packaging, README, and example sync | Closeout sync complete for current P1/P2/P3/P4/P5/P6/P9 scope: recommended assets, configs, verification/packaging defaults, docs, and minimal-project index are aligned |
 
 ## First MVP scope / 最小可交付范围
 
@@ -98,13 +98,13 @@ If another AI takes over this repository:
 1. Read `README.md`.
 2. Read `AI_NEXT_STEPS.md`.
 3. Read this roadmap.
-4. P1, P2, P3, P4, P5, P6, and P9 first versions are complete; continue with P10 closeout sync or P7 historical data adapter unless the user asks for repairs.
+4. P1, P2, P3, P4, P5, P6, P9, and P10 closeout sync first versions are complete; continue with P7 historical data adapter or P10 final release verification unless the user asks for repairs.
 5. Keep historical datasets external unless the user explicitly requests otherwise.
 6. Keep GPL projects concept-only.
 7. Do not start with provider integration or GUI work.
 
 ## Current stop point / 当前停点
 
-The repository has completed P0, P1, P2, P3, P4, P5, P6, P9, and P10 partial. The next recommended phase is P10 closeout sync or P7 historical data adapter.
+The repository has completed P0, P1, P2, P3, P4, P5, P6, P9, and P10 closeout sync for the current implemented scope. The next recommended phase is P7 historical data adapter or P10 final release verification.
 
-当前仓库已完成 P0、P1、P2、P3、P4、P5、P6、P9，以及 P10 partial。下一推荐阶段是 P10 收口同步，或 P7：历史数据适配器。
+当前仓库已完成 P0、P1、P2、P3、P4、P5、P6、P9，以及当前实现范围内的 P10 收口同步。下一推荐阶段是 P7：历史数据适配器，或 P10 final 发布前总验收。

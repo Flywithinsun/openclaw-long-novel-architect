@@ -21,6 +21,7 @@
 - 新增 P5 历史逻辑审计委员会首版：逻辑审计工作流、请求/报告模板、minimal project 示例审计文件，以及章节工作流的高影响变化接入说明。
 - 新增 P6 蝴蝶效应分支模拟首版：branch simulation 工作流、分支状态/分歧点/合并决策模板、minimal project 示例分支、`scripts/branch_status.py`，并把 `branches/` 纳入推荐资产与打包/验证规则。
 - 新增 P9 Git 快照与手稿导出首版：versioning/export 工作流、修订分支模板、发布说明模板、`scripts/project_snapshot.py` 和 `scripts/export_manuscript.py`。
+- 完成本轮 P10 收口同步：`timelines/`、`maps/`、`lore/`、`standards/`、`context-packs/`、`branches/`、`reports/`、`exports/` 已统一纳入推荐资产、示例配置、验证/打包默认值、README、入门/迁移文档和 minimal project 索引。
 
 ### English
 
@@ -41,6 +42,7 @@
 - Added the first P5 historical logic audit committee slice: logic audit workflow, request/report templates, a minimal-project example audit, and chapter-workflow integration notes for high-impact changes.
 - Added the first P6 butterfly-effect branch simulation slice: branch simulation workflow, branch state/divergence/merge-decision templates, a minimal-project example branch, `scripts/branch_status.py`, and `branches/` in recommended verification/packaging assets.
 - Added the first P9 Git snapshot and manuscript export slice: versioning/export workflows, revision branch and release note templates, `scripts/project_snapshot.py`, and `scripts/export_manuscript.py`.
+- Completed the current P10 closeout sync: `timelines/`, `maps/`, `lore/`, `standards/`, `context-packs/`, `branches/`, `reports/`, and `exports/` are aligned across recommended assets, example configs, verification/packaging defaults, README, setup/migration docs, and the minimal-project index.
 
 ## v0.3.0 - OpenClaw Public Onboarding Pack
 

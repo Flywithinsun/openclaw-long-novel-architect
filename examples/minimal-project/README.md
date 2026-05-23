@@ -21,3 +21,13 @@ Fresh projects may warn that no draft/readable/summary chapter files exist yet. 
 This skeleton keeps `skill/` and `scripts/` as recommended paths so it can be copied without duplicating the full toolkit. For real use, copy them into the project root before asking OpenClaw to work.
 
 这个骨架把 `skill/` 和 `scripts/` 设为推荐路径，避免示例项目重复包含整套工具。正式使用前，请把它们复制到项目根目录。
+
+## Historical-mode examples / 历史模式示例
+
+This minimal project includes example directories for timeline, geography/logistics, lore metadata, style standards, context packs, logic audits, branch simulations, reports, and exports. They are safe starter examples, not real historical research.
+
+本最小项目包含时间线、地理/后勤、lore 元数据、风格标准、上下文包、逻辑审计、分支模拟、报告和导出目录示例。这些只是安全起步样例，不是真实历史研究资料。
+
+Keep external historical datasets outside public packages. `external-data/`, SQLite databases, and unreviewed local CSV / JSON research dumps should remain private unless license-reviewed.
+
+外部历史数据集不要默认进入公开包。`external-data/`、SQLite 数据库，以及未审查的本地 CSV / JSON 研究数据应保持私有，除非已完成许可证审查。

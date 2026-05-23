@@ -10,6 +10,21 @@ cp examples/project-config.example.json /path/to/project/novel-architect.config.
 
 Edit paths and model role names.
 
+If you use historical mode, confirm the recommended directories are either present or intentionally omitted:
+
+```text
+timelines/
+maps/
+lore/
+standards/
+context-packs/
+branches/
+reports/
+exports/
+```
+
+Keep local historical datasets in `external-data/` or another private location. Public packages should not include CBDB, third-party databases, or unreviewed local CSV / JSON research data.
+
 ## 2. Verify source project
 
 ```bash
@@ -25,6 +40,8 @@ python3 scripts/package_portable_assets.py --project-root /path/to/project --con
 ```
 
 Inspect the generated manifest.
+
+Confirm that `external-data/`, `*.db`, `*.sqlite`, `*.sqlite3`, and any local historical research dumps are absent unless you are making a private, license-reviewed package.
 
 ## 4. Secret scan
 
@@ -53,4 +70,5 @@ Confirm:
 - current stop point;
 - next hard locks;
 - model role mapping;
+- whether timeline / lore / map / branch reports need to be refreshed;
 - completion checklist.

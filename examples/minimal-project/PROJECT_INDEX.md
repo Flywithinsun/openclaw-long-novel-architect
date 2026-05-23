@@ -24,6 +24,7 @@
 - `standards/` — prose style, historical dialogue, forbidden modernisms, and de-AI rules.
 - `context-packs/` — chapter/audit/de-AI context bundle templates.
 - `branches/` — alternate-history branch simulations and merge decisions.
+- `reports/` — generated validation, snapshot, and audit-support reports.
 - `writing-requests/` — self-contained chapter request packages.
 - `exports/` — intentional export outputs.
 
@@ -39,6 +40,11 @@
 - Branch merge decision: `branches/<branch-id>/merge-decision.md`
 - Lore card: `lore/<category>/<stable-slug>.md`
 - Source note: `lore/sources/<stable-slug>.md`
+- Timeline lint report: `reports/timeline-lint-report.md`
+- Lore index report: `reports/lore-index-report.md`
+- Geo lint report: `reports/geo-lint-report.md`
+- Project snapshot report: `reports/project-snapshot-YYYYMMDD-HHMMSS.md`
+- Manuscript export: `exports/manuscript.md`
 
 ## Metadata tags
 

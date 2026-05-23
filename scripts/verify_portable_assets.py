@@ -29,7 +29,19 @@ DEFAULT_CONFIG: dict[str, Any] = {
         "skill",
         "scripts",
     ],
-    "recommended_paths": ["canon", "bible", "writing-requests", "exports", "standards", "context-packs", "maps", "branches"],
+    "recommended_paths": [
+        "canon",
+        "bible",
+        "writing-requests",
+        "timelines",
+        "maps",
+        "lore",
+        "standards",
+        "context-packs",
+        "branches",
+        "reports",
+        "exports",
+    ],
     "draft_dir": "drafts",
     "readable_dir": "readable",
     "summary_dir": "summaries",
@@ -248,7 +260,7 @@ def add_historical_mode_warnings(root: Path, cfg: dict[str, Any], warnings: list
     if not isinstance(historical, dict) or not config_enabled(historical.get("enabled", False)):
         return
 
-    for key in ("timeline_dir", "map_dir", "lore_dir", "standards_dir", "context_pack_dir"):
+    for key in ("timeline_dir", "map_dir", "lore_dir", "standards_dir", "context_pack_dir", "branch_dir", "reports_dir"):
         rel = cfg.get(key)
         if rel and not (root / rel).exists():
             warnings.append(f"historical mode enabled but missing recommended path: {rel}")

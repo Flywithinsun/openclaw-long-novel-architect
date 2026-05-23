@@ -9,8 +9,10 @@
 ```bash
 mkdir my-novel-project
 cd my-novel-project
-mkdir workflow drafts readable summaries audits ledgers outlines characters canon writing-requests exports
+mkdir workflow drafts readable summaries audits ledgers outlines characters canon writing-requests timelines maps lore standards context-packs branches reports exports
 ```
+
+如果你暂时不写历史 / 架空历史小说，可以保留这些目录为空；它们只是推荐资产，不会强制你启用历史模式。
 
 ### 2. 复制模板
 
@@ -68,8 +70,10 @@ This guide creates a minimal long-novel project layout so OpenClaw can resume fr
 ```bash
 mkdir my-novel-project
 cd my-novel-project
-mkdir workflow drafts readable summaries audits ledgers outlines characters canon writing-requests exports
+mkdir workflow drafts readable summaries audits ledgers outlines characters canon writing-requests timelines maps lore standards context-packs branches reports exports
 ```
+
+If you are not writing historical / alternate-history fiction yet, these directories can stay empty; they are recommended assets and do not force historical mode on.
 
 ### 2. Copy templates
 

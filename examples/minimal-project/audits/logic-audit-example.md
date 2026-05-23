@@ -7,7 +7,8 @@
 - Historical period: 明末示例期
 - Place: 北京及周边州县
 - Related timeline events: @event:event-1644-03-19-li-zicheng-beijing
-- Related lore/source ids: @lore:lore-ming-salary-system, @source:source-example-ming-institution
+- Related lore id: @lore:lore-ming-salary-system
+- Related source id: @source:source-example-ming-institution
 
 ## Verdict
 
