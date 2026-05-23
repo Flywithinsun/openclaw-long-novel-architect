@@ -23,6 +23,7 @@
     "exports",
     "standards",
     "context-packs",
+    "maps",
     "branches"
   ],
   "draft_dir": "drafts",

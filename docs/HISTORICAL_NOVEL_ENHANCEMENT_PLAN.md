@@ -8,7 +8,7 @@
 
 ## 0. Immediate next step for the next AI session
 
-The next AI session should continue with **Phase P9 — Git writing, revision, snapshot, and export workflow**, unless the user asks for earlier-phase repairs. Phase P0, P1, P3, P4, P5, P6, and P10 partial have usable implementations.
+The next AI session should continue with **P10 closeout sync** or **Phase P7 — Historical data source adapter**, unless the user asks for earlier-phase repairs. Phase P0, P1, P2, P3, P4, P5, P6, P9, and P10 partial have usable implementations.
 
 ### First command to run
 
@@ -52,7 +52,7 @@ scripts/verify_portable_assets.py
 
 ### Do not do first
 
-Do **not** begin by integrating AutoGen, CBDB, Electron, Obsidian, Emacs, or any external AI provider. The next recommended phase is P9 Git snapshot and manuscript export workflow; keep P0 licensing and data-safety boundaries intact.
+Do **not** begin by integrating AutoGen, CBDB, Electron, Obsidian, Emacs, or any external AI provider. The next recommended phase is P10 closeout sync or P7 historical data adapter; keep P0 licensing and data-safety boundaries intact.
 
 ---
 
@@ -573,6 +573,10 @@ scripts/geo_lint.py
 - Example project has at least one route.
 - Chapter request template includes geography/logistics constraints.
 - Audit report template includes geography/logistics checks.
+
+### Current status
+
+First usable version complete. Added `skill/references/geo-logistics-workflow.md`, place/route/logistics templates, minimal project `maps/` examples, and `scripts/geo_lint.py`. Verified the minimal project map examples with zero errors and zero warnings.
 
 ---
 

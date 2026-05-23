@@ -10,14 +10,16 @@ Use only when the user clearly asks to start/write/generate a chapter.
 4. Check recent git if available.
 5. Load relevant outline, summary, audit, ledger, and continuity locks.
 6. If historical mode is enabled, load relevant timeline files: `timelines/real-history.md`, `timelines/alt-history.md`, and optional character/military/policy tracks.
-7. If lore tracking is enabled, load `lore/index.md` and relevant lore cards / source notes.
-8. If standards or context packs exist, load relevant `standards/` files and a chapter context pack.
-9. If the chapter proposes a major reform, war, technology, economy, logistics, geography, or social-order change, prepare a logic audit request before canon prose.
+7. If geography/logistics tracking is enabled, load `maps/places.md`, `maps/routes.md`, and relevant movement constraints.
+8. If lore tracking is enabled, load `lore/index.md` and relevant lore cards / source notes.
+9. If standards or context packs exist, load relevant `standards/` files and a chapter context pack.
+10. If the chapter proposes a major reform, war, technology, economy, logistics, geography, or social-order change, prepare a logic audit request before canon prose.
 
 ## Production path
 
 1. Create a self-contained request.
    - Include relevant timeline event ids and any expected alternate-history divergence.
+   - Include relevant place ids, route ids, travel-day constraints, and logistics risks.
    - Include required lore ids, source ids, and unresolved lore questions.
    - Include period-language constraints and forbidden modernisms.
    - Flag whether `logic_audit_required` is yes/no and why.
@@ -33,6 +35,7 @@ Use only when the user clearly asks to start/write/generate a chapter.
 7. Produce readable/de-AI candidate when required.
 8. Verify count and continuity.
    - When timeline files are present, run `scripts/timeline_lint.py`.
+   - When map/route files are present, run `scripts/geo_lint.py`.
    - When lore cards or metadata tags are present, run `scripts/lore_index.py`.
 9. Update state/work queue.
 10. Commit or record version status.

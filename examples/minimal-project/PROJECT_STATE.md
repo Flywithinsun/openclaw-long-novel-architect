@@ -15,6 +15,7 @@
 - Character directory: `characters/`
 - Ledger directory: `ledgers/`
 - Timeline directory: `timelines/`
+- Map/logistics directory: `maps/`
 - Lore directory: `lore/`
 - Standards directory: `standards/`
 - Context pack directory: `context-packs/`
@@ -27,6 +28,7 @@
 ## Historical / lore state
 
 - Timeline examples exist under `timelines/`.
+- Map and route examples exist under `maps/`.
 - Lore examples exist under `lore/`.
 - Style and period-language standards exist under `standards/`.
 - Logic audit examples exist under `audits/`.
@@ -37,6 +39,7 @@
 
 - Project has not started drafting yet.
 - Major historical changes should use the logic audit committee before canon.
+- Travel, campaign, supply, or courier movement should be checked against `maps/` route constraints before canon.
 - Alternate-history branch work is not canon until a merge decision is accepted.
 
 ## Next OpenClaw instruction

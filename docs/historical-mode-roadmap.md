@@ -48,7 +48,7 @@ Historical mode is for projects that need:
 |---|---|---|
 | P0 | Licensing, safety, and scope boundary | Completed: third-party inspiration doc, roadmap, safe packaging exclusions |
 | P1 | Dual-axis historical timeline | Completed first version: real-history and alt-history timelines, event templates, timeline linter |
-| P2 | Geography and logistics | Place cards, routes, movement checks |
+| P2 | Geography and logistics | Completed first version: maps examples, place/route/logistics templates, geo-logistics workflow, and geo linter |
 | P3 | Lore metadata and cross-reference system | Completed first version: lore cards, source notes, index script, metadata tags |
 | P4 | Context layers and period-language controls | Completed first version: standards files, context packs, workflow references |
 | P5 | Historical logic audit committee | Completed first version: logic audit workflow, request/report templates, and minimal-project example |
@@ -98,13 +98,13 @@ If another AI takes over this repository:
 1. Read `README.md`.
 2. Read `AI_NEXT_STEPS.md`.
 3. Read this roadmap.
-4. P1, P3, P4, P5, P6, and P9 first versions are complete; continue with P10 closeout sync or P2 geography/logistics unless the user asks for repairs.
+4. P1, P2, P3, P4, P5, P6, and P9 first versions are complete; continue with P10 closeout sync or P7 historical data adapter unless the user asks for repairs.
 5. Keep historical datasets external unless the user explicitly requests otherwise.
 6. Keep GPL projects concept-only.
 7. Do not start with provider integration or GUI work.
 
 ## Current stop point / 当前停点
 
-The repository has completed P0, P1, P3, P4, P5, P6, P9, and P10 partial. The next recommended phase is P10 closeout sync or P2 geography/logistics.
+The repository has completed P0, P1, P2, P3, P4, P5, P6, P9, and P10 partial. The next recommended phase is P10 closeout sync or P7 historical data adapter.
 
-当前仓库已完成 P0、P1、P3、P4、P5、P6、P9，以及 P10 partial。下一推荐阶段是 P10 收口同步，或 P2：地理 / 地图 / 后勤约束。
+当前仓库已完成 P0、P1、P2、P3、P4、P5、P6、P9，以及 P10 partial。下一推荐阶段是 P10 收口同步，或 P7：历史数据适配器。

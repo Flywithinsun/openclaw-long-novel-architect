@@ -20,9 +20,9 @@ docs/historical-mode-roadmap.md
 docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 ```
 
-当前状态：**P9：Git 快照与手稿导出工作流已完成首版**。P1/P3/P4/P5/P6/P9/P10 partial 已完成可用版本，下一步按路线图继续 P10 收口或进入 P2 地理 / 地图 / 后勤约束。
+当前状态：**P2：地理 / 地图 / 后勤约束已完成首版**。P1/P2/P3/P4/P5/P6/P9/P10 partial 已完成可用版本，下一步按路线图继续 P10 收口或进入 P7 历史数据适配器。
 
-当前路线图顺序是 P1 → P3 → P4 → P10 partial → P5 → P6。不要先集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何外部模型 provider；历史数据适配器仍应保持用户本地自备、默认不打包。
+当前路线图顺序已推进到 P1 → P3 → P4 → P10 partial → P5 → P6 → P9 → P2。不要先集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何外部模型 provider；历史数据适配器仍应保持用户本地自备、默认不打包。
 
 历史模式路线图见：[`docs/historical-mode-roadmap.md`](docs/historical-mode-roadmap.md)<br>
 第三方灵感与许可证边界见：[`docs/third-party-inspiration.md`](docs/third-party-inspiration.md)<br>
@@ -36,6 +36,7 @@ docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 |---|---|---|
 | P0：许可、安全与范围边界 | 已完成 | 已建立第三方灵感 / GPL 边界、CBDB 与外部数据不打包规则、`external-data/` 与数据库文件排除、路线图与 README 指针。 |
 | P1：双轴历史时间线 | 已完成首版 | 已建立真实历史与架空历史时间线目录、事件模板、时间线工作流和 `scripts/timeline_lint.py`。 |
+| P2：地理 / 地图 / 后勤约束 | 已完成首版 | 已建立 maps 示例、地点/路线/后勤模板、地理后勤工作流和 `scripts/geo_lint.py`。 |
 | P3：Lore 元数据与交叉引用 | 已完成首版 | 已建立 lore 工作流、卡片模板、来源模板、minimal project 示例卡片和 `scripts/lore_index.py`。 |
 | P4：上下文层与时代语言控制 | 已完成首版 | 已建立 standards、context-packs、上下文层工作流与 de-AI 规则引用。 |
 | P5：历史逻辑审计委员会 | 已完成首版 | 已加入逻辑审计工作流、请求/报告模板、示例审计和章节审计接入说明。 |
@@ -86,6 +87,20 @@ reports/lore-index-report.md
 
 Lore 卡片使用 `- id: lore-...` 元数据，并可在正文、摘要、审计、账本中使用 `@lore:`、`@source:`、`@event:`、`@chapter:` 等标签交叉引用。
 
+#### P2 地理 / 后勤检查
+
+```bash
+python3 scripts/geo_lint.py --project-root . --config novel-architect.config.json --write-report
+```
+
+检查报告默认写入：
+
+```text
+reports/geo-lint-report.md
+```
+
+地点使用 `maps/places.md`，路线使用 `maps/routes.md`，用于约束行军、运输、通信、补给和人物移动。
+
 #### P9 快照与手稿导出
 
 生成项目快照报告：
@@ -126,12 +141,12 @@ exports/release/volume-01.md
 
 | 项目 | 当前值 |
 |---|---|
-| 记录时间 | 2026-05-23 21:50:00 +08 |
-| 当前阶段 | P9：Git 快照与手稿导出工作流已完成首版 |
+| 记录时间 | 2026-05-23 22:06:00 +08 |
+| 当前阶段 | P2：地理 / 地图 / 后勤约束已完成首版 |
 | P0 状态 | 已完成 |
-| 下一步 | P10 收口同步，或继续 P2：地理 / 地图 / 后勤约束 |
-| 最近一次 Git 同步本地时间 | 2026-05-23 21:35 +08 |
-| 当前状态 | P1/P3/P4/P5/P6/P9/P10 partial 已可用；P6 已通过 branch_status，P9 已通过 export_manuscript、project_snapshot 与 minimal-project 资产验证演练 |
+| 下一步 | P10 收口同步，或继续 P7：历史数据适配器 |
+| 最近一次 Git 同步本地时间 | 2026-05-23 21:54 +08 |
+| 当前状态 | P1/P2/P3/P4/P5/P6/P9/P10 partial 已可用；P2 已通过 geo_lint 与 minimal-project 资产验证，本次提交用于同步 GitHub |
 
 #### 下次更新格式
 
@@ -190,6 +205,7 @@ openclaw-long-novel-architect/
 │   │   ├── project-map.md
 │   │   ├── chapter-workflow.md
 │   │   ├── timeline-workflow.md
+│   │   ├── geo-logistics-workflow.md
 │   │   ├── lore-metadata-workflow.md
 │   │   ├── context-layer-workflow.md
 │   │   ├── deai-workflow.md
@@ -207,6 +223,9 @@ openclaw-long-novel-architect/
 │       ├── chapter-request-template.md
 │       ├── timeline-event-template.md
 │       ├── timeline-audit-template.md
+│       ├── place-card-template.md
+│       ├── route-template.md
+│       ├── logistics-check-template.md
 │       ├── lore-card-template.md
 │       ├── source-note-template.md
 │       ├── context-pack-template.md
@@ -229,6 +248,7 @@ openclaw-long-novel-architect/
 │   ├── package_portable_assets.py
 │   ├── verify_portable_assets.py
 │   ├── timeline_lint.py
+│   ├── geo_lint.py
 │   ├── lore_index.py
 │   ├── branch_status.py
 │   ├── export_manuscript.py
@@ -389,6 +409,7 @@ ledgers/
 outlines/
 characters/
 canon/ 或 bible/
+maps/
 skill/
 scripts/
 ```

@@ -1,0 +1,10 @@
+[
+  {
+    "id": "geo-example-tongzhou-beijing-supply",
+    "chapter": "ch050",
+    "route": "route-tongzhou-beijing",
+    "movement_type": "supply",
+    "claimed_duration_days": 1,
+    "notes": "Example only; replace with project-specific logistics evidence before canon use."
+  }
+]

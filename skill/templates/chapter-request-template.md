@@ -20,6 +20,8 @@ You are continuing a long-form novel project from explicit files. Do not rely on
 - Relevant alternate-history events:
 - Required lore:
 - Required sources:
+- Required places/routes:
+- Geography/logistics constraints:
 - Timeline divergence risk:
 
 ## This chapter must accomplish
