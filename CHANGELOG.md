@@ -15,6 +15,7 @@
 - 新增 P3 lore 元数据系统：`lore-metadata-workflow.md`、lore 卡片模板、来源笔记模板、minimal project 示例 lore 卡和分类目录。
 - 新增 `scripts/lore_index.py`，无外部依赖检查 lore id、必填字段、重复 id、元数据标签和可判断的缺失 lore 引用，并可写出 `reports/lore-index-report.md`。
 - 新增 P4 上下文层与时代语言控制首版：context-layer 工作流、context/style 模板、minimal project standards 与 context-packs 示例。
+- 开始 P10 partial 收口：standards / context-packs 已纳入推荐资产、验证脚本与打包脚本默认配置。
 
 ### English
 
@@ -29,6 +30,7 @@
 - Added the P3 lore metadata system: `lore-metadata-workflow.md`, lore card template, source note template, minimal project sample lore card, and category folders.
 - Added `scripts/lore_index.py` with no external dependencies to validate lore ids, required fields, duplicate ids, metadata tags, and detectable missing lore references, with optional `reports/lore-index-report.md` output.
 - Added the first P4 context-layer and period-language controls: context-layer workflow, context/style templates, minimal project standards, and context-pack examples.
+- Started P10 partial polish: standards / context-packs are now part of recommended assets and default verification/packaging configuration.
 
 ## v0.3.0 - OpenClaw Public Onboarding Pack
 

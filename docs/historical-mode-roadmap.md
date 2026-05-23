@@ -56,7 +56,7 @@ Historical mode is for projects that need:
 | P7 | Historical data adapter | Optional local data sources such as SQLite / CSV / JSON |
 | P8 | Org mode outline export | Optional outline export for large projects |
 | P9 | Git writing, revision, snapshot, and export workflow | Snapshot/export scripts and release handling |
-| P10 | Verification, packaging, README, and example sync | Docs, examples, scripts, and release polish |
+| P10 | Verification, packaging, README, and example sync | Partial in progress: P1/P3/P4 verification, packaging roots, README sync |
 
 ## First MVP scope / 最小可交付范围
 
@@ -105,6 +105,6 @@ If another AI takes over this repository:
 
 ## Current stop point / 当前停点
 
-The repository has completed P0, P1, P3, and the first usable P4 context-layer system. The recommended next phase is P10 partial verification/package/README sync.
+The repository has completed P0, P1, P3, and the first usable P4 context-layer system. P10 partial verification/package/README sync is in progress.
 
-当前仓库已完成 P0、P1、P3，以及 P4 上下文层系统首个可用版本。建议下一阶段推进 P10 partial：验证、打包与 README 同步。
+当前仓库已完成 P0、P1、P3，以及 P4 上下文层系统首个可用版本。P10 partial：验证、打包与 README 同步正在进行。

@@ -19,7 +19,9 @@
     "writing-requests",
     "exports",
     "skill",
-    "scripts"
+    "scripts",
+    "standards",
+    "context-packs"
   ],
   "draft_dir": "drafts",
   "readable_dir": "readable",

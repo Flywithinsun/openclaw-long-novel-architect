@@ -20,7 +20,9 @@
     "canon",
     "bible",
     "writing-requests",
-    "exports"
+    "exports",
+    "standards",
+    "context-packs"
   ],
   "draft_dir": "drafts",
   "readable_dir": "readable",

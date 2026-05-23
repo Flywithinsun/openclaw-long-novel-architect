@@ -29,7 +29,7 @@ DEFAULT_CONFIG: dict[str, Any] = {
         "skill",
         "scripts",
     ],
-    "recommended_paths": ["canon", "bible", "writing-requests", "exports"],
+    "recommended_paths": ["canon", "bible", "writing-requests", "exports", "standards", "context-packs"],
     "exclude_dirs": [
         ".git",
         ".secrets",

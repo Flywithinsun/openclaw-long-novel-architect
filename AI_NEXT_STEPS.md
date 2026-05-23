@@ -32,9 +32,9 @@ Upgrade `openclaw-long-novel-architect` from a general long-novel OpenClaw workf
 
 ## Start with this phase / 从这一阶段开始
 
-P1, P3, and P4 have first usable implementations. Continue with **P10 partial — verification/package/README sync**, unless the user asks for P1/P3/P4 fixes.
+P1, P3, and P4 have first usable implementations. **P10 partial — verification/package/README sync is in progress**; continue it unless the user asks for P1/P3/P4 fixes.
 
-**P1、P3、P4**已有首个可用实现。除非用户要求修补 P1/P3/P4，否则继续做 **P10 partial：验证、打包与 README 同步**。
+**P1、P3、P4**已有首个可用实现。**P10 partial：验证、打包与 README 同步正在进行**；除非用户要求修补 P1/P3/P4，否则继续收口 P10 partial。
 
 P0 licensing / safety / scope boundary is complete, and P1/P3/P4 basics are implemented. Do not start with AutoGen, CBDB, Electron, Obsidian, Emacs, or model-provider integrations.
 
