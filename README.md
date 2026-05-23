@@ -20,7 +20,7 @@ docs/historical-mode-roadmap.md
 docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 ```
 
-当前状态：**P6：蝴蝶效应分支模拟已完成首版**。P1/P3/P4/P5/P6/P10 partial 已完成可用版本，下一步按路线图进入 P9 Git 快照与手稿导出工作流。
+当前状态：**P9：Git 快照与手稿导出工作流已完成首版**。P1/P3/P4/P5/P6/P9/P10 partial 已完成可用版本，下一步按路线图继续 P10 收口或进入 P2 地理 / 地图 / 后勤约束。
 
 当前路线图顺序是 P1 → P3 → P4 → P10 partial → P5 → P6。不要先集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何外部模型 provider；历史数据适配器仍应保持用户本地自备、默认不打包。
 
@@ -40,6 +40,7 @@ docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 | P4：上下文层与时代语言控制 | 已完成首版 | 已建立 standards、context-packs、上下文层工作流与 de-AI 规则引用。 |
 | P5：历史逻辑审计委员会 | 已完成首版 | 已加入逻辑审计工作流、请求/报告模板、示例审计和章节审计接入说明。 |
 | P6：蝴蝶效应分支模拟 | 已完成首版 | 已加入 branch simulation 工作流、分支模板、示例分支和 `scripts/branch_status.py`。 |
+| P9：Git 快照与手稿导出 | 已完成首版 | 已加入 versioning/export 工作流、修订分支与发布说明模板、`scripts/project_snapshot.py` 和 `scripts/export_manuscript.py`。 |
 
 #### P1 交付物
 
@@ -85,6 +86,34 @@ reports/lore-index-report.md
 
 Lore 卡片使用 `- id: lore-...` 元数据，并可在正文、摘要、审计、账本中使用 `@lore:`、`@source:`、`@event:`、`@chapter:` 等标签交叉引用。
 
+#### P9 快照与手稿导出
+
+生成项目快照报告：
+
+```bash
+python3 scripts/project_snapshot.py --project-root . --config novel-architect.config.json --write-report
+```
+
+默认写入：
+
+```text
+reports/project-snapshot-YYYYMMDD-HHMMSS.md
+```
+
+从 `readable/` 章节生成手稿：
+
+```bash
+python3 scripts/export_manuscript.py --project-root . --config novel-architect.config.json --write-release
+```
+
+默认写入：
+
+```text
+exports/manuscript.md
+exports/manuscript.txt
+exports/release/volume-01.md
+```
+
 ### 长期规则与进度记录
 
 1. 本 README 以后只保留中文说明；只有文件名、命令、路径、代码块、参数名、链接锚点等必要内容可以保留原样。
@@ -97,12 +126,12 @@ Lore 卡片使用 `- id: lore-...` 元数据，并可在正文、摘要、审计
 
 | 项目 | 当前值 |
 |---|---|
-| 记录时间 | 2026-05-23 21:15:00 +08 |
-| 当前阶段 | P6：蝴蝶效应分支模拟已完成首版 |
+| 记录时间 | 2026-05-23 21:50:00 +08 |
+| 当前阶段 | P9：Git 快照与手稿导出工作流已完成首版 |
 | P0 状态 | 已完成 |
-| 下一步 | 进入 P9：Git 快照与手稿导出工作流 |
+| 下一步 | P10 收口同步，或继续 P2：地理 / 地图 / 后勤约束 |
 | 最近一次 Git 同步本地时间 | 2026-05-23 21:35 +08 |
-| 当前状态 | P1/P3/P4/P5/P6/P10 partial 已提交并同步准备中；P6 已通过 branch_status、资产验证与打包 manifest 检查 |
+| 当前状态 | P1/P3/P4/P5/P6/P9/P10 partial 已可用；P6 已通过 branch_status，P9 已通过 export_manuscript、project_snapshot 与 minimal-project 资产验证演练 |
 
 #### 下次更新格式
 
@@ -167,6 +196,8 @@ openclaw-long-novel-architect/
 │   │   ├── audit-workflow.md
 │   │   ├── logic-audit-committee.md
 │   │   ├── branch-simulation-workflow.md
+│   │   ├── versioning-workflow.md
+│   │   ├── export-workflow.md
 │   │   ├── model-routing.md
 │   │   ├── closeout-checklist.md
 │   │   ├── asset-package.md
@@ -187,6 +218,8 @@ openclaw-long-novel-architect/
 │       ├── branch-state-template.md
 │       ├── divergence-point-template.md
 │       ├── branch-merge-decision-template.md
+│       ├── revision-branch-template.md
+│       ├── release-note-template.md
 │       ├── completion-report-template.md
 │       ├── project-state-template.md
 │       ├── work-queue-template.md
@@ -198,6 +231,8 @@ openclaw-long-novel-architect/
 │   ├── timeline_lint.py
 │   ├── lore_index.py
 │   ├── branch_status.py
+│   ├── export_manuscript.py
+│   ├── project_snapshot.py
 │   └── github_private_sync.py
 ├── examples/
 │   ├── project-config.example.json

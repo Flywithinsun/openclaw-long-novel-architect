@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased - Historical Mode P1/P3/P4/P5/P6 Timeline, Lore, Context, Logic Audit, and Branch Simulation
+## Unreleased - Historical Mode P1/P3/P4/P5/P6/P9 Timeline, Lore, Context, Logic Audit, Branch Simulation, Snapshot, and Export
 
 ### 中文
 
@@ -19,6 +19,7 @@
 - 补充 minimal project 的 `exports/` 占位目录，并为 `reports/` 增加忽略规则，避免验证演练产物污染模板工作区。
 - 新增 P5 历史逻辑审计委员会首版：逻辑审计工作流、请求/报告模板、minimal project 示例审计文件，以及章节工作流的高影响变化接入说明。
 - 新增 P6 蝴蝶效应分支模拟首版：branch simulation 工作流、分支状态/分歧点/合并决策模板、minimal project 示例分支、`scripts/branch_status.py`，并把 `branches/` 纳入推荐资产与打包/验证规则。
+- 新增 P9 Git 快照与手稿导出首版：versioning/export 工作流、修订分支模板、发布说明模板、`scripts/project_snapshot.py` 和 `scripts/export_manuscript.py`。
 
 ### English
 
@@ -37,6 +38,7 @@
 - Added a minimal-project `exports/` placeholder and a `reports/` ignore rule so verification runs do not pollute the template workspace.
 - Added the first P5 historical logic audit committee slice: logic audit workflow, request/report templates, a minimal-project example audit, and chapter-workflow integration notes for high-impact changes.
 - Added the first P6 butterfly-effect branch simulation slice: branch simulation workflow, branch state/divergence/merge-decision templates, a minimal-project example branch, `scripts/branch_status.py`, and `branches/` in recommended verification/packaging assets.
+- Added the first P9 Git snapshot and manuscript export slice: versioning/export workflows, revision branch and release note templates, `scripts/project_snapshot.py`, and `scripts/export_manuscript.py`.
 
 ## v0.3.0 - OpenClaw Public Onboarding Pack
 

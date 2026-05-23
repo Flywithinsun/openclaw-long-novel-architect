@@ -11,6 +11,8 @@ Before reporting completion, verify configured equivalents of:
 - verification passed or blocker recorded;
 - state/work queue updated;
 - branch impact recorded if a chapter creates or changes an alternate-history divergence;
+- project snapshot written or explicitly skipped/blocked;
+- manuscript export updated if this is a release or volume stop point;
 - git status/commit recorded;
 - private GitHub sync passed, skipped by instruction, or failed with blocker recorded.
 

@@ -32,9 +32,9 @@ Upgrade `openclaw-long-novel-architect` from a general long-novel OpenClaw workf
 
 ## Start with this phase / 从这一阶段开始
 
-P1, P3, P4, P5, P6, and P10 partial have first usable implementations. **P9 Git snapshot and manuscript export workflow is the next phase**; continue it unless the user asks for repairs.
+P1, P3, P4, P5, P6, P9, and P10 partial have first usable implementations. Continue with **P10 closeout sync** or **P2 geography/logistics** unless the user asks for repairs.
 
-**P1、P3、P4、P5、P6、P10 partial**已有可用实现。**P9 Git 快照与手稿导出工作流**是下一阶段；除非用户要求修补既有阶段，否则继续 P9。
+**P1、P3、P4、P5、P6、P9、P10 partial**已有可用实现。除非用户要求修补既有阶段，否则继续 **P10 收口同步** 或 **P2 地理 / 后勤约束**。
 
 P0 licensing / safety / scope boundary is complete, and P1/P3/P4 basics are implemented. Do not start with AutoGen, CBDB, Electron, Obsidian, Emacs, or model-provider integrations.
 
