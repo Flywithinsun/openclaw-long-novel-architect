@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased - Historical Mode P0 Groundwork
+## Unreleased - Historical Mode P1 Timeline
 
 ### 中文
 
@@ -9,6 +9,9 @@
 - 增强验证脚本：在历史模式启用时提示时间线 / lore / 标准目录缺失，并警告包内路径下的本地数据库文件。
 - 同步 README、发布检查清单与脱敏报告，强调历史数据适配器应保持轻量、可选、用户本地自备。
 - 补齐 P0 完成记录与 P1 下一步交接说明，README、`AI_NEXT_STEPS.md` 和路线图不再提示从 P0 开始。
+- 新增 P1 双轴历史时间线系统：`timeline-workflow.md`、时间线事件模板、时间线审计模板、minimal project 示例时间线。
+- 新增 `scripts/timeline_lint.py`，无外部依赖检查事件 id、日期、历法、轨道、可信度、真实历史来源、架空历史章节关联和重复 id，并可写出 `reports/timeline-lint-report.md`。
+- 更新章节请求模板、章节工作流和审计工作流，要求历史模式下读取相关时间线并记录分歧后果。
 
 ### English
 
@@ -17,6 +20,9 @@
 - Enhanced verification: warn when historical mode is enabled but timeline / lore / standards paths are missing, and warn about local database files under package roots.
 - Synced README, release checklist, and sanitization guidance to keep historical data adapters lightweight, optional, and user-provided.
 - Added the P0 completion record and P1 next-step handoff so README, `AI_NEXT_STEPS.md`, and the roadmap no longer tell new sessions to start from P0.
+- Added the P1 dual-axis historical timeline system: `timeline-workflow.md`, timeline event template, timeline audit template, and minimal project timeline examples.
+- Added `scripts/timeline_lint.py` with no external dependencies to validate event ids, dates, calendars, tracks, confidence values, real-history sources, alternate-history chapter links, and duplicate ids, with optional `reports/timeline-lint-report.md` output.
+- Updated the chapter request template, chapter workflow, and audit workflow to load relevant timelines and record divergence consequences in historical mode.
 
 ## v0.3.0 - OpenClaw Public Onboarding Pack
 

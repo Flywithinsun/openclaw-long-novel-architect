@@ -16,6 +16,9 @@ You are continuing a long-form novel project from explicit files. Do not rely on
 - Recent audit lock:
 - Outline node:
 - Character/name/object locks:
+- Relevant real-history events:
+- Relevant alternate-history events:
+- Timeline divergence risk:
 
 ## This chapter must accomplish
 
@@ -33,6 +36,7 @@ You are continuing a long-form novel project from explicit files. Do not rely on
 - No cost-free solution.
 - No side material directly into canon.
 - No empty procedural stalling.
+- No unreviewed timeline divergence.
 - No automatic next chapter.
 
 ## Required files
@@ -46,4 +50,6 @@ You are continuing a long-form novel project from explicit files. Do not rely on
 ...
 === FILE: ledgers/chNNN-update-suggestions.md ===
 ...
+=== FILE: ledgers/chNNN-timeline-updates.md ===
+... (only if timeline events changed or should be proposed)
 ```

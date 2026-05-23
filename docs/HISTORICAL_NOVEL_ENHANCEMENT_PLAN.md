@@ -8,7 +8,7 @@
 
 ## 0. Immediate next step for the next AI session
 
-The next AI session should start with **Phase P1 — Dual-axis historical timeline system**. Phase P0 is complete.
+The next AI session should continue with **Phase P3 — Lore metadata and cross-reference system**, unless the user asks for P1 repairs. Phase P0 is complete, and Phase P1 has a first usable implementation.
 
 ### First command to run
 
@@ -28,9 +28,9 @@ examples/project-config.example.json
 examples/minimal-project/novel-architect.config.json
 ```
 
-### First implementation target
+### Current implementation target
 
-Create the dual-axis timeline workflow, templates, examples, and linter:
+P1 has already created the dual-axis timeline workflow, templates, examples, and linter:
 
 ```text
 skill/references/timeline-workflow.md
@@ -42,7 +42,7 @@ examples/minimal-project/timelines/alt-history.md
 scripts/timeline_lint.py
 ```
 
-Keep the P1 implementation aligned with:
+Keep any P1 repairs aligned with:
 
 ```text
 README.md
@@ -52,7 +52,7 @@ scripts/verify_portable_assets.py
 
 ### Do not do first
 
-Do **not** begin by integrating AutoGen, CBDB, Electron, Obsidian, Emacs, or any external AI provider. The correct next step is the Markdown-first timeline system; keep P0 licensing and data-safety boundaries intact.
+Do **not** begin by integrating AutoGen, CBDB, Electron, Obsidian, Emacs, or any external AI provider. The next recommended phase is the Markdown-first lore metadata and cross-reference system; keep P0 licensing and data-safety boundaries intact.
 
 ---
 
@@ -487,6 +487,10 @@ ledgers/chNNN-timeline-updates.md
 - README explains the timeline workflow.
 - Chapter request template references relevant timeline events.
 - Audit workflow checks timeline consistency.
+
+### Current status
+
+First usable version complete. Added `skill/references/timeline-workflow.md`, timeline templates, minimal project examples, and `scripts/timeline_lint.py`. Verified the minimal project timeline examples with zero errors and zero warnings.
 
 ---
 

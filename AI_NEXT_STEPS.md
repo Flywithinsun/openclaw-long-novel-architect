@@ -32,13 +32,13 @@ Upgrade `openclaw-long-novel-architect` from a general long-novel OpenClaw workf
 
 ## Start with this phase / 从这一阶段开始
 
-Start with **P1 — Dual-axis historical timeline system**.
+P1 — Dual-axis historical timeline system has a first usable implementation. Continue with **P3 — Lore metadata and cross-reference system**, unless the user asks for P1 fixes.
 
-先做 **P1：双轴历史时间线系统**。
+**P1：双轴历史时间线系统**已有首个可用实现。除非用户要求修补 P1，否则继续做 **P3：Lore 元数据与交叉引用系统**。
 
-P0 licensing / safety / scope boundary is complete. Do not start with AutoGen, CBDB, Electron, Obsidian, Emacs, or model-provider integrations.
+P0 licensing / safety / scope boundary is complete, and P1 timeline basics are implemented. Do not start with AutoGen, CBDB, Electron, Obsidian, Emacs, or model-provider integrations.
 
-P0 许可 / 安全 / 范围边界已经完成。不要一上来就集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何模型 provider。
+P0 许可 / 安全 / 范围边界已经完成，P1 时间线基础也已实现。不要一上来就集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何模型 provider。
 
 ---
 
@@ -80,7 +80,37 @@ Completed P0 scope:
 
 ---
 
-## P1 implementation checklist / P1 实施清单
+## P1 completion record / P1 完成记录
+
+Status: **first usable version complete**.
+
+状态：**首个可用版本已完成**。
+
+Completed P1 scope:
+
+- added `skill/references/timeline-workflow.md`;
+- added timeline event and audit templates;
+- added minimal project timeline examples for `real_history` and `alt_history`;
+- added `scripts/timeline_lint.py` with no external dependencies;
+- validates event id, date, calendar, track, confidence, source, related chapters, required fields, and duplicate ids;
+- can write `reports/timeline-lint-report.md`;
+- updated chapter workflow, audit workflow, README, roadmap, and changelog;
+- kept old non-historical projects working.
+
+已完成的 P1 范围：
+
+- 新增 `skill/references/timeline-workflow.md`；
+- 新增时间线事件模板与审计模板；
+- 新增 minimal project 的 `real_history` 与 `alt_history` 示例时间线；
+- 新增无外部依赖的 `scripts/timeline_lint.py`；
+- 可检查事件 id、日期、历法、轨道、可信度、来源、关联章节、必填字段与重复 id；
+- 可写出 `reports/timeline-lint-report.md`；
+- 已更新章节工作流、审计工作流、README、路线图与 changelog；
+- 旧的非历史项目仍可工作。
+
+---
+
+## Previous P1 implementation checklist / 既往 P1 实施清单
 
 Create:
 
