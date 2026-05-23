@@ -38,12 +38,16 @@ DEFAULT_CONFIG: dict[str, Any] = {
         "outbox",
         "archive",
         "backups",
+        "external-data",
         "node_modules",
         "__pycache__",
     ],
     "exclude_patterns": [
+        "*.db",
         "*.pyc",
         "*.pyo",
+        "*.sqlite",
+        "*.sqlite3",
         "*.zip",
         "*.tar",
         "*.tar.gz",
@@ -63,6 +67,12 @@ def load_config(path: str | None) -> dict[str, Any]:
         p = Path(path).expanduser()
         data = json.loads(p.read_text(encoding="utf-8"))
         cfg.update(data)
+        for key in ("exclude_dirs", "exclude_patterns"):
+            merged = list(DEFAULT_CONFIG.get(key, []))
+            for item in data.get(key, []):
+                if item not in merged:
+                    merged.append(item)
+            cfg[key] = merged
     return cfg
 
 

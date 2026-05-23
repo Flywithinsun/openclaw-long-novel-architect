@@ -27,7 +27,56 @@
   "summary_dir": "summaries",
   "audit_dir": "audits",
   "ledger_dir": "ledgers",
+  "timeline_dir": "timelines",
+  "map_dir": "maps",
+  "lore_dir": "lore",
+  "standards_dir": "standards",
+  "context_pack_dir": "context-packs",
+  "branch_dir": "branches",
+  "reports_dir": "reports",
+  "external_data_dir": "external-data",
+  "exports_dir": "exports",
   "github_sync_config": "github-sync.config.json",
+  "historical_mode": {
+    "enabled": false,
+    "primary_calendar": "CE",
+    "allow_bce": true,
+    "date_precision": [
+      "year",
+      "month",
+      "day"
+    ],
+    "require_source_for_real_history": true,
+    "require_chapter_link_for_alt_events": true
+  },
+  "timeline_rules": {
+    "event_id_required": true,
+    "allowed_tracks": [
+      "real_history",
+      "alt_history",
+      "character",
+      "military",
+      "policy",
+      "economy",
+      "technology",
+      "local"
+    ],
+    "allowed_confidence": [
+      "confirmed",
+      "probable",
+      "fictional",
+      "unknown"
+    ]
+  },
+  "metadata_tags": {
+    "characters": "@char",
+    "places": "@place",
+    "lore": "@lore",
+    "events": "@event",
+    "sources": "@source",
+    "chapters": "@chapter"
+  },
+  "historical_data_sources": [],
   "exclude_dirs": [
     ".git",
     ".secrets",
@@ -36,12 +85,16 @@
     "outbox",
     "archive",
     "backups",
+    "external-data",
     "node_modules",
     "__pycache__"
   ],
   "exclude_patterns": [
+    "*.db",
     "*.pyc",
     "*.pyo",
+    "*.sqlite",
+    "*.sqlite3",
     "*.zip",
     "*.tar",
     "*.tar.gz",
