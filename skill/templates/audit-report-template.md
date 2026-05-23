@@ -11,6 +11,7 @@ PASS / PASS_WITH_WARNINGS / FAIL_NEEDS_REPAIR
 - Character consistency:
 - World logic:
 - Logic audit required/passed/blocked/overridden:
+- Branch simulation impact / merge decision:
 - Timeline consistency:
 - Lore/source consistency:
 - External/antagonist adaptation:
@@ -31,3 +32,4 @@ PASS / PASS_WITH_WARNINGS / FAIL_NEEDS_REPAIR
 - Beats to compress:
 - Request-package rules:
 - Required logic audits before next prose:
+- Required branch decisions before next prose:

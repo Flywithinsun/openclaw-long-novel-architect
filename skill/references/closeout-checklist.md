@@ -10,6 +10,7 @@ Before reporting completion, verify configured equivalents of:
 - local count completed;
 - verification passed or blocker recorded;
 - state/work queue updated;
+- branch impact recorded if a chapter creates or changes an alternate-history divergence;
 - git status/commit recorded;
 - private GitHub sync passed, skipped by instruction, or failed with blocker recorded.
 

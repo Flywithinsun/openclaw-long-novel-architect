@@ -20,9 +20,9 @@ docs/historical-mode-roadmap.md
 docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 ```
 
-当前状态：**P5：历史逻辑审计委员会进行中**。P1/P3/P4/P10 partial 已完成可用版本，当前加入多角色历史合理性审计工作流。
+当前状态：**P6：蝴蝶效应分支模拟已完成首版**。P1/P3/P4/P5/P6/P10 partial 已完成可用版本，下一步按路线图进入 P9 Git 快照与手稿导出工作流。
 
-当前路线图顺序是 P1 → P3 → P4 → P10 partial → P5。不要先集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何外部模型 provider；历史数据适配器仍应保持用户本地自备、默认不打包。
+当前路线图顺序是 P1 → P3 → P4 → P10 partial → P5 → P6。不要先集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何外部模型 provider；历史数据适配器仍应保持用户本地自备、默认不打包。
 
 历史模式路线图见：[`docs/historical-mode-roadmap.md`](docs/historical-mode-roadmap.md)<br>
 第三方灵感与许可证边界见：[`docs/third-party-inspiration.md`](docs/third-party-inspiration.md)<br>
@@ -38,7 +38,8 @@ docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 | P1：双轴历史时间线 | 已完成首版 | 已建立真实历史与架空历史时间线目录、事件模板、时间线工作流和 `scripts/timeline_lint.py`。 |
 | P3：Lore 元数据与交叉引用 | 已完成首版 | 已建立 lore 工作流、卡片模板、来源模板、minimal project 示例卡片和 `scripts/lore_index.py`。 |
 | P4：上下文层与时代语言控制 | 已完成首版 | 已建立 standards、context-packs、上下文层工作流与 de-AI 规则引用。 |
-| P5：历史逻辑审计委员会 | 进行中 | 已加入逻辑审计工作流、请求/报告模板、示例审计和章节审计接入说明。 |
+| P5：历史逻辑审计委员会 | 已完成首版 | 已加入逻辑审计工作流、请求/报告模板、示例审计和章节审计接入说明。 |
+| P6：蝴蝶效应分支模拟 | 已完成首版 | 已加入 branch simulation 工作流、分支模板、示例分支和 `scripts/branch_status.py`。 |
 
 #### P1 交付物
 
@@ -97,11 +98,11 @@ Lore 卡片使用 `- id: lore-...` 元数据，并可在正文、摘要、审计
 | 项目 | 当前值 |
 |---|---|
 | 记录时间 | 2026-05-23 21:15:00 +08 |
-| 当前阶段 | P5：历史逻辑审计委员会 |
+| 当前阶段 | P6：蝴蝶效应分支模拟已完成首版 |
 | P0 状态 | 已完成 |
-| 下一步 | 继续完善逻辑审计流程与示例，验证 P5 工作流 |
-| 最近一次 Git 同步本地时间 | 2026-05-23 21:29 +08 |
-| 当前状态 | P1/P3/P4/P10 partial 已提交并同步；P5 资产已加入工作区，准备继续完善审计流程 |
+| 下一步 | 进入 P9：Git 快照与手稿导出工作流 |
+| 最近一次 Git 同步本地时间 | 2026-05-23 21:35 +08 |
+| 当前状态 | P1/P3/P4/P5/P6/P10 partial 已提交并同步准备中；P6 已通过 branch_status、资产验证与打包 manifest 检查 |
 
 #### 下次更新格式
 
@@ -165,6 +166,7 @@ openclaw-long-novel-architect/
 │   │   ├── deai-workflow.md
 │   │   ├── audit-workflow.md
 │   │   ├── logic-audit-committee.md
+│   │   ├── branch-simulation-workflow.md
 │   │   ├── model-routing.md
 │   │   ├── closeout-checklist.md
 │   │   ├── asset-package.md
@@ -182,6 +184,9 @@ openclaw-long-novel-architect/
 │       ├── audit-report-template.md
 │       ├── logic-audit-request-template.md
 │       ├── logic-audit-report-template.md
+│       ├── branch-state-template.md
+│       ├── divergence-point-template.md
+│       ├── branch-merge-decision-template.md
 │       ├── completion-report-template.md
 │       ├── project-state-template.md
 │       ├── work-queue-template.md
@@ -192,6 +197,7 @@ openclaw-long-novel-architect/
 │   ├── verify_portable_assets.py
 │   ├── timeline_lint.py
 │   ├── lore_index.py
+│   ├── branch_status.py
 │   └── github_private_sync.py
 ├── examples/
 │   ├── project-config.example.json

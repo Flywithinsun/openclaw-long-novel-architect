@@ -8,7 +8,7 @@
 
 ## 0. Immediate next step for the next AI session
 
-The next AI session should continue with **Phase P5 — Historical logic audit committee**, unless the user asks for P1/P3/P4 repairs. Phase P0, P1, P3, P4, and P10 partial have usable implementations.
+The next AI session should continue with **Phase P9 — Git writing, revision, snapshot, and export workflow**, unless the user asks for earlier-phase repairs. Phase P0, P1, P3, P4, P5, P6, and P10 partial have usable implementations.
 
 ### First command to run
 
@@ -52,7 +52,7 @@ scripts/verify_portable_assets.py
 
 ### Do not do first
 
-Do **not** begin by integrating AutoGen, CBDB, Electron, Obsidian, Emacs, or any external AI provider. The next recommended phase is P5 historical logic audit committee; keep P0 licensing and data-safety boundaries intact.
+Do **not** begin by integrating AutoGen, CBDB, Electron, Obsidian, Emacs, or any external AI provider. The next recommended phase is P9 Git snapshot and manuscript export workflow; keep P0 licensing and data-safety boundaries intact.
 
 ---
 

@@ -22,7 +22,8 @@
     "writing-requests",
     "exports",
     "standards",
-    "context-packs"
+    "context-packs",
+    "branches"
   ],
   "draft_dir": "drafts",
   "readable_dir": "readable",

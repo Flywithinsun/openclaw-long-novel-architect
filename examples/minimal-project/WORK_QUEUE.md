@@ -15,12 +15,14 @@
 4. If historical mode is used, run timeline and lore validation before reporting completion.
 5. Use standards and context packs when preparing chapter requests.
 6. If the chapter changes institutions, war, economy, logistics, geography, or social order, prepare a logic audit request first.
+7. If the chapter creates a durable alternate-history divergence, create or update a branch simulation under `branches/`.
 
 ## Blockers
 
 - Fill in project-specific canon, outline, and character details.
 - Replace example timeline/lore/source placeholders with project-owned research.
 - Decide whether the first chapter needs a logic audit committee review.
+- Decide whether any proposed divergence needs a branch simulation.
 
 ## Stop rule
 

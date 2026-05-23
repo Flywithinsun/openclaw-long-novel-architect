@@ -22,6 +22,7 @@ Use only when the user clearly asks to start/write/generate a chapter.
    - Include period-language constraints and forbidden modernisms.
    - Flag whether `logic_audit_required` is yes/no and why.
 2. Run a logic audit committee review for high-impact historical changes, or record explicit user override.
+   - If the change creates a durable alternate-history branch, create or update `branches/<branch-id>/` and record branch status.
 3. Run configured side-mining/red-team.
 4. Let final canon role select/compose final prose.
 5. Write draft.
@@ -45,3 +46,4 @@ Use only when the user clearly asks to start/write/generate a chapter.
 - Using stale archive notes as current progress.
 - Creating an alternate-history divergence without chapter linkage, consequence notes, and final canon review.
 - Canonizing a major historical change without a logic audit or explicit user override.
+- Merging a branch simulation into canon without a merge decision.

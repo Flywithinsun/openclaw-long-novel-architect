@@ -22,6 +22,7 @@
 - `lore/` — historical research cards, source notes, and metadata cross-references.
 - `standards/` — prose style, historical dialogue, forbidden modernisms, and de-AI rules.
 - `context-packs/` — chapter/audit/de-AI context bundle templates.
+- `branches/` — alternate-history branch simulations and merge decisions.
 - `writing-requests/` — self-contained chapter request packages.
 - `exports/` — intentional export outputs.
 
@@ -32,6 +33,9 @@
 - Summary: `summaries/chNNN-summary.md`
 - Audit: `audits/chAAA-chBBB-audit.md`
 - Logic audit: `audits/chNNN-logic-audit.md`
+- Branch state: `branches/<branch-id>/BRANCH_STATE.md`
+- Branch divergence point: `branches/<branch-id>/divergence-point.md`
+- Branch merge decision: `branches/<branch-id>/merge-decision.md`
 - Lore card: `lore/<category>/<stable-slug>.md`
 - Source note: `lore/sources/<stable-slug>.md`
 

@@ -18,6 +18,7 @@
 - Lore directory: `lore/`
 - Standards directory: `standards/`
 - Context pack directory: `context-packs/`
+- Branch simulation directory: `branches/`
 
 ## Current continuity locks
 
@@ -29,12 +30,14 @@
 - Lore examples exist under `lore/`.
 - Style and period-language standards exist under `standards/`.
 - Logic audit examples exist under `audits/`.
+- Branch simulation examples exist under `branches/`.
 - Replace all placeholder historical sources with project-owned research before canon use.
 
 ## Current risks
 
 - Project has not started drafting yet.
 - Major historical changes should use the logic audit committee before canon.
+- Alternate-history branch work is not canon until a merge decision is accepted.
 
 ## Next OpenClaw instruction
 
