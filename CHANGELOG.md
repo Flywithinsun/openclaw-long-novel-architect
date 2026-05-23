@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased - Historical Mode P1/P3/P4 Timeline, Lore, and Context
+## Unreleased - Historical Mode P1/P3/P4/P5 Timeline, Lore, Context, and Logic Audit
 
 ### 中文
 
@@ -17,6 +17,7 @@
 - 新增 P4 上下文层与时代语言控制首版：context-layer 工作流、context/style 模板、minimal project standards 与 context-packs 示例。
 - 开始 P10 partial 收口：standards / context-packs 已纳入推荐资产、验证脚本与打包脚本默认配置。
 - 补充 minimal project 的 `exports/` 占位目录，并为 `reports/` 增加忽略规则，避免验证演练产物污染模板工作区。
+- 新增 P5 历史逻辑审计委员会首版：逻辑审计工作流、请求/报告模板、minimal project 示例审计文件，以及章节工作流的高影响变化接入说明。
 
 ### English
 
@@ -33,6 +34,7 @@
 - Added the first P4 context-layer and period-language controls: context-layer workflow, context/style templates, minimal project standards, and context-pack examples.
 - Started P10 partial polish: standards / context-packs are now part of recommended assets and default verification/packaging configuration.
 - Added a minimal-project `exports/` placeholder and a `reports/` ignore rule so verification runs do not pollute the template workspace.
+- Added the first P5 historical logic audit committee slice: logic audit workflow, request/report templates, a minimal-project example audit, and chapter-workflow integration notes for high-impact changes.
 
 ## v0.3.0 - OpenClaw Public Onboarding Pack
 

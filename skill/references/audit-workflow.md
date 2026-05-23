@@ -9,6 +9,7 @@ A range audit checks the completed chapters and locks the next stage.
 - character consistency;
 - name/object/location consistency;
 - world logic and institutional/logistical plausibility;
+- whether major historical changes required a logic audit committee review;
 - real-history and alternate-history timeline consistency;
 - source coverage for real-history events when configured;
 - chapter links and consequences for alternate-history events when configured;
@@ -28,5 +29,6 @@ A range audit checks the completed chapters and locks the next stage.
 - request-package hard rules.
 - timeline repairs or locks for the next request package.
 - lore repairs, missing sources, or required cards for the next request package.
+- logic-audit required/passed/blocked/overridden status for major reforms, wars, technology, economy, logistics, or social reactions.
 
 After audit, update state/work queue and stop unless explicitly asked to start the next chapter.

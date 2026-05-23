@@ -28,11 +28,13 @@
 - Timeline examples exist under `timelines/`.
 - Lore examples exist under `lore/`.
 - Style and period-language standards exist under `standards/`.
+- Logic audit examples exist under `audits/`.
 - Replace all placeholder historical sources with project-owned research before canon use.
 
 ## Current risks
 
 - Project has not started drafting yet.
+- Major historical changes should use the logic audit committee before canon.
 
 ## Next OpenClaw instruction
 

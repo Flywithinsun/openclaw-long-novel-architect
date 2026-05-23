@@ -13,7 +13,7 @@
 - `drafts/` — canonical draft chapters.
 - `readable/` — readable / de-AI polished candidates.
 - `summaries/` — chapter or range summaries.
-- `audits/` — range audits and quality reviews.
+- `audits/` — range audits, quality reviews, and logic audit committee reports.
 - `ledgers/` — continuity, economy, logistics, institutions, promises, or other ledgers.
 - `outlines/` — arc and chapter outlines.
 - `characters/` — character files.
@@ -31,6 +31,7 @@
 - Readable chapter: `readable/chNNN.md`
 - Summary: `summaries/chNNN-summary.md`
 - Audit: `audits/chAAA-chBBB-audit.md`
+- Logic audit: `audits/chNNN-logic-audit.md`
 - Lore card: `lore/<category>/<stable-slug>.md`
 - Source note: `lore/sources/<stable-slug>.md`
 

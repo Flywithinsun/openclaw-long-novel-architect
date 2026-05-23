@@ -32,6 +32,7 @@ github-sync.config.json, if private GitHub sync is enabled
 7. **Protect private data.** Never package secrets, raw logs, credentials, personal paths, or private archives by default.
 8. **Prefer reversible operations.** Avoid destructive deletes; archive or ask when unsure.
 9. **Historical timeline discipline.** If historical mode is enabled, read configured timeline files before drafting or auditing chapters, and do not let alternate-history changes enter canon without final review.
+10. **Logic audit discipline.** Major reforms, wars, technology shifts, logistics changes, and social-order changes require a logic audit or explicit user override before canonizing.
 
 ## 2. Mandatory first reads
 
@@ -48,6 +49,7 @@ timelines/alt-history.md, if historical mode is enabled
 lore/index.md, if lore tracking is enabled
 standards/prose-style.md, if present
 context-packs/chapter-context-template.md, if present
+references/logic-audit-committee.md, if major historical changes are being proposed
 ```
 
 For progress questions, also inspect chapter directories and recent version control:
@@ -85,22 +87,25 @@ A full chapter is complete only when all configured required assets exist and pa
    - If lore tracking is enabled, also load `lore/index.md` and relevant lore cards.
    - If standards/context packs are present, load relevant style standards and the chapter context pack.
 4. Generate or refresh a self-contained chapter request.
-5. Run configured side-mining/red-team steps; store outputs in scratch/process directories, not canon directories.
-6. Use the final canon role for final prose decisions.
-7. Write configured draft path, e.g. `drafts/chNNN.md`.
-8. Write configured support files:
+   - If the chapter proposes a major reform, war, technology, economy, logistics, geography, or social-order change, mark `logic_audit_required: yes` and create a logic audit request.
+5. Run a logic audit committee review for high-impact historical changes, or record explicit user override.
+6. Run configured side-mining/red-team steps; store outputs in scratch/process directories, not canon directories.
+7. Use the final canon role for final prose decisions.
+8. Write configured draft path, e.g. `drafts/chNNN.md`.
+9. Write configured support files:
    - summary;
    - self-audit;
    - ledger/update suggestions;
+   - logic audit report or override record if required;
    - final-review evidence if used.
-9. Create readable/de-AI candidate if part of the project standard.
-10. Run local character/word count and verification.
+10. Create readable/de-AI candidate if part of the project standard.
+11. Run local character/word count and verification.
     - If timeline files changed or constrain the chapter, run `python3 scripts/timeline_lint.py --project-root . --config novel-architect.config.json --write-report`.
     - If lore cards or metadata tags changed, run `python3 scripts/lore_index.py --project-root . --config novel-architect.config.json --write-report`.
-11. Update state/work queue.
-12. Commit or record version status.
-13. If configured, sync the checkpoint to the private GitHub remote.
-14. Report completion and stop.
+12. Update state/work queue.
+13. Commit or record version status.
+14. If configured, sync the checkpoint to the private GitHub remote.
+15. Report logic audit status, completion evidence, and stop.
 
 ## 5. Readability / de-AI workflow
 
@@ -177,6 +182,7 @@ Count: ____.
 Continuity: ____.
 Files written: ____.
 Verification: ____.
+Logic audit required/status: ____.
 Version control: ____.
 GitHub private sync: ____.
 Current stop point: before Chapter N+1. Waiting for instruction.
@@ -194,6 +200,7 @@ references/lore-metadata-workflow.md
 references/context-layer-workflow.md
 references/deai-workflow.md
 references/audit-workflow.md
+references/logic-audit-committee.md
 references/model-routing.md
 references/closeout-checklist.md
 references/asset-package.md

@@ -10,6 +10,7 @@ PASS / PASS_WITH_WARNINGS / FAIL_NEEDS_REPAIR
 - Pacing:
 - Character consistency:
 - World logic:
+- Logic audit required/passed/blocked/overridden:
 - Timeline consistency:
 - Lore/source consistency:
 - External/antagonist adaptation:
@@ -29,3 +30,4 @@ PASS / PASS_WITH_WARNINGS / FAIL_NEEDS_REPAIR
 - Hooks to carry:
 - Beats to compress:
 - Request-package rules:
+- Required logic audits before next prose:
