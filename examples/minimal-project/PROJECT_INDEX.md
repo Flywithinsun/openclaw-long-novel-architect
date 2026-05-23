@@ -21,12 +21,14 @@
 - `timelines/` — real-history and alternate-history timeline events.
 - `maps/` — places, routes, travel-time, and logistics constraints.
 - `lore/` — historical research cards, source notes, and metadata cross-references.
+- `external-data/` — optional user-provided local datasets; excluded from packages by default.
 - `standards/` — prose style, historical dialogue, forbidden modernisms, and de-AI rules.
 - `context-packs/` — chapter/audit/de-AI context bundle templates.
 - `branches/` — alternate-history branch simulations and merge decisions.
 - `reports/` — generated validation, snapshot, and audit-support reports.
 - `writing-requests/` — self-contained chapter request packages.
 - `exports/` — intentional export outputs.
+- `exports/org/` — optional generated Org-mode project outline exports.
 
 ## Naming conventions
 
@@ -40,11 +42,14 @@
 - Branch merge decision: `branches/<branch-id>/merge-decision.md`
 - Lore card: `lore/<category>/<stable-slug>.md`
 - Source note: `lore/sources/<stable-slug>.md`
+- Generated lore draft: `lore/generated/persons/<stable-slug>.md`
 - Timeline lint report: `reports/timeline-lint-report.md`
 - Lore index report: `reports/lore-index-report.md`
 - Geo lint report: `reports/geo-lint-report.md`
+- Historical data report: `reports/historical-data-report.md`
 - Project snapshot report: `reports/project-snapshot-YYYYMMDD-HHMMSS.md`
 - Manuscript export: `exports/manuscript.md`
+- Org outline export: `exports/org/project-outline.org`
 
 ## Metadata tags
 

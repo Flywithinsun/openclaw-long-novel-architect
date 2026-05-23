@@ -28,5 +28,6 @@ Before publishing this repository or a generated asset package:
 - [ ] SQLite / local database files excluded by default: `*.db`, `*.sqlite`, `*.sqlite3`.
 - [ ] CBDB or other third-party historical databases not bundled in public packages.
 - [ ] Local CSV / JSON research data reviewed before sharing.
+- [ ] Generated Org outline exports under `exports/org/` inspected if included.
 - [ ] Secret scan passed.
 - [ ] Destination verification passed.

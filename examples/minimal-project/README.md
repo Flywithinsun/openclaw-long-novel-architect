@@ -24,9 +24,19 @@ This skeleton keeps `skill/` and `scripts/` as recommended paths so it can be co
 
 ## Historical-mode examples / 历史模式示例
 
-This minimal project includes example directories for timeline, geography/logistics, lore metadata, style standards, context packs, logic audits, branch simulations, reports, and exports. They are safe starter examples, not real historical research.
+This minimal project includes example directories for timeline, geography/logistics, lore metadata, external-data placeholders, style standards, context packs, logic audits, branch simulations, reports, and exports. They are safe starter examples, not real historical research.
 
-本最小项目包含时间线、地理/后勤、lore 元数据、风格标准、上下文包、逻辑审计、分支模拟、报告和导出目录示例。这些只是安全起步样例，不是真实历史研究资料。
+本最小项目包含时间线、地理/后勤、lore 元数据、external-data 占位目录、风格标准、上下文包、逻辑审计、分支模拟、报告和导出目录示例。这些只是安全起步样例，不是真实历史研究资料。
+
+If you need a navigable Org-mode project outline, copy `scripts/` into the project and run:
+
+```bash
+python scripts/export_org_outline.py --project-root . --config novel-architect.config.json
+```
+
+The default output is `exports/org/project-outline.org`; it is a generated navigation aid, not canon approval.
+
+如果需要可导航的 Org-mode 项目大纲，请先把 `scripts/` 复制进项目，再运行上面的命令。默认输出为 `exports/org/project-outline.org`；它只是生成的导航辅助，不是 canon 审批。
 
 Keep external historical datasets outside public packages. `external-data/`, SQLite databases, and unreviewed local CSV / JSON research dumps should remain private unless license-reviewed.
 

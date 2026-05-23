@@ -9,7 +9,7 @@
 ```bash
 mkdir my-novel-project
 cd my-novel-project
-mkdir workflow drafts readable summaries audits ledgers outlines characters canon writing-requests timelines maps lore standards context-packs branches reports exports
+mkdir workflow drafts readable summaries audits ledgers outlines characters canon writing-requests timelines maps lore external-data standards context-packs branches reports exports
 ```
 
 如果你暂时不写历史 / 架空历史小说，可以保留这些目录为空；它们只是推荐资产，不会强制你启用历史模式。
@@ -49,6 +49,14 @@ python scripts/verify_portable_assets.py --project-root . --config novel-archite
 
 如果只是刚初始化，可能会看到没有章节文件的 warning。这是正常的；缺少 required 文件才需要先修复。
 
+如果你需要给大型项目生成可导航大纲，可以在复制脚本后运行：
+
+```bash
+python scripts/export_org_outline.py --project-root . --config novel-architect.config.json
+```
+
+默认输出为 `exports/org/project-outline.org`。
+
 ### 5. 推荐工作方式
 
 每次新 OpenClaw 会话开始：
@@ -70,7 +78,7 @@ This guide creates a minimal long-novel project layout so OpenClaw can resume fr
 ```bash
 mkdir my-novel-project
 cd my-novel-project
-mkdir workflow drafts readable summaries audits ledgers outlines characters canon writing-requests timelines maps lore standards context-packs branches reports exports
+mkdir workflow drafts readable summaries audits ledgers outlines characters canon writing-requests timelines maps lore external-data standards context-packs branches reports exports
 ```
 
 If you are not writing historical / alternate-history fiction yet, these directories can stay empty; they are recommended assets and do not force historical mode on.
@@ -109,6 +117,14 @@ python scripts/verify_portable_assets.py --project-root . --config novel-archite
 ```
 
 For a freshly initialized project, warnings about missing chapter files are expected. Missing required files should be fixed first.
+
+If you need a navigable outline for a large project, run this after copying scripts:
+
+```bash
+python scripts/export_org_outline.py --project-root . --config novel-architect.config.json
+```
+
+The default output is `exports/org/project-outline.org`.
 
 ### 5. Recommended workflow
 

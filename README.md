@@ -20,15 +20,15 @@ docs/historical-mode-roadmap.md
 docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 ```
 
-当前状态：**P10 收口同步已推进**。P1/P2/P3/P4/P5/P6/P9/P10 closeout sync 已完成可用版本，下一步可进入 P7 历史数据适配器，或继续做 P10 final 的发布前总验收。
+当前状态：**P10 final 发布前总验收已完成**。P1/P2/P3/P4/P5/P6/P7/P8/P9/P10 已完成可用版本与发布前验证；下一步只需按需创建 GitHub release / tag，或处理用户指定修补。
 
-当前路线图顺序已推进到 P1 → P3 → P4 → P10 partial → P5 → P6 → P9 → P2 → P10 closeout sync。不要先集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何外部模型 provider；历史数据适配器仍应保持用户本地自备、默认不打包。
+当前路线图顺序已推进到 P1 → P3 → P4 → P10 partial → P5 → P6 → P9 → P2 → P10 closeout sync → P7 → P8 → P10 final。不要先集成 AutoGen、CBDB、Electron、Obsidian、Emacs 或任何外部模型 provider；历史数据适配器仍应保持用户本地自备、默认不打包。
 
 历史模式路线图见：[`docs/historical-mode-roadmap.md`](docs/historical-mode-roadmap.md)<br>
 第三方灵感与许可证边界见：[`docs/third-party-inspiration.md`](docs/third-party-inspiration.md)<br>
 完整 AI 交接实施计划见：[`docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md`](docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md)
 
-历史数据适配器应保持**轻量、可选、用户本地自备**：优先读取 SQLite / CSV / JSON 等简单格式；公共模板和默认打包流程不捆绑 CBDB 或任何第三方历史数据库。
+历史数据适配器应保持**轻量、可选、用户本地自备**：优先读取 SQLite / CSV / JSON / Markdown table 等简单格式；公共模板和默认打包流程不捆绑 CBDB 或任何第三方历史数据库。
 
 ### 历史模式阶段进度
 
@@ -41,8 +41,10 @@ docs/HISTORICAL_NOVEL_ENHANCEMENT_PLAN.md
 | P4：上下文层与时代语言控制 | 已完成首版 | 已建立 standards、context-packs、上下文层工作流与 de-AI 规则引用。 |
 | P5：历史逻辑审计委员会 | 已完成首版 | 已加入逻辑审计工作流、请求/报告模板、示例审计和章节审计接入说明。 |
 | P6：蝴蝶效应分支模拟 | 已完成首版 | 已加入 branch simulation 工作流、分支模板、示例分支和 `scripts/branch_status.py`。 |
+| P7：历史数据适配器 | 已完成首版 | 已加入本地 SQLite / CSV / JSON / Markdown table 查询、生成 lore 草稿、外部数据目录说明和安全边界文档。 |
+| P8：Org mode 大纲导出 | 已完成首版 | 已加入 `skill/references/org-export-workflow.md` 和 `scripts/export_org_outline.py`，可从项目状态、工作队列、大纲、人物、lore、时间线和分支生成 `exports/org/project-outline.org`。 |
 | P9：Git 快照与手稿导出 | 已完成首版 | 已加入 versioning/export 工作流、修订分支与发布说明模板、`scripts/project_snapshot.py` 和 `scripts/export_manuscript.py`。 |
-| P10：验证、打包、README 与示例同步 | 已完成本轮收口同步 | 已把 timelines/maps/lore/standards/context-packs/branches/reports/exports 纳入推荐资产、配置、验证/打包默认值和入门/迁移文档。 |
+| P10：验证、打包、README 与示例同步 | 已完成 final 发布前总验收 | 已把 timelines/maps/lore/external-data 说明/standards/context-packs/branches/reports/exports/org 纳入推荐资产、配置、验证/打包默认值和入门/迁移文档，并完成脚本、打包、脱敏与陈旧交接提示检查。 |
 
 #### P1 交付物
 
@@ -87,6 +89,38 @@ reports/lore-index-report.md
 ```
 
 Lore 卡片使用 `- id: lore-...` 元数据，并可在正文、摘要、审计、账本中使用 `@lore:`、`@source:`、`@event:`、`@chapter:` 等标签交叉引用。
+
+#### P7 历史数据查询与生成 lore 草稿
+
+历史数据源必须由用户本地自备，并在 `novel-architect.config.json` 的 `historical_data_sources` 中显式配置。查询示例：
+
+```bash
+python3 scripts/historical_data_query.py --project-root . --config novel-architect.config.json --source cbdb-local --query-person "李自成" --write-report
+```
+
+生成 lore 草稿示例：
+
+```bash
+python3 scripts/generate_lore_from_data.py --project-root . --config novel-architect.config.json --source cbdb-local --person "某人"
+```
+
+默认报告写入 `reports/historical-data-report.md`；生成卡片默认写入 `lore/generated/persons/`。缺失或禁用的数据源只产生 warning，不应导致工作流崩溃；没有匹配数据时默认不写卡片，除非显式使用 `--allow-empty`。生成卡片在 `final_canon` 审核前不是 canon。
+
+#### P8 Org mode 大纲导出
+
+如需给大型项目生成可导航的 Org mode 逻辑树：
+
+```bash
+python3 scripts/export_org_outline.py --project-root . --config novel-architect.config.json
+```
+
+默认输出：
+
+```text
+exports/org/project-outline.org
+```
+
+该导出读取 `PROJECT_STATE.md`、`WORK_QUEUE.md`、`outlines/`、`characters/`、`lore/`、`timelines/` 和 `branches/`。它只是导航与交接辅助，不等于 canon 审批；生成过程不需要 Emacs，也不复制 GPL 项目代码。
 
 #### P2 地理 / 后勤检查
 
@@ -142,12 +176,12 @@ exports/release/volume-01.md
 
 | 项目 | 当前值 |
 |---|---|
-| 记录时间 | 2026-05-23 22:26:00 +08 |
-| 当前阶段 | P10：验证、打包、README 与示例同步已完成本轮收口 |
+| 记录时间 | 2026-05-24 00:30:00 +08 |
+| 当前阶段 | P10 final：发布前总验收已完成 |
 | P0 状态 | 已完成 |
-| 下一步 | P7：历史数据适配器，或 P10 final 发布前总验收 |
-| 最近一次 Git 同步本地时间 | 2026-05-23 21:54 +08 |
-| 当前状态 | P1/P2/P3/P4/P5/P6/P9/P10 closeout sync 已可用；推荐资产、验证/打包默认值、minimal project 索引与入门/迁移文档已同步到当前历史模式目录集 |
+| 下一步 | 按需创建 GitHub release / tag，或处理用户指定修补 |
+| 最近一次 Git 同步本地时间 | 2026-05-24 00:31 +08 |
+| 当前状态 | P1/P2/P3/P4/P5/P6/P7/P8/P9/P10 final 均已可用并通过发布前验证；P7/P8/P10 文档、示例、验证、打包与安全边界已同步 |
 
 #### 下次更新格式
 
@@ -208,6 +242,7 @@ openclaw-long-novel-architect/
 │   │   ├── timeline-workflow.md
 │   │   ├── geo-logistics-workflow.md
 │   │   ├── lore-metadata-workflow.md
+│   │   ├── historical-data-workflow.md
 │   │   ├── context-layer-workflow.md
 │   │   ├── deai-workflow.md
 │   │   ├── audit-workflow.md
@@ -215,6 +250,7 @@ openclaw-long-novel-architect/
 │   │   ├── branch-simulation-workflow.md
 │   │   ├── versioning-workflow.md
 │   │   ├── export-workflow.md
+│   │   ├── org-export-workflow.md
 │   │   ├── model-routing.md
 │   │   ├── closeout-checklist.md
 │   │   ├── asset-package.md
@@ -229,6 +265,8 @@ openclaw-long-novel-architect/
 │       ├── logistics-check-template.md
 │       ├── lore-card-template.md
 │       ├── source-note-template.md
+│       ├── historical-data-source-template.md
+│       ├── generated-lore-card-template.md
 │       ├── context-pack-template.md
 │       ├── style-standard-template.md
 │       ├── deai-request-template.md
@@ -251,6 +289,9 @@ openclaw-long-novel-architect/
 │   ├── timeline_lint.py
 │   ├── geo_lint.py
 │   ├── lore_index.py
+│   ├── historical_data_query.py
+│   ├── generate_lore_from_data.py
+│   ├── export_org_outline.py
 │   ├── branch_status.py
 │   ├── export_manuscript.py
 │   ├── project_snapshot.py
@@ -413,6 +454,7 @@ canon/ 或 bible/
 timelines/
 maps/
 lore/
+external-data/
 standards/
 context-packs/
 branches/

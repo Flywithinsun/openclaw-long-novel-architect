@@ -32,9 +32,9 @@ Upgrade `openclaw-long-novel-architect` from a general long-novel OpenClaw workf
 
 ## Start with this phase / 从这一阶段开始
 
-P1, P2, P3, P4, P5, P6, P9, and P10 closeout sync have first usable implementations. Continue with **P7 historical data adapter** or **P10 final release verification** unless the user asks for repairs.
+P1, P2, P3, P4, P5, P6, P7, P8, P9, and P10 final release verification have first usable implementations. No feature phase is pending; continue with release/tag preparation or user-requested repairs.
 
-**P1、P2、P3、P4、P5、P6、P9、P10 closeout sync**已有可用实现。除非用户要求修补既有阶段，否则继续 **P7 历史数据适配器** 或 **P10 final 发布前总验收**。
+**P1、P2、P3、P4、P5、P6、P7、P8、P9、P10 final 发布前总验收**已有可用实现。当前没有待推进功能阶段；下一步只做 release/tag 准备或用户指定修补。
 
 P0 licensing / safety / scope boundary is complete, and P1/P3/P4 basics are implemented. Do not start with AutoGen, CBDB, Electron, Obsidian, Emacs, or model-provider integrations.
 
@@ -193,6 +193,92 @@ Completed P4 scope:
 
 ---
 
+## P7 completion record / P7 完成记录
+
+Status: **first usable version complete**.
+
+状态：**首个可用版本已完成**。
+
+Completed P7 scope:
+
+- added `skill/references/historical-data-workflow.md`;
+- added historical data source and generated lore card templates;
+- added `examples/minimal-project/external-data/README.md` as a public-safe placeholder;
+- added `scripts/historical_data_query.py` with standard-library SQLite / CSV / JSON / Markdown-table querying;
+- added `scripts/generate_lore_from_data.py` to create clearly marked generated lore draft cards;
+- missing, disabled, or unconfigured data sources produce warnings instead of crashes;
+- generated lore cards mark source, query, confidence, license boundary, and `final_canon` review requirement;
+- external datasets remain user-provided and excluded from packages by default.
+
+已完成的 P7 范围：
+
+- 新增 `skill/references/historical-data-workflow.md`；
+- 新增历史数据源模板与生成 lore 卡片模板；
+- 新增 `examples/minimal-project/external-data/README.md`，作为公开安全占位目录说明；
+- 新增 `scripts/historical_data_query.py`，使用标准库查询 SQLite / CSV / JSON / Markdown 表格；
+- 新增 `scripts/generate_lore_from_data.py`，生成明确标记的 lore 草稿卡；
+- 数据源缺失、禁用或未配置时输出 warning 而不是崩溃；
+- 生成 lore 卡明确标记来源、查询词、置信度、许可证边界和 `final_canon` 审核要求；
+- 外部数据集仍由用户自备，默认不进入打包。
+
+---
+
+## P8 completion record / P8 完成记录
+
+Status: **first usable version complete**.
+
+状态：**首个可用版本已完成**。
+
+Completed P8 scope:
+
+- added `skill/references/org-export-workflow.md`;
+- added `scripts/export_org_outline.py` with Python standard library only;
+- exports `PROJECT_STATE.md`, `WORK_QUEUE.md`, `outlines/`, `characters/`, `lore/`, `timelines/`, and `branches/` into `exports/org/project-outline.org`;
+- Emacs is not required;
+- generated Org output stays under `exports/` by default;
+- no GPL code is copied.
+
+已完成的 P8 范围：
+
+- 新增 `skill/references/org-export-workflow.md`；
+- 新增仅使用 Python 标准库的 `scripts/export_org_outline.py`；
+- 可把 `PROJECT_STATE.md`、`WORK_QUEUE.md`、`outlines/`、`characters/`、`lore/`、`timelines/` 和 `branches/` 导出到 `exports/org/project-outline.org`；
+- 生成过程不需要 Emacs；
+- 生成的 Org 输出默认留在 `exports/` 下；
+- 不复制 GPL 代码。
+
+---
+
+## P10 final completion record / P10 final 完成记录
+
+Status: **final release verification complete**.
+
+状态：**发布前总验收已完成**。
+
+Completed P10 final scope:
+
+- all scripts pass Python syntax checks and `--help` smoke tests;
+- minimal project passes asset, timeline, lore, geo, and branch validation;
+- P7 local CSV query/generation smoke test passes on a temporary project;
+- P8 Org outline export smoke test passes and generated `.org` output is not kept in the public template;
+- P9 snapshot/manuscript export smoke test passes on a temporary project;
+- portable package smoke test confirms `external-data/`, local database files, and generated Org output are excluded by default;
+- stale handoff prompts pointing to P8 were removed;
+- `git diff --check` passes.
+
+已完成的 P10 final 范围：
+
+- 全部脚本通过 Python 语法检查与 `--help` 冒烟检查；
+- minimal project 通过资产、时间线、lore、地理和分支验证；
+- P7 本地 CSV 查询 / 生成在临时项目中通过冒烟测试；
+- P8 Org 大纲导出通过冒烟测试，生成 `.org` 文件不会保留在公开模板中；
+- P9 快照 / 手稿导出在临时项目中通过冒烟测试；
+- 便携包冒烟测试确认默认排除 `external-data/`、本地数据库文件和生成的 Org 输出；
+- 已移除指向 P8 的陈旧交接提示；
+- `git diff --check` 通过。
+
+---
+
 ## Previous P0 implementation checklist / 既往 P0 实施清单
 
 Create:
@@ -287,6 +373,7 @@ examples/minimal-project/standards/forbidden-modernisms.md
 README.md updates
 verify_portable_assets.py updates
 package_portable_assets.py external-data/database exclusions
+historical_data_query.py / generate_lore_from_data.py optional local data adapters
 ```
 
 ---

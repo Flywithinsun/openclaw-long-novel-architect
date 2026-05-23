@@ -15,9 +15,15 @@ inbox/
 outbox/
 archive/
 backups/
+external-data/
+!examples/minimal-project/external-data/
+!examples/minimal-project/external-data/README.md
 exports/
 !examples/minimal-project/exports/
 !examples/minimal-project/exports/.gitkeep
+!examples/minimal-project/exports/org/
+!examples/minimal-project/exports/org/.gitkeep
+examples/minimal-project/exports/org/*.org
 
 # Python
 __pycache__/

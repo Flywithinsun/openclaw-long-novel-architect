@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased - Historical Mode P1/P2/P3/P4/P5/P6/P9 Timeline, Geography, Lore, Context, Logic Audit, Branch Simulation, Snapshot, and Export
+## Unreleased - Historical Mode P1/P2/P3/P4/P5/P6/P7/P8/P9 Timeline, Geography, Lore, Context, Logic Audit, Branch Simulation, Historical Data, Org Outline, Snapshot, and Export
 
 ### 中文
 
@@ -22,6 +22,11 @@
 - 新增 P6 蝴蝶效应分支模拟首版：branch simulation 工作流、分支状态/分歧点/合并决策模板、minimal project 示例分支、`scripts/branch_status.py`，并把 `branches/` 纳入推荐资产与打包/验证规则。
 - 新增 P9 Git 快照与手稿导出首版：versioning/export 工作流、修订分支模板、发布说明模板、`scripts/project_snapshot.py` 和 `scripts/export_manuscript.py`。
 - 完成本轮 P10 收口同步：`timelines/`、`maps/`、`lore/`、`standards/`、`context-packs/`、`branches/`、`reports/`、`exports/` 已统一纳入推荐资产、示例配置、验证/打包默认值、README、入门/迁移文档和 minimal project 索引。
+- 新增 P7 历史数据适配器首版：`historical-data-workflow.md`、历史数据源模板、生成 lore 卡模板、`examples/minimal-project/external-data/README.md`、`scripts/historical_data_query.py` 和 `scripts/generate_lore_from_data.py`，支持本地 SQLite / CSV / JSON / Markdown 表格查询与生成明确标记的 lore 草稿。
+- P7 保持安全边界：数据源缺失、禁用或未配置时只输出 warning；无匹配数据时默认不写 lore 卡片；生成 lore 在 `final_canon` 审核前不是 canon；外部数据集仍由用户自备并默认不打包。
+- 新增 P8 Org mode 大纲导出首版：`skill/references/org-export-workflow.md` 与 `scripts/export_org_outline.py`，可从项目状态、工作队列、大纲、人物、lore、时间线和分支生成 `exports/org/project-outline.org`。
+- P8 保持可选与安全边界：生成过程不需要 Emacs，只使用 Python 标准库；默认输出留在 `exports/` 下；不复制 `org-novelist` 的 GPL 代码。
+- 完成 P10 final 发布前总验收：脚本语法与 `--help`、minimal project 验证、P7/P8/P9 冒烟测试、便携包排除边界、陈旧交接提示和 `git diff --check` 均已通过。
 
 ### English
 
@@ -43,6 +48,11 @@
 - Added the first P6 butterfly-effect branch simulation slice: branch simulation workflow, branch state/divergence/merge-decision templates, a minimal-project example branch, `scripts/branch_status.py`, and `branches/` in recommended verification/packaging assets.
 - Added the first P9 Git snapshot and manuscript export slice: versioning/export workflows, revision branch and release note templates, `scripts/project_snapshot.py`, and `scripts/export_manuscript.py`.
 - Completed the current P10 closeout sync: `timelines/`, `maps/`, `lore/`, `standards/`, `context-packs/`, `branches/`, `reports/`, and `exports/` are aligned across recommended assets, example configs, verification/packaging defaults, README, setup/migration docs, and the minimal-project index.
+- Added the first P7 historical data adapter slice: `historical-data-workflow.md`, historical data source template, generated lore card template, `examples/minimal-project/external-data/README.md`, `scripts/historical_data_query.py`, and `scripts/generate_lore_from_data.py`, supporting local SQLite / CSV / JSON / Markdown-table queries and clearly marked generated lore drafts.
+- Preserved P7 safety boundaries: missing, disabled, or unconfigured sources produce warnings; no-row results do not write lore cards by default; generated lore is not canon before `final_canon` review; external datasets remain user-provided and excluded from packages by default.
+- Added the first P8 Org mode outline export slice: `skill/references/org-export-workflow.md` and `scripts/export_org_outline.py`, generating `exports/org/project-outline.org` from project state, work queue, outlines, characters, lore, timelines, and branches.
+- Preserved P8 optional/safety boundaries: Emacs is not required, the script uses Python standard library only, generated output stays under `exports/` by default, and no GPL code from `org-novelist` is copied.
+- Completed P10 final release verification: script syntax and `--help`, minimal-project validation, P7/P8/P9 smoke tests, portable package exclusion boundaries, stale handoff prompts, and `git diff --check` all pass.
 
 ## v0.3.0 - OpenClaw Public Onboarding Pack
 

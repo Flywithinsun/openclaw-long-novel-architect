@@ -56,6 +56,7 @@ DEFAULT_CONFIG: dict[str, Any] = {
     "reports_dir": "reports",
     "external_data_dir": "external-data",
     "exports_dir": "exports",
+    "org_export_path": "exports/org/project-outline.org",
     "historical_mode": {
         "enabled": False,
         "primary_calendar": "CE",
@@ -105,6 +106,7 @@ DEFAULT_CONFIG: dict[str, Any] = {
         "*.pyo",
         "*.sqlite",
         "*.sqlite3",
+        "project-outline.org",
         "*.zip",
         "*.tar",
         "*.tar.gz",
@@ -288,6 +290,19 @@ def add_historical_mode_warnings(root: Path, cfg: dict[str, Any], warnings: list
             warnings.append(f"historical data source is outside external data dir: {name} -> {source_path}")
 
 
+def add_org_export_warnings(cfg: dict[str, Any], warnings: list[str]) -> None:
+    org_export_path = cfg.get("org_export_path")
+    if not org_export_path:
+        return
+    org_path = Path(str(org_export_path))
+    exports_dir = str(cfg.get("exports_dir", "exports"))
+    if org_path.is_absolute():
+        warnings.append(f"org export path should normally be project-relative under {exports_dir}/: {org_export_path}")
+        return
+    if org_path.parts and org_path.parts[0] != exports_dir:
+        warnings.append(f"org export path is outside configured exports dir {exports_dir}/: {org_export_path}")
+
+
 def main() -> int:
     args = parse_args()
     root = Path(args.project_root).expanduser().resolve()
@@ -328,6 +343,7 @@ def main() -> int:
         warnings.append(f"latest summary {summary_latest} behind latest draft {draft_latest}")
 
     add_historical_mode_warnings(root, cfg, warnings)
+    add_org_export_warnings(cfg, warnings)
     for rel in scan_package_roots_for_databases(root, cfg):
         warnings.append(
             "database file found under package roots; keep it lightweight, external, "

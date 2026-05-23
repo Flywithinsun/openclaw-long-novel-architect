@@ -60,6 +60,7 @@ DEFAULT_CONFIG: dict[str, Any] = {
         "*.pyo",
         "*.sqlite",
         "*.sqlite3",
+        "project-outline.org",
         "*.zip",
         "*.tar",
         "*.tar.gz",
@@ -70,6 +71,7 @@ DEFAULT_CONFIG: dict[str, Any] = {
         ".env",
         ".env.*",
     ],
+    "org_export_path": "exports/org/project-outline.org",
 }
 
 
@@ -98,7 +100,21 @@ def parse_args() -> argparse.Namespace:
     return p.parse_args()
 
 
+def explicit_exclude_paths(cfg: dict[str, Any]) -> set[str]:
+    """Return project-relative generated files that should not enter packages by default."""
+    paths: set[str] = set()
+    org_export_path = cfg.get("org_export_path")
+    if org_export_path:
+        org_path = Path(str(org_export_path))
+        if not org_path.is_absolute():
+            paths.add(org_path.as_posix())
+    return paths
+
+
 def should_exclude(rel: str, is_dir: bool, cfg: dict[str, Any]) -> bool:
+    rel_posix = Path(rel).as_posix()
+    if not is_dir and rel_posix in explicit_exclude_paths(cfg):
+        return True
     parts = Path(rel).parts
     if any(part in set(cfg.get("exclude_dirs", [])) for part in parts):
         return True

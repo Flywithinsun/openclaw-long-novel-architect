@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 from pathlib import Path
 import sys
 from typing import Any
@@ -11,8 +12,16 @@ from typing import Any
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="Report branch-simulation state.")
     p.add_argument("--project-root", default=".")
-    p.add_argument("--branch-dir", default="branches")
+    p.add_argument("--config", default=None, help="JSON config path.")
+    p.add_argument("--branch-dir", default=None, help="Override branch simulation directory.")
     return p.parse_args()
+
+
+def load_config(path: str | None) -> dict[str, Any]:
+    if not path:
+        return {}
+    p = Path(path).expanduser()
+    return json.loads(p.read_text(encoding="utf-8"))
 
 
 def read_text(p: Path) -> str:
@@ -51,7 +60,8 @@ def branch_summary(branch_path: Path) -> dict[str, str]:
 def main() -> int:
     args = parse_args()
     root = Path(args.project_root).expanduser().resolve()
-    branch_dir = root / args.branch_dir
+    cfg = load_config(args.config)
+    branch_dir = root / (args.branch_dir or cfg.get("branch_dir", "branches"))
 
     if not root.exists():
         print(f"ERROR: project root not found: {root}", file=sys.stderr)

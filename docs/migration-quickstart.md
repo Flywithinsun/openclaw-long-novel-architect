@@ -16,11 +16,13 @@ If you use historical mode, confirm the recommended directories are either prese
 timelines/
 maps/
 lore/
+external-data/  # keep user-provided datasets private and excluded by default
 standards/
 context-packs/
 branches/
 reports/
 exports/
+exports/org/project-outline.org  # optional generated Org outline
 ```
 
 Keep local historical datasets in `external-data/` or another private location. Public packages should not include CBDB, third-party databases, or unreviewed local CSV / JSON research data.
@@ -71,4 +73,5 @@ Confirm:
 - next hard locks;
 - model role mapping;
 - whether timeline / lore / map / branch reports need to be refreshed;
+- whether an optional Org outline export under `exports/org/` should be regenerated;
 - completion checklist.

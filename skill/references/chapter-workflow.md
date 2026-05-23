@@ -12,8 +12,9 @@ Use only when the user clearly asks to start/write/generate a chapter.
 6. If historical mode is enabled, load relevant timeline files: `timelines/real-history.md`, `timelines/alt-history.md`, and optional character/military/policy tracks.
 7. If geography/logistics tracking is enabled, load `maps/places.md`, `maps/routes.md`, and relevant movement constraints.
 8. If lore tracking is enabled, load `lore/index.md` and relevant lore cards / source notes.
-9. If standards or context packs exist, load relevant `standards/` files and a chapter context pack.
-10. If the chapter proposes a major reform, war, technology, economy, logistics, geography, or social-order change, prepare a logic audit request before canon prose.
+9. If local historical data adapters are used, load `skill/references/historical-data-workflow.md` and treat query/generation output as non-canon until reviewed.
+10. If standards or context packs exist, load relevant `standards/` files and a chapter context pack.
+11. If the chapter proposes a major reform, war, technology, economy, logistics, geography, or social-order change, prepare a logic audit request before canon prose.
 
 ## Production path
 
@@ -37,6 +38,7 @@ Use only when the user clearly asks to start/write/generate a chapter.
    - When timeline files are present, run `scripts/timeline_lint.py`.
    - When map/route files are present, run `scripts/geo_lint.py`.
    - When lore cards or metadata tags are present, run `scripts/lore_index.py`.
+   - When generated lore from external data is used, record source warnings and `final_canon` review status.
 9. Update state/work queue.
 10. Commit or record version status.
 11. Report logic audit status and stop.

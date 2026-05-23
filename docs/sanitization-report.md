@@ -15,6 +15,7 @@ Historical data support is intentionally lightweight and external-data oriented.
 - `external-data/` and user-provided historical datasets;
 - CBDB or other third-party historical databases;
 - local database files such as `*.db`, `*.sqlite`, and `*.sqlite3`;
+- generated Org outline exports unless intentionally reviewed and included;
 - `.git/` history from the source project;
 - `.secrets/`, `.env`, API keys, provider credentials;
 - personal home paths;

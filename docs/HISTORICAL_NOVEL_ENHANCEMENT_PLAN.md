@@ -8,7 +8,7 @@
 
 ## 0. Immediate next step for the next AI session
 
-The next AI session should continue with **Phase P7 — Historical data source adapter** or **P10 final release verification**, unless the user asks for earlier-phase repairs. Phase P0, P1, P2, P3, P4, P5, P6, P9, and P10 closeout sync have usable implementations.
+The next AI session should continue with release/tag preparation or user-requested repairs. Phase P0, P1, P2, P3, P4, P5, P6, P7, P8, P9, and P10 final release verification have usable implementations.
 
 ### First command to run
 
@@ -52,7 +52,7 @@ scripts/verify_portable_assets.py
 
 ### Do not do first
 
-Do **not** begin by integrating AutoGen, CBDB, Electron, Obsidian, Emacs, or any external AI provider. The next recommended phase is P7 historical data adapter or P10 final release verification; keep P0 licensing and data-safety boundaries intact.
+Do **not** begin by integrating AutoGen, CBDB, Electron, Obsidian, Emacs, or any external AI provider. The next recommended step is release/tag preparation or user-requested repairs; keep P0 licensing and data-safety boundaries intact.
 
 ---
 
@@ -1114,6 +1114,10 @@ exports/org/project-outline.org
 - Output is optional and goes under `exports/`.
 - No GPL code is copied.
 
+### Current status
+
+First usable version is complete: `skill/references/org-export-workflow.md` documents the workflow, and `scripts/export_org_outline.py` generates `exports/org/project-outline.org` from project state, work queue, outlines, characters, lore, timelines, and branches.
+
 ---
 
 ## 15. Phase P9 — Git writing, revision, snapshot, and export workflow
@@ -1231,7 +1235,7 @@ scripts/package_portable_assets.py
 
 ### Current status
 
-Closeout sync for the current implemented scope is complete. Recommended asset roots, example configs, verification defaults, packaging defaults, README, setup/migration docs, minimal project state/index, roadmap, changelog, and handoff notes are aligned for P1/P2/P3/P4/P5/P6/P9. P7 remains the next feature phase; P10 final remains the final release verification pass after remaining optional phases.
+Final release verification for the current implemented scope is complete. Recommended asset roots, example configs, verification defaults, packaging defaults, README, setup/migration docs, minimal project state/index, roadmap, changelog, and handoff notes are aligned for P1/P2/P3/P4/P5/P6/P7/P8/P9/P10.
 
 ### `package_portable_assets.py` should eventually ensure
 

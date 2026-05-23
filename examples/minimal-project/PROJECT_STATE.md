@@ -17,6 +17,7 @@
 - Timeline directory: `timelines/`
 - Map/logistics directory: `maps/`
 - Lore directory: `lore/`
+- External data directory: `external-data/` (user-provided, excluded from packages by default)
 - Standards directory: `standards/`
 - Context pack directory: `context-packs/`
 - Branch simulation directory: `branches/`
@@ -32,11 +33,13 @@
 - Timeline examples exist under `timelines/`.
 - Map and route examples exist under `maps/`.
 - Lore examples exist under `lore/`.
+- External data placeholder exists under `external-data/`; real datasets must be user-provided and license-reviewed.
 - Style and period-language standards exist under `standards/`.
 - Logic audit examples exist under `audits/`.
 - Branch simulation examples exist under `branches/`.
 - Reports are written under `reports/` and ignored when generated.
 - Exports are written under `exports/` only when intentionally generated.
+- Optional Org outline exports are written under `exports/org/` when intentionally generated.
 - Replace all placeholder historical sources with project-owned research before canon use.
 
 ## Current risks

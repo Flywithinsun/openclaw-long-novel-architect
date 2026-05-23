@@ -33,6 +33,7 @@ github-sync.config.json, if private GitHub sync is enabled
 8. **Prefer reversible operations.** Avoid destructive deletes; archive or ask when unsure.
 9. **Historical timeline discipline.** If historical mode is enabled, read configured timeline files before drafting or auditing chapters, and do not let alternate-history changes enter canon without final review.
 10. **Logic audit discipline.** Major reforms, wars, technology shifts, logistics changes, and social-order changes require a logic audit or explicit user override before canonizing.
+11. **Historical data boundary.** Local historical datasets are user-provided research aids; do not package them by default, and treat generated lore as non-canon until `final_canon` review.
 
 ## 2. Mandatory first reads
 
@@ -47,6 +48,7 @@ workflow/start-chapter.md
 timelines/real-history.md, if historical mode is enabled
 timelines/alt-history.md, if historical mode is enabled
 lore/index.md, if lore tracking is enabled
+references/historical-data-workflow.md, if local historical data adapters are used
 standards/prose-style.md, if present
 context-packs/chapter-context-template.md, if present
 references/logic-audit-committee.md, if major historical changes are being proposed
@@ -102,6 +104,8 @@ A full chapter is complete only when all configured required assets exist and pa
 11. Run local character/word count and verification.
     - If timeline files changed or constrain the chapter, run `python3 scripts/timeline_lint.py --project-root . --config novel-architect.config.json --write-report`.
     - If lore cards or metadata tags changed, run `python3 scripts/lore_index.py --project-root . --config novel-architect.config.json --write-report`.
+    - If generated lore from external data was used, record `scripts/historical_data_query.py` / `scripts/generate_lore_from_data.py` output and confirm `final_canon` review.
+    - If a navigable project outline is needed, run `python3 scripts/export_org_outline.py --project-root . --config novel-architect.config.json`.
 12. Update state/work queue.
 13. Commit or record version status.
 14. If configured, sync the checkpoint to the private GitHub remote.
@@ -196,12 +200,17 @@ Read the most specific reference:
 references/project-map.md
 references/chapter-workflow.md
 references/timeline-workflow.md
+references/geo-logistics-workflow.md
 references/lore-metadata-workflow.md
+references/historical-data-workflow.md
 references/context-layer-workflow.md
 references/deai-workflow.md
 references/audit-workflow.md
 references/logic-audit-committee.md
 references/branch-simulation-workflow.md
+references/versioning-workflow.md
+references/export-workflow.md
+references/org-export-workflow.md
 references/model-routing.md
 references/closeout-checklist.md
 references/asset-package.md
